@@ -1,0 +1,24 @@
+@mixin flex-row-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+@mixin flex-column-center {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@mixin size($w, $h) {
+    width: $w;
+    height: $h;
+}
+
+@mixin abs-center {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
