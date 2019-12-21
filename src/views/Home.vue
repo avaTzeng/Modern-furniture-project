@@ -1,20 +1,20 @@
 <template>
     <div>
         <main>
-            <section class="section-nav">
-                <div class="section-nav__img-block">
-                    <span class="section-nav__title">softness in the arms of nature</span>
-                    <span class="section-nav__img-bg">
+            <section class="section-header">
+                <div class="section-header__contents">
+                    <span class="section-header__title">softness in the arms of nature</span>
+                    <span class="section-header__img-bg">
                         <img src="../assets/images/homepage/cover_01.jpeg" alt="Mountain Photo">
                     </span>
-                    <span class="section-nav__img-product">
+                    <span class="section-header__img-product">
                         <img src="../assets/images/furniture/bed/bed_01.png" alt="Product Photo">
                     </span>
                 </div>
             </section>
             <section class="section-intro">
-                <div class="section-intro__introdunction">
-                    <span class="section-intro__img-block">
+                <div class="section-intro__story">
+                    <span class="section-intro__block">
                         <span class="section-intro__contents">
                             <h2>inspiration from nature</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
@@ -24,16 +24,16 @@
                     </span>
                 </div>
                 
-                <div class="section-intro__panels">
-                    <span class="section-intro__collection-contents">
+                <div class="section-intro__banner">
+                    <span class="section-intro__banner-contents">
                         <span>furniture creative</span>
                         <h2>latest collection</h2>
                         <a href="#" class="btn btn--normal">show all</a>
                     </span>
-                    <span class="section-intro__panel">
+                    <span class="section-intro__img">
                         <img src="../assets/images/homepage/moreCollection.jpg" alt="Collection 1">
                     </span>
-                    <span class="section-intro__panel">
+                    <span class="section-intro__img">
                         <img src="../assets/images/homepage/moreCollection.jpg" alt="Collection 2">
                     </span>
                     
@@ -52,8 +52,8 @@
 </script>
 
 <style scoped lang="scss">
-//-------------------- SECTION-NAV --------------------
-    .section-nav {
+//-------------------- SECTION-HEADER --------------------
+    .section-header {
         margin-bottom: $u-margin-bottom-section-md;
 
         display: flex;
@@ -61,7 +61,7 @@
         justify-content: flex-end;
         overflow: hidden;
         
-        &__img-block {
+        &__contents {
             width: 105rem;
             height: 50rem;
             img {
@@ -117,14 +117,14 @@
             z-index: -1;
         }
         
-        &__introdunction {
+        &__story {
             display: flex;
             justify-content: flex-start;
             align-items: center;
             overflow: hidden;
         }
 
-        &__img-block {
+        &__block {
             width: 85rem;
             height: 50rem;
             img {
@@ -148,7 +148,7 @@
             }
         }
 
-        &__collection-contents {
+        &__banner-contents {
             @include abs-center;
             @include flex-column-center;
             z-index: 1;
@@ -168,12 +168,12 @@
             }
         }
 
-        &__panels {
+        &__banner {
             @include flex-row-center;
             padding: $u-margin-bottom-section-md 0;
         }
 
-        &__panel {
+        &__img {
             @include size(38rem, 27rem);
             background-color: yellow;
             overflow: hidden;
