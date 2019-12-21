@@ -1,29 +1,29 @@
 <template>
     <!-- 網頁頂端的導覽區塊 -->
-    <header class="header-nav">
-        <span class="header-nav__logo-box">
-            <img src="./assets/images/brandLogo.png" alt="Logo">
-        </span>
-        <nav class="navigation">
-            <ul class="navigation__list">
-                <li class="navigation__item">
-                    <span class="navigation__link"><router-link to="/" class="navigation__link-text">Home</router-link></span>
-                </li>
-                <span class="navigation__divider"></span>
-                <li class="navigation__item">
-                    <span class="navigation__link"><router-link to="/about" class="navigation__link-text">About us</router-link></span>
-                </li>
-                <span class="navigation__divider"></span>
-                <li class="navigation__item">
-                    <span class="navigation__link"><router-link to="/shop" class="navigation__link-text">Shop</router-link></span>
-                </li>
-                <span class="navigation__divider"></span>
-                <li class="navigation__item">
-                    <span class="navigation__link"><router-link to="/contact" class="navigation__link-text">Contact</router-link></span>
-                </li>
-            </ul>
-        </nav>
-    </header>
+    <div>
+        <header class="header-nav">
+            <span class="header-nav__logo-box">
+                <img src="./assets/images/brandLogo.png" alt="Logo">
+            </span>
+            <div class="header-nav__contents">
+                <nav class="navigation">
+                    <ul class="navigation__list">
+                        <li class="navigation__item"><router-link to="/" class="navigation__link">Home</router-link></li>
+                        <li class="navigation__item"><router-link to="/" class="navigation__link">About us</router-link></li>
+                        <li class="navigation__item"><router-link to="/" class="navigation__link">Shop</router-link></li>
+                        <li class="navigation__item"><router-link to="/" class="navigation__link">Contact</router-link></li>
+                    </ul>
+                </nav>
+                <span class="header-nav__info-pnl">
+                    <svg class="header-nav__shopping-cart-icon">
+                        <use xlink:href="./assets/sprites_icon.svg#icon-shopping-cart"></use>
+                    </svg>
+                </span>
+            </div>
+        </header>
+        <router-view></router-view>
+    </div>
+    
 </template>
 
 <script>
@@ -34,6 +34,8 @@
 
 <style lang="scss">
     @import "./sass/base/_reset";
+    @import "./sass/base/typography";
+    @import "./sass/component/button.scss";
 </style>
 
 <style scoped lang="scss">
@@ -41,7 +43,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 2rem 5rem; 
+        padding: 2.5rem 3rem; 
         
         &__logo-box {
             @include size(5rem, 5rem);
@@ -50,48 +52,50 @@
                 width: 100%;
             }
         }
+
+        &__contents {
+            @include flex-row-center;
+        }
+
+        &__shopping-cart-icon {
+            @include size(2rem, 2rem);
+            color: $color-black;
+            vertical-align: middle;
+        }
     }
 
     .navigation {
+        margin-right: 1.5rem;
+
         &__list {
-            @include flex-row-center;
             list-style: none;
         }
 
         &__item {
-            @include size(6.5rem, 2rem);
+            display: inline-block;
             text-align: center;
-            border: 2px solid red;
-            // margin: 0 .1rem;
+            vertical-align: middle;
+            line-height: 1.5rem;
+            padding: 0 1.5rem;
 
-            // &::after {
-            //     content: "";
-            //     @include size(.3rem, 3rem);
-            //     display: inline-block;
-            //     background-color: blue;
-            //     position: absolute;
-            //     top: 50%;
-            //     transform: translateY(-50%);
-            //     right: 0rem;
-            // }
-        }
-
-        &__link {
-            @include abs-center;
-            width: 100%;
-
-            &-text {
-                text-decoration: none;
-                color: $color-black;
-                font-family: $font-family-1;
-                font-weight: 700;
+            &:not(:last-child)::after {
+                content: "";
+                @include size(.2rem, 1.2rem);
+                display: inline-block;
+                background-color: $color-black;
+                position: absolute;
+                top: 50%;
+                right: 0%;
+                transform: translate(50%, -50%);
             }
         }
 
-        &__divider {
-            @include size(.2rem, 1.2rem);
-            background-color: blue;
-            margin: 0 .1rem;
+        &__link {
+            text-decoration: none;
+            color: $color-black;
+            font-family: $font-family-1;
+            font-weight: 700;
+            font-size: 1.2rem;
         }
     }
 </style>

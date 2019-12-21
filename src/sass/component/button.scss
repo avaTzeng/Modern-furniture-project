@@ -1,0 +1,35 @@
+.btn {
+// ------------ 基本定義 ------------
+    &,
+    &:link,
+    &:visited {
+        display: inline-block;
+        padding: .9rem 2rem;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-family: $font-family-1;
+        font-weight: 600;
+        letter-spacing: .2rem;
+        color: $color-black;
+        background-color: $color-primary; 
+    }
+
+    &:hover {
+        
+    }
+
+    &:active,
+    &:focus {
+
+    }
+
+
+// ------------ 尺寸 ------------
+    &--normal {
+        width: 17.5rem;
+    }
+
+
+// ------------ 樣式? ------------
+}
