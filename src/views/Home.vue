@@ -36,8 +36,20 @@
                     <span class="section-intro__img">
                         <img src="../assets/images/homepage/moreCollection.jpg" alt="Collection 2">
                     </span>
-                    
                 </div>
+            </section>
+
+            <section class="section-product">
+                <div class="section-product__slogan">product creative</div>
+                <div class="section-product__title">
+                    <h2>creative world in your hands</h2>
+                    <span class="section-product__title-sub">view all product</span>
+                </div>
+                <div class="section-product__contents">
+
+                </div>
+                
+
             </section>
 
 
@@ -104,7 +116,7 @@
     }
 //-------------------- SECTION-INTRO --------------------
     .section-intro {
-        // margin-bottom: $u-margin-bottom-section-md;
+        margin-bottom: $u-margin-bottom-section-md;
 
         &::before {
             @include abs-center;
@@ -198,6 +210,56 @@
                 height: 100%;
             }
 
+        }
+    }
+//-------------------- SECTION-PRODUCT --------------------
+    .section-product {
+        max-width: 114rem;
+        margin: 0 auto;
+
+        &__slogan {
+            color: $color-primary;
+            text-transform: uppercase;
+            font-family: $font-family-1;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+        }
+
+        &__title {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 7rem;
+
+            h2 {
+                display: inline-block;
+            }
+
+            &-sub {
+                text-transform: uppercase;
+                font-family: $font-family-1;
+                font-weight: 600;
+                letter-spacing: .2rem;
+                color: $color-black;
+                font-size: 1rem;
+                
+                &::before {
+                    @include size(4rem, 1px);                
+                    content: "";
+                    background-color: $color-black;
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    transform: translate(calc(-50% - 3rem), -50%);
+                }
+
+            }
+        }
+
+        &__contents {
+            // temp
+            height: 80rem;
+            background-color: yellow;
         }
     }
 </style>
