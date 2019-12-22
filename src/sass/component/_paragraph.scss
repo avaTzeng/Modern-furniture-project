@@ -1,0 +1,16 @@
+.p {
+ //-------------- STYLES --------------   
+    &--fore-line {
+        text-indent: 4.5rem;
+        
+        &::before {
+            @include size(3.6rem, 1px);
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translate(calc(-50% + 1.8rem), calc(-50% + 1.1rem));
+            background-color: $color-black;
+        }
+    }
+}

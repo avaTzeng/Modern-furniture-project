@@ -3,19 +3,21 @@ h2 {
     font-family: $font-family-1;
     text-transform: uppercase;
     letter-spacing: .15rem;
+    color: $color-black;
 }
 
 p {
     font-size: 1.3rem;
     font-family: $font-family-2;
-    line-height: 1.8;
+    line-height: 1.6;
     text-align: justify;
     text-justify: inter-word;
+    color: $color-black;
 }
 
 .sub-title {
     font-family: $font-family-1;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 700;
     text-transform: uppercase;
     color: $color-black;

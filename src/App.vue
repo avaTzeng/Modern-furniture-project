@@ -15,12 +15,10 @@
             </div>
         </header>
 
-        <main>
-            <router-view></router-view>
-        </main>
+        <router-view></router-view>
         
         <footer class="footer">
-            <app-navigation></app-navigation>
+            <app-navigation class="footer__nav"></app-navigation>
             <ul class="footer__social-media-list">
                 <li>
                     <a href="#">
@@ -45,7 +43,7 @@
 </template>
 
 <script>
-    import Navigation from './components/ui/Navigation.vue';
+    import Navigation from './components/ui/AppNavigation.vue';
 
     export default {
         components: {
@@ -56,8 +54,9 @@
 
 <style lang="scss">
     @import "./sass/base/_reset";
-    @import "./sass/base/typography";
-    @import "./sass/component/button.scss";
+    @import "./sass/base/_typography";
+    @import "./sass/component/_button.scss";
+    @import "./sass/component/_paragraph.scss";
 </style>
 
 <style scoped lang="scss">
@@ -65,7 +64,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 2.5rem 3rem; 
+        padding: 2.5rem 3rem 0 3rem;
         
         &__logo-box {
             @include size(5rem, 5rem);
@@ -96,8 +95,12 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        margin-top: 15rem;
+        padding: 0 3rem 2.5rem 3rem;
 
-        margin: 15rem 2.5rem 2rem 2.5rem;
+        &__nav {
+            margin-left: -1.8rem;
+        }
 
         &__social-media-list {
             @include flex-row-center;

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <main>
         <section class="section-header">
             <div class="section-header__contents">
                 <span class="section-header__title">softness in the arms of nature</span>
@@ -16,7 +16,7 @@
                 <span class="section-intro__block">
                     <span class="section-intro__contents">
                         <h2>inspiration from nature</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+                        <p class="p--fore-line">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
                         <a href="#" class="btn btn--normal">view more</a>
                     </span>
                     <img src="../assets/images/homepage/cover_02.jpg" alt="Mountain Photo">
@@ -64,7 +64,7 @@
             </span>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor</p>
         </section>
-    </div>
+    </main>
 </template>
 
 <script>
