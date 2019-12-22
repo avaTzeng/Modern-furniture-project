@@ -2,9 +2,9 @@
     <nav class="navigation">
         <ul class="navigation__list">
             <li class="navigation__item"><router-link to="/" class="navigation__link">Home</router-link></li>
-            <li class="navigation__item"><router-link to="/" class="navigation__link">About us</router-link></li>
-            <li class="navigation__item"><router-link to="/" class="navigation__link">Shop</router-link></li>
-            <li class="navigation__item"><router-link to="/" class="navigation__link">Contact</router-link></li>
+            <li class="navigation__item"><router-link to="/about" class="navigation__link">About us</router-link></li>
+            <li class="navigation__item"><router-link to="/shop" class="navigation__link">Shop</router-link></li>
+            <li class="navigation__item"><router-link to="/contact" class="navigation__link">Contact</router-link></li>
         </ul>
     </nav>
 </template>

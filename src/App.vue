@@ -17,12 +17,6 @@
 
         <main>
             <router-view></router-view>
-            <section class="section-customer">
-                <span class="section-customer__img">
-                    <img src="./assets/images/homepage/companyLogos.png" alt="Companies's logo">
-                </span>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor</p>
-            </section>
         </main>
         
         <footer class="footer">
@@ -96,25 +90,7 @@
         }
     }
 
-    .section-customer {
-        @include flex-column-center;
-        margin-top: 28rem;
-
-        p {
-            margin-top: 3.5rem;
-            margin-bottom: 2.5rem;
-            width: 60rem;
-            text-align: center;
-            color: $color-grey-light;
-        }
-
-        &__img {
-            width: 85rem;
-            img {
-                width: 100%;
-            }
-        }
-    }
+    
 
     .footer {
         display: flex;
