@@ -45,8 +45,18 @@
                     <h2>creative world in your hands</h2>
                     <span class="section-product__title-sub">view all product</span>
                 </div>
-                <div class="section-product__contents">
-
+                <div class="section-product__contents"> 
+                    <div class="section-product__contents-list">
+                        <!-- <span class="section-product__contents-list-item">
+                        
+                        </span> -->
+                        <!-- <ul class="section-product__contents-list">
+                            <li class="section-product__contents-list-item">Temp</li>
+                            <li class="section-product__contents-list-item">Temp</li>
+                            <li class="section-product__contents-list-item">Temp</li>
+                            <li class="section-product__contents-list-item">Temp</li>
+                        </ul> -->
+                    </div>
                 </div>
                 
 
@@ -256,10 +266,26 @@
             }
         }
 
+//------------- 之後寫
         &__contents {
+            @include flex-column-center;
             // temp
-            height: 80rem;
+            height: 60rem;
             background-color: yellow;
+
+            // &-row {
+                
+            // }
+
+            &-list {
+                @include flex-row-center;
+            }
+
+            &-list-item {
+                width: 15rem;
+                height: 20rem;
+            }
         }
+//------------- 之後寫
     }
 </style>
