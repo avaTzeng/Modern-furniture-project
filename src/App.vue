@@ -1,37 +1,62 @@
 <template>
     <!-- 網頁頂端的導覽區塊 -->
     <div>
-        <header class="header-nav">
-            <span class="header-nav__logo-box">
+        <header class="header">
+            <span class="header__logo-box">
                 <img src="./assets/images/brandLogo.png" alt="Logo">
             </span>
-            <div class="header-nav__contents">
-                <nav class="navigation">
-                    <ul class="navigation__list">
-                        <li class="navigation__item"><router-link to="/" class="navigation__link">Home</router-link></li>
-                        <li class="navigation__item"><router-link to="/" class="navigation__link">About us</router-link></li>
-                        <li class="navigation__item"><router-link to="/" class="navigation__link">Shop</router-link></li>
-                        <li class="navigation__item"><router-link to="/" class="navigation__link">Contact</router-link></li>
-                    </ul>
-                </nav>
-                <span class="header-nav__info-pnl">
-                    <svg class="header-nav__shopping-cart-icon">
+            <div class="header__contents">
+                <app-navigation></app-navigation>
+                <span class="header__info-pnl">
+                    <svg class="header__shopping-cart-icon">
                         <use xlink:href="./assets/sprites_icon.svg#icon-shopping-cart"></use>
                     </svg>
                 </span>
             </div>
         </header>
-        <router-view></router-view>
-        <footer>
-            
+
+        <main>
+            <router-view></router-view>
+            <section class="section-customer">
+                <span class="section-customer__img">
+                    <img src="./assets/images/homepage/companyLogos.png" alt="Companies's logo">
+                </span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor</p>
+            </section>
+        </main>
+        
+        <footer class="footer">
+            <app-navigation></app-navigation>
+            <ul class="footer__social-media-list">
+                <li>
+                    <a href="#">
+                        <svg><use xlink:href="./assets/sprites_icon.svg#icon-social-facebook"></use></svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <svg><use xlink:href="./assets/sprites_icon.svg#icon-social-twitter"></use></svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <svg><use xlink:href="./assets/sprites_icon.svg#icon-social-pinterest"></use></svg>
+                    </a>
+                </li>
+            </ul>
+            <span class="footer__info">©2015 CopyRight HeadPassion. All rights reserved.</span>
         </footer>
     </div>
     
 </template>
 
 <script>
+    import Navigation from './components/ui/Navigation.vue';
+
     export default {
-        
+        components: {
+            appNavigation: Navigation
+        }
     }
 </script>
 
@@ -42,7 +67,7 @@
 </style>
 
 <style scoped lang="scss">
-    .header-nav {
+    .header {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -60,6 +85,10 @@
             @include flex-row-center;
         }
 
+        &__info-pnl {
+            margin-left: 1.5rem;
+        }
+
         &__shopping-cart-icon {
             @include size(2rem, 2rem);
             color: $color-black;
@@ -67,39 +96,57 @@
         }
     }
 
-    .navigation {
-        margin-right: 1.5rem;
+    .section-customer {
+        @include flex-column-center;
+        margin-top: 28rem;
 
-        &__list {
-            list-style: none;
+        p {
+            margin-top: 3.5rem;
+            margin-bottom: 2.5rem;
+            width: 60rem;
+            text-align: center;
+            color: $color-grey-light;
         }
 
-        &__item {
-            display: inline-block;
-            text-align: center;
-            vertical-align: middle;
-            line-height: 1.5rem;
-            padding: 0 1.5rem;
+        &__img {
+            width: 85rem;
+            img {
+                width: 100%;
+            }
+        }
+    }
 
-            &:not(:last-child)::after {
-                content: "";
-                @include size(.2rem, 1.2rem);
-                display: inline-block;
-                background-color: $color-black;
-                position: absolute;
-                top: 50%;
-                right: 0%;
-                transform: translate(50%, -50%);
+    .footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        margin: 15rem 2.5rem 2rem 2.5rem;
+
+        &__social-media-list {
+            @include flex-row-center;
+            list-style: none;
+
+            li {
+                cursor: pointer;
+            }
+
+            li:not(:first-child) {
+                margin-left: 7rem;    
+            }
+
+            svg {
+                @include size(2rem, 2rem);
+                color: $color-black;
             }
         }
 
-        &__link {
-            text-decoration: none;
-            color: $color-black;
-            font-family: $font-family-1;
-            font-weight: 700;
-            font-size: 1.2rem;
+        &__info {
+            font-family: $font-family-2;
+
         }
     }
+
+    
 </style>
 

@@ -1,69 +1,63 @@
 <template>
     <div>
-        <main>
-            <section class="section-header">
-                <div class="section-header__contents">
-                    <span class="section-header__title">softness in the arms of nature</span>
-                    <span class="section-header__img-bg">
-                        <img src="../assets/images/homepage/cover_01.jpeg" alt="Mountain Photo">
+        <section class="section-header">
+            <div class="section-header__contents">
+                <span class="section-header__title">softness in the arms of nature</span>
+                <span class="section-header__img-bg">
+                    <img src="../assets/images/homepage/cover_01.jpeg" alt="Mountain Photo">
+                </span>
+                <span class="section-header__img-product">
+                    <img src="../assets/images/furniture/bed/bed_01.png" alt="Product Photo">
+                </span>
+            </div>
+        </section>
+        <section class="section-intro">
+            <div class="section-intro__story">
+                <span class="section-intro__block">
+                    <span class="section-intro__contents">
+                        <h2>inspiration from nature</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+                        <a href="#" class="btn btn--normal">view more</a>
                     </span>
-                    <span class="section-header__img-product">
-                        <img src="../assets/images/furniture/bed/bed_01.png" alt="Product Photo">
-                    </span>
-                </div>
-            </section>
-            <section class="section-intro">
-                <div class="section-intro__story">
-                    <span class="section-intro__block">
-                        <span class="section-intro__contents">
-                            <h2>inspiration from nature</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
-                            <a href="#" class="btn btn--normal">view more</a>
-                        </span>
-                        <img src="../assets/images/homepage/cover_02.jpg" alt="Mountain Photo">
-                    </span>
-                </div>
-                
-                <div class="section-intro__banner">
-                    <span class="section-intro__banner-contents">
-                        <span>furniture creative</span>
-                        <h2>latest collection</h2>
-                        <a href="#" class="btn btn--normal">show all</a>
-                    </span>
-                    <span class="section-intro__img">
-                        <img src="../assets/images/homepage/moreCollection.jpg" alt="Collection 1">
-                    </span>
-                    <span class="section-intro__img">
-                        <img src="../assets/images/homepage/moreCollection.jpg" alt="Collection 2">
-                    </span>
-                </div>
-            </section>
+                    <img src="../assets/images/homepage/cover_02.jpg" alt="Mountain Photo">
+                </span>
+            </div>
+            
+            <div class="section-intro__banner">
+                <span class="section-intro__banner-contents">
+                    <span>furniture creative</span>
+                    <h2>latest collection</h2>
+                    <a href="#" class="btn btn--normal">show all</a>
+                </span>
+                <span class="section-intro__img">
+                    <img src="../assets/images/homepage/moreCollection.jpg" alt="Collection 1">
+                </span>
+                <span class="section-intro__img">
+                    <img src="../assets/images/homepage/moreCollection.jpg" alt="Collection 2">
+                </span>
+            </div>
+        </section>
 
-            <section class="section-product">
-                <div class="section-product__slogan">product creative</div>
-                <div class="section-product__title">
-                    <h2>creative world in your hands</h2>
-                    <span class="section-product__title-sub">view all product</span>
+        <section class="section-product">
+            <div class="section-product__slogan">product creative</div>
+            <div class="section-product__title">
+                <h2>creative world in your hands</h2>
+                <span class="section-product__title-sub">view all product</span>
+            </div>
+            <div class="section-product__contents"> 
+                <div class="section-product__contents-list">
+                    <!-- <span class="section-product__contents-list-item">
+                    
+                    </span> -->
+                    <!-- <ul class="section-product__contents-list">
+                        <li class="section-product__contents-list-item">Temp</li>
+                        <li class="section-product__contents-list-item">Temp</li>
+                        <li class="section-product__contents-list-item">Temp</li>
+                        <li class="section-product__contents-list-item">Temp</li>
+                    </ul> -->
                 </div>
-                <div class="section-product__contents"> 
-                    <div class="section-product__contents-list">
-                        <!-- <span class="section-product__contents-list-item">
-                        
-                        </span> -->
-                        <!-- <ul class="section-product__contents-list">
-                            <li class="section-product__contents-list-item">Temp</li>
-                            <li class="section-product__contents-list-item">Temp</li>
-                            <li class="section-product__contents-list-item">Temp</li>
-                            <li class="section-product__contents-list-item">Temp</li>
-                        </ul> -->
-                    </div>
-                </div>
-                
-
-            </section>
-
-
-        </main>
+            </div>
+        </section>
     </div>
 </template>
 
