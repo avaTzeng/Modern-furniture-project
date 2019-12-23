@@ -136,6 +136,7 @@
 
     .section-aboutus {
         margin-top: 20rem;
+        margin-bottom: 15rem;
     
 
         &__contents {

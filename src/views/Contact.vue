@@ -2,23 +2,23 @@
     <main>
         <section class="section-contact">
             <span class="section-contact__cover">
-                    <img src="../assets/images/contactpage/cover.jpeg" alt="Team photo">
-                </span>
+                <img src="../assets/images/contactpage/cover.jpeg" alt="Team photo">
+            </span>
             <div class="section-contact__form">
-                <div class="sub-title">A: 1125 Josie Knolls Apt. 978 New York</div>
-                <div class="sub-title">T: 01 234 5678     E: contact@m989.com</div>
+                <!-- <div class="sub-title">A: 1125 Josie Knolls Apt. 978 New York</div>
+                <div class="sub-title">T: 01 234 5678     E: contact@m989.com</div> -->
                 <form action="#">
                     <label for="name">Name</label>
                     <input type="text" name="name" id="name">
 
-                    <label for="name">Email</label>
-                    <input type="email" name="name" id="name">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email">
 
-                    <label for="name">Subject</label>
-                    <input type="text" name="name" id="name">
+                    <label for="subject">Subject</label>
+                    <input type="text" name="subject" id="subject">
 
-                    <label for="name">Your content</label>
-                    <input type="text" name="name" id="name">
+                    <label for="content">Your content</label>
+                    <textarea name="content" id="content"></textarea>
 
                     <input type="submit" value="send messenger">
                 </form>
@@ -45,26 +45,29 @@
         }
 
         &__form {
-            margin-left: 9rem;
-            margin-top: 2rem;
+            right: -8rem;
+            top: 1rem;
 
             .sub-title {
                 margin-bottom: .5rem;
             }
 
             form {
-                margin-top: 5rem;
 
                 label {
                     display: block;
                     font-family: $font-family-1;
                     font-size: 1.4rem;
-                    margin-top: 2rem;
+
+                    &:not(:first-child) {
+                        margin-top: 2rem;
+                    }
                 }
 
                 input[type=submit] {
                     @include size(22rem, 3.5rem);
-                    margin-top: 4rem;
+                    float: right;
+                    margin-top: 2.5rem;
                     line-height: 1;
                     text-transform: uppercase;
                     font-family: $font-family-1;
@@ -72,11 +75,7 @@
                     border: none;
                     color: $color-black;
                     background-color: $color-primary;
-<<<<<<< HEAD
-                    letter-spacing: 2px;
-=======
->>>>>>> 01996c7b4f47347167209d279f59ef395a277cab
-                    
+                    letter-spacing: 2px;       
                 }
 
                 input:not([type=submit]) {
@@ -85,14 +84,16 @@
                     border: none;
                     border-bottom: 1px solid $color-grey-dark;
                 }
+
+                textarea {
+                    @include size(38rem, 15rem);
+                    display: block;
+                    border: 1px solid $color-grey-dark;
+                    margin-top: 1rem;
+                    resize: none;
+
+                }
             }
-
-            
-
-            
         }
-
-        
-
     }
 </style>

@@ -292,7 +292,8 @@
 //-------------------- SECTION-CUSTOMER --------------------
     .section-customer {
         @include flex-column-center;
-        margin-top: 28rem;
+        margin-top: 25rem;
+        margin-bottom: 15rem;
 
         p {
             margin-top: 3.5rem;

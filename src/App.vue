@@ -37,6 +37,9 @@
                 </li>
             </ul>
             <span class="footer__info">©2015 CopyRight HeadPassion. All rights reserved.</span>
+            <span class="footer__bg">
+                <img src="./assets/images/cover_footer.png" alt="Footer background">
+            </span>
         </footer>
     </div>
     
@@ -89,13 +92,10 @@
         }
     }
 
-    
-
     .footer {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        // margin-top: 15rem;
         padding: 0 3rem 2.5rem 3rem;
 
         &__nav {
@@ -122,7 +122,23 @@
 
         &__info {
             font-family: $font-family-2;
+        }
 
+        &__bg {
+            width: 100%;
+            height: 30rem;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 0);
+            z-index: -2;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                bottom: 5rem;
+                opacity: .5;
+            }
         }
     }
 
