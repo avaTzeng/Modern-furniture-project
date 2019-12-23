@@ -95,7 +95,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-top: 15rem;
+        // margin-top: 15rem;
         padding: 0 3rem 2.5rem 3rem;
 
         &__nav {
