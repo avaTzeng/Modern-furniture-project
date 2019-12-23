@@ -72,7 +72,10 @@
                     border: none;
                     color: $color-black;
                     background-color: $color-primary;
+<<<<<<< HEAD
                     letter-spacing: 2px;
+=======
+>>>>>>> 01996c7b4f47347167209d279f59ef395a277cab
                     
                 }
 
