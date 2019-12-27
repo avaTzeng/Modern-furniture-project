@@ -1,5 +1,4 @@
 <template>
-    <!-- 網頁頂端的導覽區塊 -->
     <div>
         <header class="header">
             <span class="header__logo-box">
@@ -42,7 +41,6 @@
             </span>
         </footer>
     </div>
-    
 </template>
 
 <script>
@@ -51,6 +49,9 @@
     export default {
         components: {
             appNavigation: Navigation
+        },
+        created() {
+            this.$store.dispatch('initData');
         }
     }
 </script>

@@ -12,6 +12,7 @@
             </div>
         </section>
         <section class="section-intro">
+            
             <div class="section-intro__story">
                 <span class="section-intro__block">
                     <span class="section-intro__contents">
@@ -23,16 +24,18 @@
                 </span>
             </div>
             
+            
             <div class="section-intro__banner">
                 <span class="section-intro__banner-contents">
                     <span>furniture creative</span>
                     <h2>latest collection</h2>
                     <a href="#" class="btn btn--normal">show all</a>
                 </span>
-                <span class="section-intro__img">
+    
+                <span class="section-intro__banner-img">
                     <img src="../assets/images/homepage/moreCollection.jpg" alt="Collection 1">
                 </span>
-                <span class="section-intro__img">
+                <span class="section-intro__banner-img">
                     <img src="../assets/images/homepage/moreCollection.jpg" alt="Collection 2">
                 </span>
             </div>
@@ -44,19 +47,9 @@
                 <h2>creative world in your hands</h2>
                 <span class="section-product__title-sub">view all product</span>
             </div>
-            <div class="section-product__contents"> 
-                <div class="section-product__contents-list">
-                    <!-- <span class="section-product__contents-list-item">
-                    
-                    </span> -->
-                    <!-- <ul class="section-product__contents-list">
-                        <li class="section-product__contents-list-item">Temp</li>
-                        <li class="section-product__contents-list-item">Temp</li>
-                        <li class="section-product__contents-list-item">Temp</li>
-                        <li class="section-product__contents-list-item">Temp</li>
-                    </ul> -->
-                </div>
-            </div>
+            
+             <app-product-grid :products="showOffProducts"></app-product-grid>
+             
         </section>
         <section class="section-customer">
             <span class="section-customer__img">
@@ -68,12 +61,28 @@
 </template>
 
 <script>
+    import ProductGrid from '@/components/product/AppGrid';
     export default {
-        
+        data() {
+            return {
+                // products: this.$store.state.dataMap.get('SHOW_OFF')
+            };
+        },
+        components: {
+            appProductGrid: ProductGrid
+        },
+        computed: {
+            showOffProducts() {
+                return this.$store.state.dataMap.get('SHOW_OFF');
+            }
+        }
     }
 </script>
 
+
+
 <style scoped lang="scss">
+
 //-------------------- SECTION-HEADER --------------------
     .section-header {
         margin-bottom: $u-margin-bottom-section-md;
@@ -126,7 +135,7 @@
     }
 //-------------------- SECTION-INTRO --------------------
     .section-intro {
-        margin-bottom: $u-margin-bottom-section-md;
+        margin-bottom: $u-margin-bottom-section-md * 2;
 
         &::before {
             @include abs-center;
@@ -170,61 +179,60 @@
             }
         }
 
-        &__banner-contents {
-            @include abs-center;
-            @include flex-column-center;
-            z-index: 1;
-            color: $color-black;
-
-            span {
-                text-transform: uppercase;
-                font-family: $font-family-1;
-                font-weight: 800;
-                letter-spacing: .1rem;
-                
-            }
-
-            h2 {
-                margin-top: 1.5rem;
-                margin-bottom: 2rem;
-            }
-        }
-
         &__banner {
             @include flex-row-center;
+            position: relative;
+            margin: 0 auto;
+            width: $row-max-width;
             padding: $u-margin-bottom-section-md 0;
-        }
 
-        &__img {
-            @include size(38rem, 27rem);
-            background-color: yellow;
-            overflow: hidden;
+            &-contents {
+                @include abs-center;
+                @include flex-column-center;
+                z-index: 1;
+                color: $color-black;
 
-            &:not(:first-child) {
-                margin-left: 2rem;
-            }
+                span {
+                    text-transform: uppercase;
+                    font-family: $font-family-1;
+                    font-weight: 800;
+                    letter-spacing: .1rem;
+                    
+                }
 
-            &:first-child {
-                img {
-                    left: 0;
+                h2 {
+                    margin-top: 1.5rem;
+                    margin-bottom: 2rem;
                 }
             }
 
-            &:last-child {
+            &-img {
+                @include size(50%, 27rem);
+                background-color: yellow;
+                overflow: hidden;
+
+                &:first-child {
+                    img {
+                        left: 0;
+                    }
+                }
+
+                &:last-child {
+                    margin-left: 2rem;
+                    img {
+                        right: 50%;
+                    }
+                }
+
                 img {
-                    right: 100%;
+                    height: 100%;
                 }
             }
-
-            img {
-                height: 100%;
-            }
-
         }
     }
 //-------------------- SECTION-PRODUCT --------------------
     .section-product {
-        max-width: 114rem;
+        max-width: $row-max-width;
         margin: 0 auto;
 
         &__slogan {
@@ -266,27 +274,14 @@
             }
         }
 
-//------------- 之後寫
-        &__contents {
-            @include flex-column-center;
-            // temp
-            height: 60rem;
-            background-color: yellow;
-
-            // &-row {
-                
-            // }
-
-            &-list {
-                @include flex-row-center;
-            }
-
-            &-list-item {
-                width: 15rem;
-                height: 20rem;
-            }
+        &__grid {
+            display: grid;
+            width: 100%;
+            border: 2px solid blue !important;
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 3rem;
         }
-//------------- 之後寫
     }
 
 //-------------------- SECTION-CUSTOMER --------------------
@@ -306,6 +301,7 @@
         &__img {
             width: 85rem;
             img {
+                vertical-align: middle;
                 width: 100%;
             }
         }

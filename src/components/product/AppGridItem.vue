@@ -1,11 +1,11 @@
 <template>
     <div class="product-content">
         <div class="product-content__img">
-            <img src="https://www.ikea.com/ca/en/images/products/bekant-conference-table-white-stained-oak-veneer-black__0736335_PE740476_S5.JPG?f=xxl" alt="Product photo">
+            <img :src="data.imgUrl">
         </div>
         <div>
-            <div class="sub-title">contain your time</div>
-            <div class="product-content__price sub-title">150 €</div>
+            <div class="sub-title">{{ data.name }}</div>
+            <div class="product-content__price sub-title">$ {{ data.price }}</div>
         </div>
         <span class="product-content__button">
             <a href="#">buy now</a>
@@ -14,9 +14,15 @@
     </div>
 </template>
 
+<script>
+    export default {
+        props: ['data']
+    }
+</script>
+
 <style lang="scss" scoped>
     .product-content {
-        width: 20rem;
+        // width: 20rem;
         text-align: center;
         img {
             width: 100%;

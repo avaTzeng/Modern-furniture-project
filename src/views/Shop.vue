@@ -77,7 +77,7 @@
 </template>
 
 <script>
-    import ProductItem from '../components/product/ListItem.vue';
+    import ProductItem from '@/components/product/AppGridItem';
     export default {
         components: {
             appProductItem: ProductItem
