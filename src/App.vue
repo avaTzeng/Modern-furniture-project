@@ -68,7 +68,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 2.5rem 3rem 0 3rem;
+        padding: 3rem 4rem 0 4rem;
         
         &__logo-box {
             @include size(5rem, 5rem);
@@ -97,7 +97,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 0 3rem 2.5rem 3rem;
+        padding: 0 4rem 3rem 4rem;
 
         &__nav {
             margin-left: -1.8rem;

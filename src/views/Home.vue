@@ -1,6 +1,29 @@
 <template>
     <main>
         <section class="section-header">
+            <nav>
+                <ul>
+                    <li><a href="#">01</a><span></span></li>
+                    <li><a href="#">02</a><span></span></li>
+                    <li><a href="#">03</a><span></span></li>
+                    <li><a href="#">04</a><span></span></li>
+                    <li><a href="#">05</a><span></span></li>
+                </ul>
+                <div class="chevron-btns-grp">
+                    <span class="chevron-btns-grp__icon">
+                        <svg>
+                            <use xlink:href="../assets/sprites_icon_entypo.svg#icon-triangle-up"></use>
+                        </svg>
+                    </span>
+                    
+                    <span class="chevron-btns-grp__icon">
+                        <svg>
+                            <use xlink:href="../assets/sprites_icon_entypo.svg#icon-triangle-down"></use>
+                        </svg>
+                    </span>
+                </div>
+            </nav>
+            
             <div class="section-header__contents">
                 <span class="section-header__title">softness in the arms of nature</span>
                 <span class="section-header__img-bg">
@@ -91,7 +114,85 @@
         align-items: center;
         justify-content: flex-end;
         overflow: hidden;
-        
+
+        nav {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transform: translate(6rem, 0);
+
+            ul {
+                list-style: none;
+                margin-bottom: 9rem;
+
+                li {
+                    padding: 1.5rem;
+
+                    &:not(:last-child) {
+                        margin-bottom: 1rem;
+                    }
+
+                    &:hover {
+                        a {
+                            color: $color-black;
+                            font-size: 2rem;
+                            transform: translate(calc(-50% - 1.4rem), -50%);
+                            transform-origin: top right;
+                        }
+
+                        span {
+                            height: 3rem;
+                            opacity: 1;
+                            transform: translate(calc(50% - .8rem), -50%);
+                        }
+                    }
+                }
+
+                a {
+                    @include abs-center;
+                    font-family: $font-family-1;
+                    font-size: 1.3rem;
+                    font-weight: 300;
+                    text-decoration: none;
+                    cursor: default;
+                    color: $color-grey-light;
+                    transition: .15s ease-in-out;
+                }
+
+                span {
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+                    transform: translate(calc(50% - .8rem), -50%);
+                    width: .1rem;
+                    height: 0rem;
+                    background-color: $color-black;
+                    opacity: 0;
+                    transition: .2s ease-in-out;
+                }
+            }
+
+            .chevron-btns-grp {
+                @include flex-column-center;
+                right: .65rem;
+
+                &__icon {
+                    @include size(100%, 3rem);
+                    background-color: $color-grey-bright-2;
+
+                    &:first-child {
+                        margin-bottom: .5rem;
+                    }
+
+                    svg {
+                        @include abs-center;
+                        @include size(50%, 50%);
+                        fill: $color-black;
+                    }
+                }
+            }
+        }
+
         &__contents {
             width: 105rem;
             height: 50rem;
@@ -272,15 +373,6 @@
                 }
 
             }
-        }
-
-        &__grid {
-            display: grid;
-            width: 100%;
-            border: 2px solid blue !important;
-            grid-template-rows: repeat(2, 1fr);
-            grid-template-columns: repeat(4, 1fr);
-            grid-gap: 3rem;
         }
     }
 
