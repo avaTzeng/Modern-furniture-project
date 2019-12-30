@@ -3,20 +3,20 @@
         <section class="section-header">
             <nav>
                 <ul>
-                    <li><a href="#">01</a><span></span></li>
-                    <li><a href="#">02</a><span></span></li>
-                    <li><a href="#">03</a><span></span></li>
-                    <li><a href="#">04</a><span></span></li>
-                    <li><a href="#">05</a><span></span></li>
+                    <li id="section-header__list-item-0" class="section-header__list-item section-header__list-item--active"><a href="#">01</a><span></span></li>
+                    <li id="section-header__list-item-1" class="section-header__list-item"><a href="#">02</a><span></span></li>
+                    <li id="section-header__list-item-2" class="section-header__list-item"><a href="#">03</a><span></span></li>
+                    <li id="section-header__list-item-3" class="section-header__list-item"><a href="#">04</a><span></span></li>
+                    <li id="section-header__list-item-4" class="section-header__list-item"><a href="#">05</a><span></span></li>
                 </ul>
                 <div class="chevron-btns-grp">
-                    <span class="chevron-btns-grp__icon">
+                    <span id="chevron-btn-up" class="chevron-btns-grp__icon">
                         <svg>
                             <use xlink:href="../assets/sprites_icon_entypo.svg#icon-triangle-up"></use>
                         </svg>
                     </span>
                     
-                    <span class="chevron-btns-grp__icon">
+                    <span id="chevron-btn-down" class="chevron-btns-grp__icon">
                         <svg>
                             <use xlink:href="../assets/sprites_icon_entypo.svg#icon-triangle-down"></use>
                         </svg>
@@ -146,27 +146,111 @@
         }
     }
 
-
-    {
+    window.onload = () => {
         let page = 0;
+
+        const ACTIVE_LIST_ITEM_CLASS_NAME = 'section-header__list-item--active';
+        const LIST_COUNT = 5;
+
+        const listItemsArr = [];
+        const chevronUpBtn = document.getElementById('chevron-btn-up');
+        const chevronDownBtn = document.getElementById('chevron-btn-down');
+        const galleryContainer = document.querySelector('.section-header__gallery-page-container');
+
+        for (let i = 0; i < LIST_COUNT; i++) {
+            const el = document.getElementById(`section-header__list-item-${i}`);
+            listItemsArr.push(el);
+        }
+
+        chevronUpBtn.addEventListener('click', () => prevPage());
+        chevronDownBtn.addEventListener('click', () => nextPage());
+
         setInterval(() => {
+            nextPage();
+        }, 3000);
+
+        function nextPage() {
+            listItemsArr[page].classList.remove(ACTIVE_LIST_ITEM_CLASS_NAME);
             page += 1;
-            if (page > 4) {
+            if (page > (listItemsArr.length - 1)) {
                 page = 0;
             }
-            document.querySelector('.section-header__gallery-page-container').style.right = `${page*100}%`;
-        }, 3000);
+            listItemsArr[page].classList.add(ACTIVE_LIST_ITEM_CLASS_NAME);
+            galleryContainer.style.right = `${ page * 100 }%`;
+        }
+
+        function prevPage() {
+            listItemsArr[page].classList.remove(ACTIVE_LIST_ITEM_CLASS_NAME);
+            page -= 1;
+            if (page < 0) {
+                page = (listItemsArr.length - 1);
+            }
+            listItemsArr[page].classList.add(ACTIVE_LIST_ITEM_CLASS_NAME);
+            galleryContainer.style.right = `${ page * 100 }%`;
+        }
     }
+    
 </script>
 
 <style scoped lang="scss">
 
 //-------------------- SECTION-HEADER --------------------
+
+
+
     .section-header {
+        margin-top: 1rem;
         margin-bottom: $u-margin-bottom-section-md;
 
         // border: 3px solid orange !important;
         overflow: hidden;
+
+        &__list-item {
+            padding: 1.5rem;
+
+            &:not(:last-child) {
+                margin-bottom: 1rem;
+            }
+
+            a {
+                @include abs-center;
+                font-family: $font-family-1;
+                font-size: 1.3rem;
+                font-weight: 300;
+                text-decoration: none;
+                cursor: default;
+                color: $color-grey-light;
+                transition: .15s ease-in-out;
+            }
+
+            span {
+                position: absolute;
+                top: 50%;
+                right: 0;
+                transform: translate(calc(50% - .8rem), -50%);
+                width: .1rem;
+                height: 0rem;
+                background-color: $color-black;
+                opacity: 0;
+                transition: .2s ease-in-out;
+            }
+
+            &--active {
+                a {
+                    color: $color-black;
+                    font-size: 2rem;
+                    transform: translate(calc(-50% - 1.4rem), -50%);
+                    transform-origin: top right;
+                }
+
+                span {
+                    height: 3rem;
+                    opacity: 1;
+                    transform: translate(calc(50% - .8rem), -50%);
+                }
+            }
+
+        }
 
         nav {
             position: absolute;
@@ -178,52 +262,6 @@
             ul {
                 list-style: none;
                 margin-bottom: 9rem;
-
-                li {
-                    padding: 1.5rem;
-
-                    &:not(:last-child) {
-                        margin-bottom: 1rem;
-                    }
-
-                    &:hover {
-                        a {
-                            color: $color-black;
-                            font-size: 2rem;
-                            transform: translate(calc(-50% - 1.4rem), -50%);
-                            transform-origin: top right;
-                        }
-
-                        span {
-                            height: 3rem;
-                            opacity: 1;
-                            transform: translate(calc(50% - .8rem), -50%);
-                        }
-                    }
-                }
-
-                a {
-                    @include abs-center;
-                    font-family: $font-family-1;
-                    font-size: 1.3rem;
-                    font-weight: 300;
-                    text-decoration: none;
-                    cursor: default;
-                    color: $color-grey-light;
-                    transition: .15s ease-in-out;
-                }
-
-                span {
-                    position: absolute;
-                    top: 50%;
-                    right: 0;
-                    transform: translate(calc(50% - .8rem), -50%);
-                    width: .1rem;
-                    height: 0rem;
-                    background-color: $color-black;
-                    opacity: 0;
-                    transition: .2s ease-in-out;
-                }
             }
 
             .chevron-btns-grp {
@@ -255,19 +293,18 @@
 
 
             &-page-container {
-                @include size(100%, 50rem);
+                @include size(100%, 100%);
                 white-space: nowrap;
                 
                 float: right;
                 // border: 2px solid blue !important;
                 right: 0;
-                right: 00%;
                 transition: .5s;
             }
 
             &-page {
                 display: inline-block;
-                // border: 2px solid red !important;
+                // border: 1px solid red !important;
                 @include size(100%, 100%);
 
                 &-title {
@@ -287,6 +324,7 @@
                 }
 
                 &-img-bg {
+                    
                     img {
                         float: right;
                         opacity: 0.5;
