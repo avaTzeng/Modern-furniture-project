@@ -25,57 +25,12 @@
             </nav>
             
             <div class="section-header__gallery">
-                <div class="section-header__gallery-page-container">
-                    <!-- gallery 內容一 -->
-                    <div class="section-header__gallery-page">
-                        <span class="section-header__gallery-page-title">softness in the arms of nature 1</span>
-                        <span class="section-header__gallery-page-img-bg">
-                            <img src="../assets/images/homepage/cover_01.jpeg" alt="Mountain Photo">
-                        </span>
-                        <span class="section-header__gallery-page-img-product">
-                            <img src="../assets/images/homepage/furniture/7.png" alt="Product Photo">
-                        </span>
-                    </div>
-                    <!-- gallery 內容二 -->
-                    <div class="section-header__gallery-page">
-                        <span class="section-header__gallery-page-title">softness in the arms of nature 2</span>
-                        <span class="section-header__gallery-page-img-bg">
-                            <img src="../assets/images/homepage/cover_04.jpg" alt="Mountain Photo">
-                        </span>
-                        <span class="section-header__gallery-page-img-product">
-                            <img src="../assets/images/homepage/furniture/1.png" alt="Product Photo">
-                        </span>
-                    </div>
-                    <!-- gallery 內容三 -->
-                    <div class="section-header__gallery-page">
-                        <span class="section-header__gallery-page-title">softness in the arms of nature 3</span>
-                        <span class="section-header__gallery-page-img-bg">
-                            <img src="../assets/images/homepage/cover_05.jpg" alt="Mountain Photo">
-                        </span>
-                        <span class="section-header__gallery-page-img-product">
-                            <img src="../assets/images/homepage/furniture/2.png" alt="Product Photo">
-                        </span>
-                    </div>
-                    <!-- gallery 內容三 -->
-                    <div class="section-header__gallery-page">
-                        <span class="section-header__gallery-page-title">softness in the arms of nature 4</span>
-                        <span class="section-header__gallery-page-img-bg">
-                            <img src="../assets/images/homepage/cover_06.jpg" alt="Mountain Photo">
-                        </span>
-                        <span class="section-header__gallery-page-img-product">
-                            <img src="../assets/images/homepage/furniture/3.png" alt="Product Photo">
-                        </span>
-                    </div>
-                    <!-- gallery 內容三 -->
-                    <div class="section-header__gallery-page">
-                        <span class="section-header__gallery-page-title">softness in the arms of nature 5</span>
-                        <span class="section-header__gallery-page-img-bg">
-                            <img src="../assets/images/homepage/cover_07.jpg" alt="Mountain Photo">
-                        </span>
-                        <span class="section-header__gallery-page-img-product">
-                            <img src="../assets/images/homepage/furniture/4.png" alt="Product Photo">
-                        </span>
-                    </div>
+                <div class="section-header__gallery-page-container">            
+                    <app-gallery-page :content="galleryContents[0]"></app-gallery-page>
+                    <app-gallery-page :content="galleryContents[1]"></app-gallery-page>
+                    <app-gallery-page :content="galleryContents[2]"></app-gallery-page>
+                    <app-gallery-page :content="galleryContents[3]"></app-gallery-page>
+                    <app-gallery-page :content="galleryContents[4]"></app-gallery-page>
                 </div>
             </div>
         </section>
@@ -130,14 +85,43 @@
 
 <script>
     import ProductGrid from '@/components/product/AppGrid';
+    import GalleryPage from '@/components/gallery/AppPage';
     export default {
         data() {
             return {
+                galleryContents: [
+                    {
+                        title: 'softness in the arms of nature 1',
+                        bgFileName: 'cover_01.jpeg',
+                        productFileName: '7.png'
+                    },
+                    {
+                        title: 'softness in the arms of nature 2',
+                        bgFileName: 'cover_04.jpg',
+                        productFileName: '1.png'
+                    },
+                    {
+                        title: 'softness in the arms of nature 3',
+                        bgFileName: 'cover_05.jpg',
+                        productFileName: '2.png'
+                    },
+                    {
+                        title: 'softness in the arms of nature 4',
+                        bgFileName: 'cover_06.jpg',
+                        productFileName: '3.png'
+                    },
+                    {
+                        title: 'softness in the arms of nature 5',
+                        bgFileName: 'cover_07.jpg',
+                        productFileName: '4.png'
+                    }
+                ]
                 // products: this.$store.state.dataMap.get('SHOW_OFF')
             };
         },
         components: {
-            appProductGrid: ProductGrid
+            appProductGrid: ProductGrid,
+            appGalleryPage: GalleryPage
         },
         computed: {
             showOffProducts() {
@@ -193,16 +177,10 @@
 </script>
 
 <style scoped lang="scss">
-
 //-------------------- SECTION-HEADER --------------------
-
-
-
     .section-header {
         margin-top: 1rem;
         margin-bottom: $u-margin-bottom-section-md;
-
-        // border: 3px solid orange !important;
         overflow: hidden;
 
         &__list-item {
@@ -249,7 +227,6 @@
                     transform: translate(calc(50% - .8rem), -50%);
                 }
             }
-
         }
 
         nav {
@@ -286,7 +263,6 @@
         }
 
         &__gallery {
-            // border: 2px solid yellow !important;
             @include size(94%, 50rem);
             float: right;
             overflow: hidden;
@@ -297,54 +273,8 @@
                 white-space: nowrap;
                 
                 float: right;
-                // border: 2px solid blue !important;
                 right: 0;
                 transition: .5s;
-            }
-
-            &-page {
-                display: inline-block;
-                // border: 1px solid red !important;
-                @include size(100%, 100%);
-
-                &-title {
-                    width: 55rem;
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(calc(-50% + 10rem), calc(-50% - 3rem));
-                    z-index: 1;
-
-                    font-size: 7rem;
-                    font-family: $font-family-1;
-                    font-weight: 800;
-                    text-transform: uppercase;
-                    color: $color-black;
-                    white-space: initial;
-                }
-
-                &-img-bg {
-                    
-                    img {
-                        float: right;
-                        opacity: 0.5;
-                        width: 80%;
-                    }
-                }
-
-                &-img-product {
-                    height: 32rem;
-                    position: absolute;
-                    transform: translate(-2rem, 17rem);
-                    top: 0;
-                    left: 0;
-                    
-                    z-index: 6;
-                    img {
-                        opacity: 1;
-                        height: 100%;
-                    }
-                }
             }
         }
     }
