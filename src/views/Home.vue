@@ -24,14 +24,59 @@
                 </div>
             </nav>
             
-            <div class="section-header__contents">
-                <span class="section-header__title">softness in the arms of nature</span>
-                <span class="section-header__img-bg">
-                    <img src="../assets/images/homepage/cover_01.jpeg" alt="Mountain Photo">
-                </span>
-                <span class="section-header__img-product">
-                    <img src="../assets/images/furniture/bed/bed_01.png" alt="Product Photo">
-                </span>
+            <div class="section-header__gallery">
+                <div class="section-header__gallery-page-container">
+                    <!-- gallery 內容一 -->
+                    <div class="section-header__gallery-page">
+                        <span class="section-header__gallery-page-title">softness in the arms of nature 1</span>
+                        <span class="section-header__gallery-page-img-bg">
+                            <img src="../assets/images/homepage/cover_01.jpeg" alt="Mountain Photo">
+                        </span>
+                        <span class="section-header__gallery-page-img-product">
+                            <img src="../assets/images/homepage/furniture/7.png" alt="Product Photo">
+                        </span>
+                    </div>
+                    <!-- gallery 內容二 -->
+                    <div class="section-header__gallery-page">
+                        <span class="section-header__gallery-page-title">softness in the arms of nature 2</span>
+                        <span class="section-header__gallery-page-img-bg">
+                            <img src="../assets/images/homepage/cover_04.jpg" alt="Mountain Photo">
+                        </span>
+                        <span class="section-header__gallery-page-img-product">
+                            <img src="../assets/images/homepage/furniture/1.png" alt="Product Photo">
+                        </span>
+                    </div>
+                    <!-- gallery 內容三 -->
+                    <div class="section-header__gallery-page">
+                        <span class="section-header__gallery-page-title">softness in the arms of nature 3</span>
+                        <span class="section-header__gallery-page-img-bg">
+                            <img src="../assets/images/homepage/cover_05.jpg" alt="Mountain Photo">
+                        </span>
+                        <span class="section-header__gallery-page-img-product">
+                            <img src="../assets/images/homepage/furniture/2.png" alt="Product Photo">
+                        </span>
+                    </div>
+                    <!-- gallery 內容三 -->
+                    <div class="section-header__gallery-page">
+                        <span class="section-header__gallery-page-title">softness in the arms of nature 4</span>
+                        <span class="section-header__gallery-page-img-bg">
+                            <img src="../assets/images/homepage/cover_06.jpg" alt="Mountain Photo">
+                        </span>
+                        <span class="section-header__gallery-page-img-product">
+                            <img src="../assets/images/homepage/furniture/3.png" alt="Product Photo">
+                        </span>
+                    </div>
+                    <!-- gallery 內容三 -->
+                    <div class="section-header__gallery-page">
+                        <span class="section-header__gallery-page-title">softness in the arms of nature 5</span>
+                        <span class="section-header__gallery-page-img-bg">
+                            <img src="../assets/images/homepage/cover_07.jpg" alt="Mountain Photo">
+                        </span>
+                        <span class="section-header__gallery-page-img-product">
+                            <img src="../assets/images/homepage/furniture/4.png" alt="Product Photo">
+                        </span>
+                    </div>
+                </div>
             </div>
         </section>
         <section class="section-intro">
@@ -100,9 +145,19 @@
             }
         }
     }
+
+
+    {
+        let page = 0;
+        setInterval(() => {
+            page += 1;
+            if (page > 4) {
+                page = 0;
+            }
+            document.querySelector('.section-header__gallery-page-container').style.right = `${page*100}%`;
+        }, 3000);
+    }
 </script>
-
-
 
 <style scoped lang="scss">
 
@@ -110,16 +165,15 @@
     .section-header {
         margin-bottom: $u-margin-bottom-section-md;
 
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
+        // border: 3px solid orange !important;
         overflow: hidden;
 
         nav {
             position: absolute;
             bottom: 0;
             left: 0;
-            transform: translate(6rem, 0);
+            transform: translate(calc(50% + 2rem), 0);
+            z-index: 5;
 
             ul {
                 list-style: none;
@@ -193,44 +247,66 @@
             }
         }
 
-        &__contents {
-            width: 105rem;
-            height: 50rem;
-            img {
-                width: 100%;
+        &__gallery {
+            // border: 2px solid yellow !important;
+            @include size(94%, 50rem);
+            float: right;
+            overflow: hidden;
+
+
+            &-page-container {
+                @include size(100%, 50rem);
+                white-space: nowrap;
+                
+                float: right;
+                // border: 2px solid blue !important;
+                right: 0;
+                right: 00%;
+                transition: .5s;
             }
-        }
 
-        &__title {
-            width: 55rem;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(calc(-50% + 5rem), calc(-50% - 1rem));
-            z-index: 1;
+            &-page {
+                display: inline-block;
+                // border: 2px solid red !important;
+                @include size(100%, 100%);
 
-            font-size: 7rem;
-            font-family: $font-family-1;
-            font-weight: 800;
-            text-transform: uppercase;
-            color: $color-black;
-        }
+                &-title {
+                    width: 55rem;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(calc(-50% + 10rem), calc(-50% - 3rem));
+                    z-index: 1;
 
-        &__img-bg {
-            img {
-                opacity: 0.5;
-            }
-        }
+                    font-size: 7rem;
+                    font-family: $font-family-1;
+                    font-weight: 800;
+                    text-transform: uppercase;
+                    color: $color-black;
+                    white-space: initial;
+                }
 
-        &__img-product {
-            width: 58rem;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(calc(-50% - 45rem), calc(-50% + 8rem));
-            z-index: 6;
-            img {
-                opacity: 1;
+                &-img-bg {
+                    img {
+                        float: right;
+                        opacity: 0.5;
+                        width: 80%;
+                    }
+                }
+
+                &-img-product {
+                    height: 32rem;
+                    position: absolute;
+                    transform: translate(-2rem, 17rem);
+                    top: 0;
+                    left: 0;
+                    
+                    z-index: 6;
+                    img {
+                        opacity: 1;
+                        height: 100%;
+                    }
+                }
             }
         }
     }
