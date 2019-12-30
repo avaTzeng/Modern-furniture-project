@@ -2,7 +2,7 @@
     <div class="page">
         <span class="page-title">{{ content.title }}</span>
         <span class="page-img-bg">
-            <img :src="require(`@/assets/images/homepage/${content.bgFileName}`)" alt="Mountain Photo">
+            <span :style="{'background-image': `url(${require(`@/assets/images/homepage/${content.bgFileName}`)})`}"></span>
         </span>
         <span class="page-img-product">
             <img :src="require(`@/assets/images/homepage/furniture/${content.productFileName}`)" alt="Product Photo">
@@ -38,11 +38,13 @@
         }
 
         &-img-bg {
-            
-            img {
+            span {
                 float: right;
-                opacity: 0.5;
+                height: 100%;
                 width: 80%;
+                background-size: cover;
+                background-attachment: fixed;
+                filter: opacity(35%);
             }
         }
 
