@@ -4,19 +4,34 @@
     &:link,
     &:visited {
         display: inline-block;
-        padding: .9rem 2rem;
-        text-align: center;
-        text-decoration: none;
-        text-transform: uppercase;
-        font-family: $font-family-1;
-        font-weight: 600;
-        letter-spacing: .2rem;
-        color: $color-black;
+        padding: 1.7rem 0;
+        
         background-color: $color-primary; 
+        transform: translateY(0);
+        transition: .15s;
+        cursor: pointer;
+
+        span {
+            @include abs-center;
+            width: 100%;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-family: $font-family-1;
+            font-weight: 600;
+            letter-spacing: .2rem;
+            color: $color-black;
+            transition: .15s;
+        }
     }
 
     &:hover {
-        
+        transform: translateY(-.3rem);
+        box-shadow: 0 1rem 1rem rgba($color-black, .15);
+        span {
+            font-size: 1.25rem;
+            letter-spacing: .25rem;
+        }
     }
 
     &:active,

@@ -41,7 +41,7 @@
                     <span class="section-intro__contents">
                         <h2>inspiration from nature</h2>
                         <p class="p--fore-line">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
-                        <a href="#" class="btn btn--normal">view more</a>
+                        <a href="#" class="btn btn--normal"><span>view more</span></a>
                     </span>
                     <img src="../assets/images/homepage/cover_02.jpg" alt="Mountain Photo">
                 </span>
@@ -50,9 +50,9 @@
             
             <div class="section-intro__banner">
                 <span class="section-intro__banner-contents">
-                    <span>furniture creative</span>
+                    <span class="section-intro__banner-sub-title">furniture creative</span>
                     <h2>latest collection</h2>
-                    <a href="#" class="btn btn--normal">show all</a>
+                    <a href="#" class="btn btn--normal"><span>show all</span></a>
                 </span>
     
                 <span class="section-intro__banner-img">
@@ -115,7 +115,7 @@
                         bgFileName: 'cover_07.jpg',
                         productFileName: '4.png'
                     }
-                ]
+                ],
                 // products: this.$store.state.dataMap.get('SHOW_OFF')
             };
         },
@@ -337,12 +337,11 @@
                 z-index: 1;
                 color: $color-black;
 
-                span {
+                & > span {
                     text-transform: uppercase;
                     font-family: $font-family-1;
                     font-weight: 800;
                     letter-spacing: .1rem;
-                    
                 }
 
                 h2 {
