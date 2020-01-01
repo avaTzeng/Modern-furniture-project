@@ -39,9 +39,9 @@
             <div class="section-intro__story">
                 <span class="section-intro__block">
                     <span class="section-intro__contents">
-                        <h2>inspiration from nature</h2>
-                        <p class="p--fore-line">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
-                        <a href="#" class="btn btn--normal"><span>view more</span></a>
+                        <h2 id="storyTitle">inspiration from nature</h2>
+                        <p id="storyParagraph" class="p--fore-line">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+                        <a id="storyBtn" href="#" class="btn btn--normal"><span>view more</span></a>
                     </span>
                     <img src="../assets/images/homepage/cover_02.jpg" alt="Mountain Photo">
                 </span>
@@ -50,9 +50,9 @@
             
             <div class="section-intro__banner">
                 <span class="section-intro__banner-contents">
-                    <span class="section-intro__banner-sub-title">furniture creative</span>
-                    <h2>latest collection</h2>
-                    <a href="#" class="btn btn--normal"><span>show all</span></a>
+                    <span id="bannerSubTitle" class="section-intro__banner-sub-title">furniture creative</span>
+                    <h2 id="bannerTitle">latest collection</h2>
+                    <a id="bannerBtn" href="#" class="btn btn--normal"><span>show all</span></a>
                 </span>
     
                 <span class="section-intro__banner-img">
@@ -65,31 +65,35 @@
         </section>
 
         <section class="section-product">
-            <div class="section-product__slogan">product creative</div>
+            <div id="productSlogan" class="section-product__slogan">product creative</div>
             <div class="section-product__title">
-                <h2>creative world in your hands</h2>
-                <span class="section-product__title-sub">view all product</span>
+                <h2 id="productTitle">creative world in your hands</h2>
+                <span id="productSubTitle" class="section-product__title-sub">view all product</span>
             </div>
             
              <app-product-grid :products="showOffProducts"></app-product-grid>
              
         </section>
         <section class="section-customer">
-            <span class="section-customer__img">
+            <span id="customerImg" class="section-customer__img">
                 <img src="../assets/images/homepage/companyLogos.png" alt="Companies's logo">
             </span>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor</p>
+            <p id="customerParagraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor</p>
         </section>
     </main>
 </template>
+ 
 
 <script>
     import ProductGrid from '@/components/product/AppGrid';
     import GalleryPage from '@/components/gallery/AppPage';
+    import AnimConfig from '@/config/ScrollRevealConfig.js';
+
     export default {
         data() {
             return {
-                galleryContents: [
+                products: this.$store.state.dataMap.get('SHOW_OFF'),
+                galleryContents: [  // mocked data
                     {
                         title: 'softness in the arms of nature 1',
                         bgFileName: 'cover_01.jpeg',
@@ -116,7 +120,6 @@
                         productFileName: '4.png'
                     }
                 ],
-                // products: this.$store.state.dataMap.get('SHOW_OFF')
             };
         },
         components: {
@@ -127,10 +130,13 @@
             showOffProducts() {
                 return this.$store.state.dataMap.get('SHOW_OFF');
             }
+        },
+        created() {      
         }
     }
 
     window.onload = () => {
+        // ----------------- GALLERY ANIMATION CONTROL ----------------- 
         let page = 0;
 
         const ACTIVE_LIST_ITEM_CLASS_NAME = 'section-header__list-item--active';
@@ -149,9 +155,9 @@
         chevronUpBtn.addEventListener('click', () => prevPage());
         chevronDownBtn.addEventListener('click', () => nextPage());
 
-        setInterval(() => {
-            nextPage();
-        }, 3000);
+        // setInterval(() => {
+        //     nextPage();
+        // }, 3000);
 
         function nextPage() {
             listItemsArr[page].classList.remove(ACTIVE_LIST_ITEM_CLASS_NAME);
@@ -172,8 +178,24 @@
             listItemsArr[page].classList.add(ACTIVE_LIST_ITEM_CLASS_NAME);
             galleryContainer.style.right = `${ page * 100 }%`;
         }
-    }
-    
+
+
+        // ----------------- SCROLL ANIMATION ----------------- 
+        ScrollReveal().reveal('#storyTitle', AnimConfig.CONTENT_LEFTWARD);
+        ScrollReveal().reveal('#storyParagraph', AnimConfig.CONTENT_LEFTWARD);
+        ScrollReveal().reveal('#storyBtn', AnimConfig.CONTENT_LEFTWARD);
+
+        ScrollReveal().reveal('#bannerSubTitle', AnimConfig.CONTENT_UPWARD);
+        ScrollReveal().reveal('#bannerTitle', AnimConfig.CONTENT_UPWARD);
+        ScrollReveal().reveal('#bannerBtn', AnimConfig.CONTENT_UPWARD);
+
+        ScrollReveal().reveal('#productSlogan', AnimConfig.CONTENT_RIGHTWARD);
+        ScrollReveal().reveal('#productTitle', AnimConfig.CONTENT_RIGHTWARD);
+        ScrollReveal().reveal('#productSubTitle');
+
+        ScrollReveal().reveal('#customerImg', AnimConfig.CONTENT_UPWARD);
+        ScrollReveal().reveal('#customerParagraph', AnimConfig.CONTENT_UPWARD);
+    };
 </script>
 
 <style scoped lang="scss">
@@ -282,16 +304,10 @@
     .section-intro {
         margin-bottom: $u-margin-bottom-section-md * 2;
 
-        &::before {
-            @include abs-center;
-            @include size(100%, 100%);
-            content: "";
-            background-image: url("../assets/images/homepage/cover_03.jpg");
-            background-size: cover;
-            background-position: top;
-            opacity: .2;
-            z-index: -1;
-        }
+        background-image: linear-gradient(rgba($color-white, .7)), url("../assets/images/homepage/cover_03.jpg");
+        background-size: cover;
+        background-position: top;
+        background-attachment: fixed;
         
         &__story {
             display: flex;
@@ -370,6 +386,7 @@
 
                 img {
                     height: 100%;
+                    
                 }
             }
         }

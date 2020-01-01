@@ -12,6 +12,11 @@
 
 html {
     font-size: 62.5%;
+
+    // ScrollReveal-only CSS ruleset
+    &.sr .load-hidden { 
+        visibility: hidden;
+    }
 }
 
 body {

@@ -54,10 +54,12 @@
             text-transform: uppercase;
             color: $color-black;
             letter-spacing: 1px;
+            transition: .15s;
 
             &:hover,
             &:active {
                 filter: brightness(105%);
+                transform: translateY(-.3rem);
             }
         }
     }

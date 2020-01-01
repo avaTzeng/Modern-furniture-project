@@ -47,6 +47,15 @@
     import Navigation from './components/ui/AppNavigation.vue';
 
     export default {
+        // head: {
+        //     scripts: [
+        //         { 
+        //             src: 'https://code.jquery.com/jquery-3.4.1.min.js',
+        //             integrity: 'sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=',
+        //             crossorigin: 'anonymous'
+        //         },
+        //     ]
+        // },
         components: {
             appNavigation: Navigation
         },
