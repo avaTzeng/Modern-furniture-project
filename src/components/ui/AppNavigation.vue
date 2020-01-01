@@ -41,7 +41,7 @@
             color: $color-black;
             letter-spacing: 1px;
             font-family: $font-family-1;
-            font-weight: 700;
+            font-weight: 600;
             font-size: 1.2rem;
         }
     }

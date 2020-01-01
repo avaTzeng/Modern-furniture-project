@@ -47,15 +47,6 @@
     import Navigation from './components/ui/AppNavigation.vue';
 
     export default {
-        // head: {
-        //     scripts: [
-        //         { 
-        //             src: 'https://code.jquery.com/jquery-3.4.1.min.js',
-        //             integrity: 'sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=',
-        //             crossorigin: 'anonymous'
-        //         },
-        //     ]
-        // },
         components: {
             appNavigation: Navigation
         },
@@ -77,7 +68,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 3rem 4rem 0 4rem;
+        padding: 4rem 4rem 0 4rem;
         
         &__logo-box {
             @include size(5rem, 5rem);
@@ -106,7 +97,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 0 4rem 3rem 4rem;
+        padding: 0 4rem 2rem 4rem;
 
         &__nav {
             margin-left: -1.8rem;

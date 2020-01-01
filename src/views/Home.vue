@@ -34,7 +34,7 @@
                 </div>
             </div>
         </section>
-        <section clas ds="section-intro">
+        <section class="section-intro">
             
             <div class="section-intro__story">
                 <span class="section-intro__block">
@@ -96,27 +96,22 @@
                 galleryContents: [  // mocked data
                     {
                         title: 'softness in the arms of nature 1',
-                        bgFileName: 'cover_01.jpeg',
                         productFileName: '7.png'
                     },
                     {
                         title: 'softness in the arms of nature 2',
-                        bgFileName: 'cover_04.jpg',
                         productFileName: '1.png'
                     },
                     {
                         title: 'softness in the arms of nature 3',
-                        bgFileName: 'cover_05.jpg',
                         productFileName: '2.png'
                     },
                     {
                         title: 'softness in the arms of nature 4',
-                        bgFileName: 'cover_06.jpg',
                         productFileName: '3.png'
                     },
                     {
                         title: 'softness in the arms of nature 5',
-                        bgFileName: 'cover_07.jpg',
                         productFileName: '4.png'
                     }
                 ],
@@ -201,7 +196,7 @@
 <style scoped lang="scss">
 //-------------------- SECTION-HEADER --------------------
     .section-header {
-        margin-top: 1rem;
+        margin-top: .5rem;
         margin-bottom: $u-margin-bottom-section-md;
         overflow: hidden;
 
@@ -255,7 +250,7 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            transform: translate(calc(50% + 2rem), 0);
+            transform: translate(calc(50% + 3rem), 0);
             z-index: 5;
 
             ul {
@@ -285,15 +280,18 @@
         }
 
         &__gallery {
-            @include size(94%, 50rem);
+            @include size(94%, 55rem);
             float: right;
             overflow: hidden;
-
+            background-image: linear-gradient(rgba($color-white, .5)), url('../assets/images/homepage/cover_03.jpg');
+            background-size: 75% auto;
+            background-position: right;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
 
             &-page-container {
                 @include size(100%, 100%);
                 white-space: nowrap;
-                
                 float: right;
                 right: 0;
                 transition: .5s;
@@ -302,7 +300,7 @@
     }
 //-------------------- SECTION-INTRO --------------------
     .section-intro {
-        margin-bottom: $u-margin-bottom-section-md * 2;
+        margin-bottom: $u-margin-bottom-section-lg;
 
         background-image: linear-gradient(rgba($color-white, .7)), url("../assets/images/homepage/cover_03.jpg");
         background-size: cover;
