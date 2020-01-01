@@ -34,7 +34,7 @@
                 </div>
             </div>
         </section>
-        <section class="section-intro">
+        <section clas ds="section-intro">
             
             <div class="section-intro__story">
                 <span class="section-intro__block">
