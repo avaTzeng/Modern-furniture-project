@@ -26,7 +26,7 @@
 
             &:not(:last-child)::after {
                 content: "";
-                @include size(.2rem, 1.2rem);
+                @include size(1px, 1.2rem);
                 display: inline-block;
                 background-color: $color-black;
                 position: absolute;
@@ -39,6 +39,7 @@
         &__link {
             text-decoration: none;
             color: $color-black;
+            letter-spacing: 1px;
             font-family: $font-family-1;
             font-weight: 700;
             font-size: 1.2rem;

@@ -155,9 +155,9 @@
         chevronUpBtn.addEventListener('click', () => prevPage());
         chevronDownBtn.addEventListener('click', () => nextPage());
 
-        // setInterval(() => {
-        //     nextPage();
-        // }, 3000);
+        setInterval(() => {
+            nextPage();
+        }, 3000);
 
         function nextPage() {
             listItemsArr[page].classList.remove(ACTIVE_LIST_ITEM_CLASS_NAME);
