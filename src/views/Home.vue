@@ -71,7 +71,7 @@
                 <span id="productSubTitle" class="section-product__title-sub">view all product</span>
             </div>
             
-             <app-product-grid :products="showOffProducts"></app-product-grid>
+             <app-product-grid :products="data"></app-product-grid>
              
         </section>
         <section class="section-customer">
@@ -88,11 +88,18 @@
     import ProductGrid from '@/components/product/AppGrid';
     import GalleryPage from '@/components/gallery/AppPage';
     import AnimConfig from '@/config/ScrollRevealConfig.js';
+    import axios from 'axios';
 
     export default {
         data() {
             return {
-                products: this.$store.state.dataMap.get('SHOW_OFF'),
+                dataMap: null,
+                data: null,
+                dataType: 'SHOW_OFF',
+                // temp: 1,
+                // tempProducts: this.$store.state.dataMap.get('SHOW_OFF'),
+                // dataObj: 'null',
+                products: null,
                 galleryContents: [  // mocked data
                     {
                         title: 'softness in the arms of nature 1',
@@ -121,12 +128,24 @@
             appProductGrid: ProductGrid,
             appGalleryPage: GalleryPage
         },
-        computed: {
-            showOffProducts() {
-                return this.$store.state.dataMap.get('SHOW_OFF');
-            }
+        mounted() {
+            this.requestData();
         },
-        created() {      
+        methods: {
+            async requestData() {
+                axios.get('')
+                    .then(response => {
+                        const data = response.data;
+                        if (data) {
+                                data.forEach(el => {
+                                    if(el.category === this.dataType) {
+                                        this.data = el.products;
+                                }
+                            });
+                        }
+                    })
+                    .catch(error => console.log(error));
+            }
         }
     }
 

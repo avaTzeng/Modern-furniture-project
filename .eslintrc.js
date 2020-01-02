@@ -16,7 +16,8 @@ module.exports = {
     parser: 'babel-eslint'
   },
   "globals": {
-    "ScrollReveal": true
+    'ScrollReveal': true,
+    'axios': true
     // "$": true,
     // "jQuery": true
   }

@@ -49,10 +49,7 @@
     export default {
         components: {
             appNavigation: Navigation
-        },
-        created() {
-            this.$store.dispatch('initData');
-        }
+        } 
     }
 </script>
 
