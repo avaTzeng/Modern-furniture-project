@@ -5,10 +5,13 @@
                 <img src="../assets/images/contactpage/cover.png" alt="Team photo">
             </span>
             <div class="section-contact__form">
-                <div class="sub-title">A: 1125 Josie Knolls Apt. 978 New York</div>
-                <div class="sub-title">T: 01 234 5678</div>
-                <div class="sub-title">E: contact@m989.com</div>
-                <form action="#">
+                <div class=" animated fadeIn">
+                    <div class="sub-title">A: 1125 Josie Knolls Apt. 978 New York</div>
+                    <div class="sub-title">T: 01 234 5678</div>
+                    <div class="sub-title">E: contact@m989.com</div>
+                </div>
+                
+                <form action="#" class="animated fadeInRight fast">
                     <label for="name">Name</label>
                     <input type="text" name="name" id="name">
 
@@ -53,7 +56,9 @@
             }
 
             form {
+                
                 margin-top: 5rem;
+                
                 label {
                     display: block;
                     font-family: $font-family-1;
