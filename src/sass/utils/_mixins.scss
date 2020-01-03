@@ -17,8 +17,15 @@
 }
 
 @mixin abs-center {
-    left: 50%;
     position: absolute;
+    left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+}
+
+@mixin abs-center-offset($w, $h) {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(calc(-50% + $w), calc(-50% + $h));
 }

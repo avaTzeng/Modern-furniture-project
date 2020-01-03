@@ -93,13 +93,8 @@
     export default {
         data() {
             return {
-                dataMap: null,
                 data: null,
                 dataType: 'SHOW_OFF',
-                // temp: 1,
-                // tempProducts: this.$store.state.dataMap.get('SHOW_OFF'),
-                // dataObj: 'null',
-                products: null,
                 galleryContents: [  // mocked data
                     {
                         title: 'softness in the arms of nature 1',
@@ -207,8 +202,8 @@
         ScrollReveal().reveal('#productTitle', AnimConfig.CONTENT_RIGHTWARD);
         ScrollReveal().reveal('#productSubTitle');
 
-        ScrollReveal().reveal('#customerImg', AnimConfig.CONTENT_UPWARD);
-        ScrollReveal().reveal('#customerParagraph', AnimConfig.CONTENT_UPWARD);
+        // ScrollReveal().reveal('#customerImg');
+        // ScrollReveal().reveal('#customerParagraph');
     };
 </script>
 

@@ -1,4 +1,4 @@
-const globalReset = 'true'; // FOR DEBUGGING PURPOSES
+const globalReset = 'false'; // FOR DEBUGGING PURPOSES
 
 export default {
     'CONTENT_LEFTWARD': {
