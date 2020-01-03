@@ -72,10 +72,20 @@
                     text-transform: uppercase;
                     font-family: $font-family-1;
                     font-weight: 600;
+                    font-size: 1rem;
                     border: none;
                     color: $color-black;
                     background-color: $color-primary;
-                    letter-spacing: 2px;       
+                    letter-spacing: 2px;
+                    transform: translateY(0);
+                    transition: .15s;
+                    
+                    &:hover {
+                        transform: translateY(-.3rem);
+                        font-size: 1.25rem;
+                        letter-spacing: .25rem;
+                        box-shadow: 0 1rem 1rem rgba($color-black, .15);
+                    }
                 }
 
                 input:not([type=submit]) {

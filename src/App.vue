@@ -5,7 +5,7 @@
                 <img src="./assets/images/brandLogo.png" alt="Logo">
             </span>
             <div class="header__contents">
-                <app-navigation></app-navigation>
+                <app-navigation :isEnableActiveVfx="true"></app-navigation>
                 <span class="header__info-pnl">
                     <svg class="header__shopping-cart-icon">
                         <use xlink:href="./assets/sprites_icon.svg#icon-shopping-cart"></use>
@@ -17,7 +17,7 @@
         <router-view></router-view>
         
         <footer class="footer">
-            <app-navigation class="footer__nav"></app-navigation>
+            <app-navigation class="footer__nav" :isEnableActiveVfx="false"></app-navigation>
             <ul class="footer__social-media-list">
                 <li>
                     <a href="#">
