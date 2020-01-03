@@ -20,17 +20,17 @@
             <app-navigation class="footer__nav" :isEnableActiveVfx="false"></app-navigation>
             <ul class="footer__social-media-list">
                 <li>
-                    <a href="#">
+                    <a href="https://www.facebook.com/" target="_blank">
                         <svg><use xlink:href="./assets/sprites_icon.svg#icon-social-facebook"></use></svg>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="https://twitter.com/?lang=zh-tw" target="_blank">
                         <svg><use xlink:href="./assets/sprites_icon.svg#icon-social-twitter"></use></svg>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="https://www.pinterest.com/" target="_blank">
                         <svg><use xlink:href="./assets/sprites_icon.svg#icon-social-pinterest"></use></svg>
                     </a>
                 </li>
