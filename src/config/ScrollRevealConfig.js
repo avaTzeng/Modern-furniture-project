@@ -1,7 +1,21 @@
-const globalReset = 'false'; // FOR DEBUGGING PURPOSES
+const globalReset = true;
 
 export default {
     'CONTENT_LEFTWARD': {
+        distance: '3rem',
+        origin: 'right',
+        reset: globalReset,
+        easing: 'cubic-bezier(0.23, 1, 0.32, 1)'
+    },
+    'CONTENT_LEFTWARD_DELAY_100': {
+        delay: 100,
+        distance: '3rem',
+        origin: 'right',
+        reset: globalReset,
+        easing: 'cubic-bezier(0.23, 1, 0.32, 1)'
+    },
+    'CONTENT_LEFTWARD_DELAY_200': {
+        delay: 200,
         distance: '3rem',
         origin: 'right',
         reset: globalReset,

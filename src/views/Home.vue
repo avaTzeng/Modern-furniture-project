@@ -202,8 +202,8 @@
         ScrollReveal().reveal('#productTitle', AnimConfig.CONTENT_RIGHTWARD);
         ScrollReveal().reveal('#productSubTitle');
 
-        // ScrollReveal().reveal('#customerImg');
-        // ScrollReveal().reveal('#customerParagraph');
+        ScrollReveal().reveal('#customerImg', AnimConfig.CONTENT_UPWARD);
+        ScrollReveal().reveal('#customerParagraph', AnimConfig.CONTENT_UPWARD);
     };
 </script>
 

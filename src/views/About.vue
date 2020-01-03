@@ -1,23 +1,23 @@
 <template>
     <main>
         <section class="section-header">
-            <div class="section-header__img">
+            <div class="animated fadeInLeft section-header__img">
                 <img src="../assets/images/homepage/cover_02.jpg" alt="Cover photo">
             </div>
             <div class="section-header__contents">
                 <div>
-                    <h2>Work for money Design for love</h2>
-                    <p class="p--fore-line">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    <p class="p--fore-line">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <p class="p--fore-line">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                    <h2 class="animated fadeIn">Work for money Design for love</h2>
+                    <p class="animated fadeInUp faster p--fore-line">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p class="animated fadeInUp faster p--fore-line">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p class="animated fadeInUp faster p--fore-line">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
                 </div>
             </div>
         </section>
 
         <section class="section-work">
-            <h2>Our work favorite</h2>
+            <h2 id="sectionWorkTitle">Our work favorite</h2>
             <div class="section-work__content">
-                <div class="section-work__content-block">
+                <div id="sectionWorkBlock_first" class="section-work__content-block">
                     <span class="section-work__content-img">
                         <img src="../assets/images/aboutpage/icon-tree.png" alt="Tree icon">
                     </span>
@@ -25,7 +25,7 @@
                     <p class="p--fore-line">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cup</p>
                 </div>
 
-                <div class="section-work__content-block">
+                <div id="sectionWorkBlock_second" class="section-work__content-block">
                     <span class="section-work__content-img">
                         <img src="../assets/images/aboutpage/icon-lightbulb.png" alt="Tree icon">
                     </span>
@@ -33,7 +33,7 @@
                     <p class="p--fore-line">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint</p>
                 </div>
 
-                <div class="section-work__content-block">
+                <div id="sectionWorkBlock_third" class="section-work__content-block">
                     <span class="section-work__content-img">
                         <img src="../assets/images/aboutpage/icon-trophy.png" alt="Tree icon">
                     </span>
@@ -45,15 +45,35 @@
 
         <section class="section-aboutus">
             <div class="section-aboutus__contents">
-                <span class="section-aboutus__contents-img">
+                <span id="sectionAboutusImg" class="section-aboutus__contents-img">
                     <img src="../assets/images/brandLogo.png" alt="Logo">
                 </span>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor</p>
-                <span class="sub-title">hoang bin - art Director</span>
+                <p id="sectionAboutusParagraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor</p>
+                <span id="sectionAboutusSubtitle" class="sub-title">hoang bin - art Director</span>
             </div>
         </section>
     </main>
 </template>
+
+<script>
+    import AnimConfig from '@/config/ScrollRevealConfig.js'
+
+    export default {
+
+    }
+
+    window.onload = () => {
+        ScrollReveal().reveal('#sectionWorkTitle', AnimConfig.CONTENT_UPWARD);
+        ScrollReveal().reveal('#sectionWorkBlock_first', AnimConfig.CONTENT_LEFTWARD);
+        ScrollReveal().reveal('#sectionWorkBlock_second', AnimConfig.CONTENT_LEFTWARD_DELAY_100);
+        ScrollReveal().reveal('#sectionWorkBlock_third', AnimConfig.CONTENT_LEFTWARD_DELAY_200);
+
+        ScrollReveal().reveal('#sectionAboutusImg', AnimConfig.CONTENT_UPWARD);
+        ScrollReveal().reveal('#sectionAboutusParagraph', AnimConfig.CONTENT_UPWARD);
+        ScrollReveal().reveal('#sectionAboutusSubtitle', AnimConfig.CONTENT_UPWARD);
+
+    };
+</script>
 
 <style scoped lang="scss">
     .section-header {
@@ -84,6 +104,7 @@
                 width: 65%;
                 line-height: 1;
                 margin-bottom: 2.5rem;
+                animation-delay: .2s;
             }
 
             p {
@@ -93,6 +114,20 @@
                     margin-bottom: 1.8rem;
                 }
             }
+
+            p:nth-of-type(1) {
+                animation-delay: .4s;
+            }
+
+            p:nth-of-type(2) {
+                animation-delay: .48s;
+            }
+
+            p:nth-of-type(3) {
+                animation-delay: .56s;
+            }
+
+
         }
     }
 
@@ -115,6 +150,7 @@
 
                 &:not(:first-child) {
                     margin-left: 2rem;
+                    
                 }
 
                 p {
@@ -131,7 +167,6 @@
                 }
             }
         }
-
     }
 
     .section-aboutus {
