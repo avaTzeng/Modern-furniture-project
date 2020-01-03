@@ -1,9 +1,9 @@
 <template>
     <div>
         <header class="header">
-            <span class="header__logo-box">
+            <router-link class="header__logo-box" to="/">
                 <img src="./assets/images/brandLogo.png" alt="Logo">
-            </span>
+            </router-link>
             <div class="header__contents">
                 <app-navigation :isEnableActiveVfx="true"></app-navigation>
                 <span class="header__info-pnl">

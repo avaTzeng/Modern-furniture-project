@@ -56,7 +56,7 @@
                 background-color: $color-primary;
                 transform-origin: left;
                 transform: translate(calc(-50% - .5rem), -50%) scaleX(0);
-                transition: all .2s;
+                transition: all .35s;
             }
 
             &:hover,
