@@ -1,4 +1,4 @@
-const globalReset = true;
+const globalReset = false;
 
 export default {
     'CONTENT_LEFTWARD': {
