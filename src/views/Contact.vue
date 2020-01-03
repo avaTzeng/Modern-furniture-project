@@ -2,11 +2,12 @@
     <main>
         <section class="section-contact">
             <span class="section-contact__cover">
-                <img src="../assets/images/contactpage/cover.jpeg" alt="Team photo">
+                <img src="../assets/images/contactpage/cover.png" alt="Team photo">
             </span>
             <div class="section-contact__form">
-                <!-- <div class="sub-title">A: 1125 Josie Knolls Apt. 978 New York</div>
-                <div class="sub-title">T: 01 234 5678     E: contact@m989.com</div> -->
+                <div class="sub-title">A: 1125 Josie Knolls Apt. 978 New York</div>
+                <div class="sub-title">T: 01 234 5678</div>
+                <div class="sub-title">E: contact@m989.com</div>
                 <form action="#">
                     <label for="name">Name</label>
                     <input type="text" name="name" id="name">
@@ -30,13 +31,13 @@
 <style scoped lang="scss">
     .section-contact {
         @include flex-row-center;
-        justify-content: flex-start;
-
-        margin-top: $u-margin-bottom-section-md;
+        margin-top: $u-margin-bottom-section-lg;
         margin-bottom: 8rem;
 
         &__cover {
-            width: 75rem;
+            width: 45%;
+            margin-left: -4rem;
+            margin-top: -8rem;
 
             img {
                 vertical-align: middle;
@@ -45,15 +46,14 @@
         }
 
         &__form {
-            right: -8rem;
-            top: 1rem;
+            margin-left: 3rem;
 
             .sub-title {
                 margin-bottom: .5rem;
             }
 
             form {
-
+                margin-top: 5rem;
                 label {
                     display: block;
                     font-family: $font-family-1;
@@ -79,14 +79,14 @@
                 }
 
                 input:not([type=submit]) {
-                    @include size(38rem, 3rem);
+                    @include size(45rem, 3rem);
                     display: block;
                     border: none;
                     border-bottom: 1px solid $color-grey-dark;
                 }
 
                 textarea {
-                    @include size(38rem, 15rem);
+                    @include size(45rem, 15rem);
                     display: block;
                     border: 1px solid $color-grey-dark;
                     margin-top: 1rem;
