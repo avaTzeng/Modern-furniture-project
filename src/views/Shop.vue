@@ -3,7 +3,7 @@
         <section class="section-shop">
             <nav class="navigation">
                 <ul class="navigation__list">
-                    <router-link to="/" tag="li"  class="navigation__list-item" active-class="active" exact>
+                    <router-link to="/" tag="li"  class="navigation__list-item" active-class="navigation__list-item--active" exact>
                         <span class="navigation__list-icon">
                             <img src="../assets/images/shoppage/icon-table.png" alt="">
                         </span>
@@ -14,7 +14,7 @@
                         </span>
                     </router-link>
 
-                    <router-link to="/" tag="li"  class="navigation__list-item" active-class="active" exact>
+                    <router-link to="/" tag="li"  class="navigation__list-item" active-class="navigation__list-item--active" exact>
                         <span class="navigation__list-icon">
                             <img src="../assets/images/shoppage/icon-sofa.png" alt="">
                         </span>
@@ -25,7 +25,7 @@
                         </span>
                     </router-link>
 
-                    <router-link to="/" tag="li"  class="navigation__list-item" active-class="active" exact>
+                    <router-link to="/" tag="li"  class="navigation__list-item" active-class="navigation__list-item--active" exact>
                         <span class="navigation__list-icon">
                             <img src="../assets/images/shoppage/icon-lamp.png" alt="">
                         </span>
@@ -36,7 +36,7 @@
                         </span>
                     </router-link>
 
-                    <router-link to="/" tag="li"  class="navigation__list-item" active-class="active" exact>
+                    <router-link to="/" tag="li"  class="navigation__list-item" active-class="navigation__list-item--active" exact>
                         <span class="navigation__list-icon">
                             <img src="../assets/images/shoppage/icon-bed.png" alt="">
                         </span>
@@ -109,6 +109,11 @@
                     p {
                         margin-top: .1rem;
                         color: $color-grey-light;
+                    }
+
+                    &--active {
+                        color: red;
+
                     }
                 }
 

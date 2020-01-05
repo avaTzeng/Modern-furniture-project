@@ -45,6 +45,15 @@
         width: 17.5rem;
     }
 
+// ------------ 樣式 ------------
+    &--black {
+        background-color: $color-black;
+        color: white;
+    }
 
-// ------------ 樣式? ------------
+    &--primary {
+        background-color: $color-primary;
+        color: $color-black;
+    }
+
 }

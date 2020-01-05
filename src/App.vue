@@ -6,11 +6,29 @@
             </router-link>
             <div class="header__contents">
                 <app-navigation :isEnableActiveVfx="true"></app-navigation>
-                <span class="header__info-pnl">
-                    <svg class="header__shopping-cart-icon">
+                <span class="info-pnl" @mouseover="isShowShoppingCart=true" @mouseout="isShowShoppingCart=false">
+                    <svg class="info-pnl__shopping-cart-icon">
                         <use xlink:href="./assets/sprites_icon.svg#icon-shopping-cart"></use>
                     </svg>
                 </span>
+                <div v-if="isShowShoppingCart" class="shopping-cart" @mouseover="isShowShoppingCart=true" @mouseout="isShowShoppingCart=false">
+                    <div>
+                        <app-shopping-cart-item class="shopping-cart__item"></app-shopping-cart-item>
+                        <app-shopping-cart-item class="shopping-cart__item"></app-shopping-cart-item>
+                        <app-shopping-cart-item class="shopping-cart__item"></app-shopping-cart-item>
+                    </div>
+
+                    <div class="shopping-cart__info">
+                        <div class="shopping-cart__contents">
+                            <span class="shopping-cart__title">Total:</span>
+                            <span class="shopping-cart__total-price">150 €</span>
+                        </div>
+                        <div class="shopping-cart__btns">
+                            <button class="btn--black"><span>view card</span></button>
+                            <button class="btn--black"><span>check out</span></button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </header>
 
@@ -45,10 +63,17 @@
 
 <script>
     import Navigation from './components/ui/AppNavigation.vue';
+    import ShoppingCartItem from './components/shoppingCart/AppListItem.vue';
 
     export default {
+        data() {
+            return {
+                isShowShoppingCart: false
+            };
+        },
         components: {
-            appNavigation: Navigation
+            appNavigation: Navigation,
+            appShoppingCartItem: ShoppingCartItem
         } 
     }
 </script>
@@ -79,14 +104,120 @@
             @include flex-row-center;
         }
 
-        &__info-pnl {
+        .info-pnl {
             margin-left: 1.5rem;
+            transform: scale(1);
+            transition: .15s;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+
+            &__shopping-cart-icon {
+                @include size(2rem, 2rem);
+                color: $color-black;
+                vertical-align: middle;
+            }
         }
 
-        &__shopping-cart-icon {
-            @include size(2rem, 2rem);
-            color: $color-black;
-            vertical-align: middle;
+//----- 購物車點出來的視窗 ------
+        .shopping-cart {
+            @include flex-column-center;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            transform: translateY(calc(100% + 1rem));
+            z-index: 5;
+            background-color: $color-white;
+            padding: 2rem;
+            box-shadow: 0 1rem 1rem rgba($color-black, .3);
+
+            &__item:not(:last-child) {
+                margin-bottom: 1rem;
+            }
+
+            &__info {
+                @include flex-column-center;
+                align-items: flex-start;
+                width: 100%;
+                margin-top: 3.5rem;
+
+                &::before {
+                    @include size(100%, 1px);
+                    content: "";
+                    display: block;
+                    position: absoulte;
+                    top: 0;
+                    transform: translateY(-1.25rem);
+                    background-color: $color-grey-light;
+                }
+            }
+
+            &__contents {
+                @include flex-row-center;
+                justify-content: flex-start;
+                margin-bottom: 1rem;
+            }
+
+            &__title {
+                font-family: $font-family-2;
+                font-size: 1.5rem;
+                color: $color-grey-light;
+            }
+
+            &__total-price {
+                margin-left: 3rem;
+                font-family: $font-family-1;
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: $color-black;
+            }
+
+            &__btns {
+                @include flex-column-center;
+                width: 100%;
+
+                button:first-child {
+                    margin-bottom: 1rem;
+                }
+
+                button {
+                    width: 100%;
+                    padding: .8rem 0;
+                    border: none;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    font-weight: 500;
+                    transition: .15s;
+                    overflow: hidden;
+
+                    span {
+                        z-index: 2;
+                    }
+
+                    &::before {
+                        @include size(105%, 105%);
+                        content: "";
+                        display: block;
+                        background-color: $color-primary;
+                        position: absolute;
+                        top: 50%;
+                        left: 0;
+                        transform-origin: left;
+                        transform: translateY(-50%) scaleX(0);
+                        z-index: 1;
+                        transition: .2s;
+                    }
+
+                    &:hover {
+                        letter-spacing: 2px;
+                        color: black;
+                        &::before {
+                            transform: translateY(-50%) scaleX(1);
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -139,7 +270,5 @@
             }
         }
     }
-
-    
 </style>
 
