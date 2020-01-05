@@ -6,12 +6,13 @@
             </router-link>
             <div class="header__contents">
                 <app-navigation :isEnableActiveVfx="true"></app-navigation>
-                <span class="info-pnl" @mouseover="isShowShoppingCart=true" @mouseout="isShowShoppingCart=false">
+                <span class="info-pnl">
                     <svg class="info-pnl__shopping-cart-icon">
                         <use xlink:href="./assets/sprites_icon.svg#icon-shopping-cart"></use>
                     </svg>
                 </span>
-                <div v-if="isShowShoppingCart" class="shopping-cart" @mouseover="isShowShoppingCart=true" @mouseout="isShowShoppingCart=false">
+                <!-- 購物車快捷視窗功能暫時拿掉 -->
+                <!-- <div v-if="isShowShoppingCart" class="shopping-cart">
                     <div>
                         <app-shopping-cart-item class="shopping-cart__item"></app-shopping-cart-item>
                         <app-shopping-cart-item class="shopping-cart__item"></app-shopping-cart-item>
@@ -28,7 +29,7 @@
                             <button class="btn--black"><span>check out</span></button>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </header>
 
@@ -63,7 +64,7 @@
 
 <script>
     import Navigation from './components/ui/AppNavigation.vue';
-    import ShoppingCartItem from './components/shoppingCart/AppListItem.vue';
+    // import ShoppingCartItem from './components/shoppingCart/AppListItem.vue';
 
     export default {
         data() {
@@ -73,7 +74,7 @@
         },
         components: {
             appNavigation: Navigation,
-            appShoppingCartItem: ShoppingCartItem
+            // appShoppingCartItem: ShoppingCartItem
         } 
     }
 </script>
