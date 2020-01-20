@@ -17,6 +17,7 @@
 
 <style scoped lang="scss">
     .navigation {
+        // border: 1px solid red;
         
         &__list {
             list-style: none;
@@ -26,12 +27,12 @@
             display: inline-block;
             text-align: center;
             vertical-align: middle;
-            line-height: 1.5rem;
-            padding: 0 1.3rem;
+            line-height: 1;
+            padding: 0 1.7rem;
 
             &:not(:last-child)::after {
                 content: "";
-                @include size(1px, 1.2rem);
+                @include size(1px, 1.5rem);
                 display: inline-block;
                 background-color: $color-black;
                 position: absolute;
@@ -41,21 +42,21 @@
             }
             
             &-link {
-                padding: .8rem .5rem;
-
+                padding: 0rem .5rem;
+                
                 text-decoration: none;
                 color: $color-black;
                 letter-spacing: 1px;
                 font-family: $font-family-1;
                 font-weight: 600;
-                font-size: 1.2rem;
+                font-size: 1.6rem;
                 transition: .15s;
                 top: 0;
 
                 transform: rotateZ(5deg);
 
                 &::before {
-                    @include size(115%,50%);
+                    @include size(115%,1rem);
                     @include abs-center;
                     content: "";
                     display: block;

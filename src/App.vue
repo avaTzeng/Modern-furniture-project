@@ -81,9 +81,10 @@
 
 <style lang="scss">
     @import "./sass/base/_reset";
+    @import "./sass/base/_grid";
     @import "./sass/base/_typography";
-    @import "./sass/component/_button.scss";
-    @import "./sass/component/_paragraph.scss";
+    @import "./sass/component/_button";
+    @import "./sass/component/_paragraph";
 </style>
 
 <style scoped lang="scss">
@@ -91,10 +92,10 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 4rem 4rem 0 4rem;
+        padding: 4.2rem 7.5rem 0 7.5rem;
         
         &__logo-box {
-            @include size(5rem, 5rem);
+            @include size(8rem, 8rem);
 
             img {
                 width: 100%;
@@ -106,7 +107,7 @@
         }
 
         .info-pnl {
-            margin-left: 1.5rem;
+            margin-left: 4.5rem;
             transform: scale(1);
             transition: .15s;
 
@@ -115,7 +116,7 @@
             }
 
             &__shopping-cart-icon {
-                @include size(2rem, 2rem);
+                @include size(2.8rem, 2.8rem);
                 color: $color-black;
                 vertical-align: middle;
             }
@@ -226,7 +227,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 0 4rem 2rem 4rem;
+        padding: 0 7.5rem 6.2rem 7.5rem;
 
         &__nav {
             margin-left: -1.8rem;
@@ -241,11 +242,11 @@
             }
 
             li:not(:first-child) {
-                margin-left: 7rem;    
+                margin-left: 9rem;    
             }
 
             svg {
-                @include size(2rem, 2rem);
+                @include size(2.5rem, 2.5rem);
                 color: $color-black;
             }
         }

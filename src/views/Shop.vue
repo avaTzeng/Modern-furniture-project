@@ -48,7 +48,8 @@
                     </router-link>
                 </ul>
             </nav>
-            <div class="section-shop__product-grid">
+            <app-product-grid :products="null"></app-product-grid>
+            <!-- <div class="section-shop__product-grid">
                 <div class="section-shop__product-grid-row">
                     <app-product-item></app-product-item>
                     <app-product-item></app-product-item>
@@ -67,7 +68,7 @@
                     <app-product-item></app-product-item>
                     <app-product-item></app-product-item>
                 </div>
-            </div>
+            </div> -->
             <span class="section-shop__pagination">
                 <a href="#">❮ Prev</a>
                 <a href="#">Next ❯</a>
@@ -77,10 +78,59 @@
 </template>
 
 <script>
-    import ProductItem from '@/components/product/AppGridItem';
+    import ProductGrid from '@/components/product/AppGrid';
+    import axios from 'axios';
+
     export default {
+        data() {
+            return {
+                dataMap: null,
+                displayData: null,
+                dataTypes: ['TABLE', 'SOFA', 'LAMP', 'BED']
+            };
+        },
         components: {
-            appProductItem: ProductItem
+            appProductGrid: ProductGrid
+        },
+        methods: {
+            async requestData() {
+                axios.get('')
+                    .then(response => {
+                        const data = response.data;
+                        if (data) {
+                            data.forEach(el => {
+                                for (let i = 0; i < this.dataTypes.length; i++) {
+                                    const type = this.dataTypes[i];
+                                    if (type === el.category) {
+                                        this.dataMap.set(type, el.products);
+                                        // console.log(`加入型態為${type}的資料，而資料有${el.products}`);
+                                    }
+                                }
+                            });
+
+                            // if (!displayData) {
+                                
+                            // }
+                        }
+
+                    }).catch(error => console.log(error));
+            },
+            injectData(type) {
+                if (!this.dataMap.has(type)) {
+                    console.log(`沒有 [ ${type} ] 的相關資料`);
+                    return;
+                }
+                
+                this.displayData = this.dataMap.get(type);
+            }
+        },
+        mounted() {
+            this.dataMap = new Map();
+            this.requestData();
+            // this.requestData().then(() => {
+                // console.log("好了！" + this.dataMap.get('SOFA'));
+            // });
+
         }
     }
 </script>
@@ -129,22 +179,22 @@
             }
         }
 
-//----------- PRODUCT-GRID ----------- 
-        &__product-grid {
-            @include flex-column-center;
-            width: 100%;
-            margin-top: 10rem;
+// //----------- PRODUCT-GRID ----------- 
+//         &__product-grid {
+//             @include flex-column-center;
+//             width: 100%;
+//             margin-top: 10rem;
 
-            &-row {
-                @include flex-row-center;
-                width: 100%;
-                justify-content: space-between;
-            }
+//             &-row {
+//                 @include flex-row-center;
+//                 width: 100%;
+//                 justify-content: space-between;
+//             }
 
-            & > div:not(:last-child) {
-                margin-bottom: 8rem;
-            }
-        }
+//             & > div:not(:last-child) {
+//                 margin-bottom: 8rem;
+//             }
+//         }
 
 
 //----------- PAGINATION ----------- 

@@ -23,6 +23,5 @@
         grid-template-columns: repeat(4, 1fr);
         grid-row-gap: 10rem;
         grid-column-gap: 5rem;
-
     }
 </style>

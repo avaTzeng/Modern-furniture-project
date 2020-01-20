@@ -1,9 +1,6 @@
 <template>
     <div class="page">
         <span class="page-title">{{ content.title }}</span>
-        <!-- <span class="page-img-bg">
-            <span :style="{'background-image': `url(${require(`@/assets/images/homepage/${content.bgFileName}`)})`}"></span>
-        </span> -->
         <span class="page-img-product">
             <img :src="require(`@/assets/images/homepage/furniture/${content.productFileName}`)" alt="Product Photo">
         </span>
@@ -20,46 +17,35 @@
     .page {
         display: inline-block;
         @include size(100%, 100%);
-
+        
         &-title {
-            width: 55rem;
+            width: 70rem;
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(calc(-50% + 8rem), calc(-50% - 2rem));
+            transform: translate(calc(-50% + 18rem), calc(-50% - 8rem));
             z-index: 1;
 
-            font-size: 7rem;
+            font-size: 10rem;
             font-family: $font-family-1;
             font-weight: 800;
             text-transform: uppercase;
             color: $color-black;
             white-space: initial;
+            line-height: 1;
         }
 
-        // &-img-bg {
-        //     span {
-        //         float: right;
-        //         height: 100%;
-        //         width: 80%;
-        //         background-size: cover;
-        //         background-attachment: fixed;
-        //         filter: opacity(35%);
-        //         background-color: red;
-        //     }
-        // }
-
         &-img-product {
-            height: 32rem;
+            width: 50%;
             position: absolute;
-            transform: translate(-2rem, 22rem);
-            top: 0;
+            transform: translate(0, 0);
+            bottom: 0;
             left: 0;
             
             z-index: 6;
             img {
                 opacity: 1;
-                height: 100%;
+                width: 100%;
             }
         }
     }

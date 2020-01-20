@@ -125,6 +125,68 @@
         },
         mounted() {
             this.requestData();
+
+            window.onload = () => {
+            // ----------------- GALLERY ANIMATION CONTROL ----------------- 
+            let page = 0;
+
+            const ACTIVE_LIST_ITEM_CLASS_NAME = 'section-header__list-item--active';
+            const LIST_COUNT = 5;
+
+            const listItemsArr = [];
+            const chevronUpBtn = document.getElementById('chevron-btn-up');
+            const chevronDownBtn = document.getElementById('chevron-btn-down');
+            const galleryContainer = document.querySelector('.section-header__gallery-page-container');
+
+            for (let i = 0; i < LIST_COUNT; i++) {
+                const el = document.getElementById(`section-header__list-item-${i}`);
+                listItemsArr.push(el);
+            }
+
+            chevronUpBtn.addEventListener('click', () => prevPage());
+            chevronDownBtn.addEventListener('click', () => nextPage());
+
+            setInterval(() => {
+                nextPage();
+            }, 3000);
+
+            function nextPage() {
+                listItemsArr[page].classList.remove(ACTIVE_LIST_ITEM_CLASS_NAME);
+                page += 1;
+                if (page > (listItemsArr.length - 1)) {
+                    page = 0;
+                }
+                listItemsArr[page].classList.add(ACTIVE_LIST_ITEM_CLASS_NAME);
+                galleryContainer.style.right = `${ page * 100 }%`;
+            }
+
+            function prevPage() {
+                listItemsArr[page].classList.remove(ACTIVE_LIST_ITEM_CLASS_NAME);
+                page -= 1;
+                if (page < 0) {
+                    page = (listItemsArr.length - 1);
+                }
+                listItemsArr[page].classList.add(ACTIVE_LIST_ITEM_CLASS_NAME);
+                galleryContainer.style.right = `${ page * 100 }%`;
+            }
+
+
+            // ----------------- SCROLL ANIMATION ----------------- 
+            ScrollReveal().reveal('#storyTitle', AnimConfig.CONTENT_LEFTWARD);
+            ScrollReveal().reveal('#storyParagraph', AnimConfig.CONTENT_LEFTWARD);
+            ScrollReveal().reveal('#storyBtn', AnimConfig.CONTENT_LEFTWARD);
+
+            ScrollReveal().reveal('#bannerSubTitle', AnimConfig.CONTENT_UPWARD);
+            ScrollReveal().reveal('#bannerTitle', AnimConfig.CONTENT_UPWARD);
+            ScrollReveal().reveal('#bannerBtn', AnimConfig.CONTENT_UPWARD);
+
+            ScrollReveal().reveal('#productSlogan', AnimConfig.CONTENT_RIGHTWARD);
+            ScrollReveal().reveal('#productTitle', AnimConfig.CONTENT_RIGHTWARD);
+            ScrollReveal().reveal('#productSubTitle');
+
+            ScrollReveal().reveal('#customerImg', AnimConfig.CONTENT_UPWARD);
+            ScrollReveal().reveal('#customerParagraph', AnimConfig.CONTENT_UPWARD);
+    };
         },
         methods: {
             async requestData() {
@@ -133,84 +195,23 @@
                         const data = response.data;
                         if (data) {
                                 data.forEach(el => {
-                                    if(el.category === this.dataType) {
+                                    if (el.category === this.dataType) {
                                         this.data = el.products;
                                 }
                             });
                         }
-                    })
-                    .catch(error => console.log(error));
+                    }).catch(error => console.log(error));
             }
         }
     }
 
-    window.onload = () => {
-        // ----------------- GALLERY ANIMATION CONTROL ----------------- 
-        let page = 0;
-
-        const ACTIVE_LIST_ITEM_CLASS_NAME = 'section-header__list-item--active';
-        const LIST_COUNT = 5;
-
-        const listItemsArr = [];
-        const chevronUpBtn = document.getElementById('chevron-btn-up');
-        const chevronDownBtn = document.getElementById('chevron-btn-down');
-        const galleryContainer = document.querySelector('.section-header__gallery-page-container');
-
-        for (let i = 0; i < LIST_COUNT; i++) {
-            const el = document.getElementById(`section-header__list-item-${i}`);
-            listItemsArr.push(el);
-        }
-
-        chevronUpBtn.addEventListener('click', () => prevPage());
-        chevronDownBtn.addEventListener('click', () => nextPage());
-
-        setInterval(() => {
-            nextPage();
-        }, 3000);
-
-        function nextPage() {
-            listItemsArr[page].classList.remove(ACTIVE_LIST_ITEM_CLASS_NAME);
-            page += 1;
-            if (page > (listItemsArr.length - 1)) {
-                page = 0;
-            }
-            listItemsArr[page].classList.add(ACTIVE_LIST_ITEM_CLASS_NAME);
-            galleryContainer.style.right = `${ page * 100 }%`;
-        }
-
-        function prevPage() {
-            listItemsArr[page].classList.remove(ACTIVE_LIST_ITEM_CLASS_NAME);
-            page -= 1;
-            if (page < 0) {
-                page = (listItemsArr.length - 1);
-            }
-            listItemsArr[page].classList.add(ACTIVE_LIST_ITEM_CLASS_NAME);
-            galleryContainer.style.right = `${ page * 100 }%`;
-        }
-
-
-        // ----------------- SCROLL ANIMATION ----------------- 
-        ScrollReveal().reveal('#storyTitle', AnimConfig.CONTENT_LEFTWARD);
-        ScrollReveal().reveal('#storyParagraph', AnimConfig.CONTENT_LEFTWARD);
-        ScrollReveal().reveal('#storyBtn', AnimConfig.CONTENT_LEFTWARD);
-
-        ScrollReveal().reveal('#bannerSubTitle', AnimConfig.CONTENT_UPWARD);
-        ScrollReveal().reveal('#bannerTitle', AnimConfig.CONTENT_UPWARD);
-        ScrollReveal().reveal('#bannerBtn', AnimConfig.CONTENT_UPWARD);
-
-        ScrollReveal().reveal('#productSlogan', AnimConfig.CONTENT_RIGHTWARD);
-        ScrollReveal().reveal('#productTitle', AnimConfig.CONTENT_RIGHTWARD);
-        ScrollReveal().reveal('#productSubTitle');
-
-        ScrollReveal().reveal('#customerImg', AnimConfig.CONTENT_UPWARD);
-        ScrollReveal().reveal('#customerParagraph', AnimConfig.CONTENT_UPWARD);
-    };
+    
 </script>
 
 <style scoped lang="scss">
 //-------------------- SECTION-HEADER --------------------
     .section-header {
-        margin-top: .5rem;
+        margin-top: 3.6rem;
         margin-bottom: $u-margin-bottom-section-md;
         overflow: hidden;
 
@@ -224,7 +225,7 @@
             a {
                 @include abs-center;
                 font-family: $font-family-1;
-                font-size: 1.3rem;
+                font-size: 2rem;
                 font-weight: 300;
                 text-decoration: none;
                 cursor: default;
@@ -236,26 +237,27 @@
                 position: absolute;
                 top: 50%;
                 right: 0;
-                transform: translate(calc(50% - .8rem), -50%);
+                transform: translate(50%, -50%);
                 width: .1rem;
                 height: 0rem;
                 background-color: $color-black;
-                opacity: 0;
+                
                 transition: .2s ease-in-out;
             }
 
             &--active {
                 a {
                     color: $color-black;
-                    font-size: 2rem;
+                    font-size: 3.6rem;
                     transform: translate(calc(-50% - 1.4rem), -50%);
                     transform-origin: top right;
                 }
 
+
+
                 span {
                     height: 3rem;
-                    opacity: 1;
-                    transform: translate(calc(50% - .8rem), -50%);
+                    transform: translate(50%, -50%);
                 }
             }
         }
@@ -294,14 +296,17 @@
         }
 
         &__gallery {
-            @include size(94%, 55rem);
+            @include size(94%, 80rem);
+            border: 1px solid red;
             float: right;
             overflow: hidden;
             background-image: linear-gradient(rgba($color-white, .5)), url('../assets/images/homepage/cover_03.jpg');
-            background-size: 75% auto;
-            background-position: right;
+            background-size: 72.2% auto;
+            // background-size: cover;
+            background-position: top right;
             background-repeat: no-repeat;
             background-attachment: fixed;
+            
 
             &-page-container {
                 @include size(100%, 100%);
@@ -457,13 +462,14 @@
         p {
             margin-top: 3.5rem;
             margin-bottom: 2.5rem;
-            width: 60rem;
+            width: 74.5rem;
             text-align: center;
             color: $color-grey-light;
+            font-size: 1.6rem;
         }
 
         &__img {
-            width: 85rem;
+            width: 117rem;
             img {
                 vertical-align: middle;
                 width: 100%;
