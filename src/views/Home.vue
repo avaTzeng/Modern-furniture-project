@@ -224,6 +224,10 @@
 
             a {
                 @include abs-center;
+                right: 0;
+                top: 50%;
+                transform: translate(-50%, -50%);
+
                 font-family: $font-family-1;
                 font-size: 2rem;
                 font-weight: 300;
@@ -231,17 +235,17 @@
                 cursor: default;
                 color: $color-grey-light;
                 transition: .15s ease-in-out;
+                line-height: 1;
             }
 
             span {
                 position: absolute;
                 top: 50%;
                 right: 0;
-                transform: translate(50%, -50%);
-                width: .1rem;
+                transform: translate(0%, -38%);
+                width: 2px;
                 height: 0rem;
                 background-color: $color-black;
-                
                 transition: .2s ease-in-out;
             }
 
@@ -249,15 +253,13 @@
                 a {
                     color: $color-black;
                     font-size: 3.6rem;
-                    transform: translate(calc(-50% - 1.4rem), -50%);
-                    transform-origin: top right;
+                    font-weight: 500;
+                    transform: translate(calc(-50% - 3rem), -50%);
                 }
-
-
 
                 span {
                     height: 3rem;
-                    transform: translate(50%, -50%);
+                    transform: translate(0%, -38%);
                 }
             }
         }
@@ -266,7 +268,7 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            transform: translate(calc(50% + 3rem), 0);
+            transform: translate(calc(50% + 9.5rem), 0);
             z-index: 5;
 
             ul {
@@ -276,7 +278,6 @@
 
             .chevron-btns-grp {
                 @include flex-column-center;
-                right: .65rem;
 
                 &__icon {
                     @include size(100%, 3rem);
@@ -296,8 +297,8 @@
         }
 
         &__gallery {
-            @include size(94%, 80rem);
-            border: 1px solid red;
+            @include size(91.8%, 80rem);
+            // border: 1px solid red;
             float: right;
             overflow: hidden;
             background-image: linear-gradient(rgba($color-white, .5)), url('../assets/images/homepage/cover_03.jpg');

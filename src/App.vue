@@ -117,7 +117,7 @@
 
             &__shopping-cart-icon {
                 @include size(2.8rem, 2.8rem);
-                color: $color-black;
+                fill: $color-black;
                 vertical-align: middle;
             }
         }
@@ -247,12 +247,14 @@
 
             svg {
                 @include size(2.5rem, 2.5rem);
-                color: $color-black;
+                fill: $color-black;
             }
         }
 
         &__info {
             font-family: $font-family-2;
+            font-size: 1.6rem;
+            color: $color-black;
         }
 
         &__bg {

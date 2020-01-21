@@ -43,7 +43,6 @@
             
             &-link {
                 padding: 0rem .5rem;
-                
                 text-decoration: none;
                 color: $color-black;
                 letter-spacing: 1px;
