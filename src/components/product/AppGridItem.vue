@@ -33,6 +33,7 @@
         }
 
         button {
+            @include size(20rem, 4rem);
             border: none;
             display: inline-block;
             padding: .8rem 5rem;
@@ -41,6 +42,7 @@
             cursor: pointer;
             font-family: $font-family-1;
             font-weight: 600;
+            font-size: 1.3rem;
             text-decoration: none;
             text-transform: uppercase;
             color: $color-white;
