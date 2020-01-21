@@ -25,6 +25,7 @@
             </nav>
             
             <div class="section-header__gallery">
+                <div class="section-header__gallery-bg"></div>
                 <div class="section-header__gallery-page-container">            
                     <app-gallery-page :content="galleryContents[0]"></app-gallery-page>
                     <app-gallery-page :content="galleryContents[1]"></app-gallery-page>
@@ -303,16 +304,22 @@
 
         &__gallery {
             @include size(90%, 80rem);
-            border: 1px solid red;
             float: right;
             overflow: hidden;
-            background-image: linear-gradient(rgba($color-white, .5)), url('../assets/images/homepage/cover_03.jpg');
-            background-size: 72.2% 100%;
-            // background-size: cover;
-            background-position: top right;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
             
+            &-bg {
+                @include size(80%, 100%);
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translate(0, -50%);
+                opacity: .35;
+                background-image: url('../assets/images/homepage/cover_03.jpg');
+                background-size: cover;
+                background-position: top;
+                background-repeat: no-repeat;
+                // background-attachment: fixed;
+            }
 
             &-page-container {
                 @include size(100%, 100%);
