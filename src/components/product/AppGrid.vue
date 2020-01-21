@@ -17,11 +17,11 @@
 <style scoped lang="scss">
     .grid {
         width: 100%;
-
+        
         display: grid;
         grid-template-rows: repeat(2, 1fr);
         grid-template-columns: repeat(4, 1fr);
         grid-row-gap: 10rem;
-        grid-column-gap: 5rem;
+        grid-column-gap: 3rem;
     }
 </style>

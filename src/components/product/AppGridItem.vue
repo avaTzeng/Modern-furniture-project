@@ -29,14 +29,14 @@
         }
 
         &__price {
-            margin-top: .4rem;
+            margin-top: 1.7rem;
         }
 
         button {
             border: none;
             display: inline-block;
             padding: .8rem 5rem;
-            margin-top: 1.7rem;
+            margin-top: 2.5rem;
             background-color: $color-black;
             cursor: pointer;
             font-family: $font-family-1;

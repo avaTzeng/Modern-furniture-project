@@ -78,10 +78,9 @@
              
         </section>
         <section class="section-customer">
-            <span id="customerImg" class="section-customer__img">
-                <img src="../assets/images/homepage/companyLogos.png" alt="Companies's logo">
-            </span>
+            <img class="section-customer__img" src="../assets/images/homepage/companyLogos.png" alt="Companies's logo">
             <p id="customerParagraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor</p>
+            <span class="sub-title">hoang bin - art Director</span>
         </section>
     </main>
 </template>
@@ -439,15 +438,17 @@
             color: $color-primary;
             text-transform: uppercase;
             font-family: $font-family-1;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
+            font-weight: 700;
+            font-size: 2rem;
+            line-height: 1;
+            margin-bottom: 3.2rem;
         }
 
         &__title {
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
-            margin-bottom: 7rem;
+            margin-bottom: 10rem;
 
             h2 {
                 display: inline-block;
@@ -459,7 +460,7 @@
                 font-weight: 600;
                 letter-spacing: .2rem;
                 color: $color-black;
-                font-size: 1rem;
+                font-size: 1.3rem;
                 
                 &::before {
                     @include size(4rem, 1px);                
@@ -478,24 +479,23 @@
 //-------------------- SECTION-CUSTOMER --------------------
     .section-customer {
         @include flex-column-center;
-        margin-top: 25rem;
-        margin-bottom: 15rem;
+        max-width: $row-max-width;
+        margin: 0 auto;
+        margin-top: 28.5rem;
+        margin-bottom: 30.3rem;
 
         p {
-            margin-top: 3.5rem;
-            margin-bottom: 2.5rem;
-            width: 74.5rem;
+            margin-top: 5.9rem;
+            margin-bottom: 4.5rem;
+            width: 75rem;
             text-align: center;
             color: $color-grey-light;
             font-size: 1.6rem;
         }
 
         &__img {
-            width: 117rem;
-            img {
-                vertical-align: middle;
-                width: 100%;
-            }
+            width: 100%;
+            vertical-align: middle;
         }
     }
 </style>
