@@ -4,47 +4,35 @@
             <nav class="navigation">
                 <ul class="navigation__list">
                     <router-link to="/" tag="li"  class="navigation__list-item" active-class="navigation__list-item--active" exact>
-                        <span class="navigation__list-icon">
-                            <img src="../assets/images/shoppage/icon-table.png" alt="">
-                        </span>
-
-                        <span>
+                        <img class="navigation__list-icon" src="../assets/images/shoppage/icon-table.png" alt="">
+                        <div>
                             <span class="sub-title">table</span>
                             <p>Made from natural</p>
-                        </span>
+                        </div>
                     </router-link>
 
                     <router-link to="/" tag="li"  class="navigation__list-item" active-class="navigation__list-item--active" exact>
-                        <span class="navigation__list-icon">
-                            <img src="../assets/images/shoppage/icon-sofa.png" alt="">
-                        </span>
-
-                        <span>
+                        <img class="navigation__list-icon" src="../assets/images/shoppage/icon-sofa.png" alt="">
+                        <div>
                             <span class="sub-title">sofa</span>
                             <p>Made from natural</p>
-                        </span>
+                        </div>
                     </router-link>
 
                     <router-link to="/" tag="li"  class="navigation__list-item" active-class="navigation__list-item--active" exact>
-                        <span class="navigation__list-icon">
-                            <img src="../assets/images/shoppage/icon-lamp.png" alt="">
-                        </span>
-
-                        <span>
+                        <img class="navigation__list-icon" src="../assets/images/shoppage/icon-lamp.png" alt="">
+                        <div>
                             <span class="sub-title">light</span>
                             <p>Made from natural</p>
-                        </span>
+                        </div>
                     </router-link>
 
-                    <router-link to="/" tag="li"  class="navigation__list-item" active-class="navigation__list-item--active" exact>
-                        <span class="navigation__list-icon">
-                            <img src="../assets/images/shoppage/icon-bed.png" alt="">
-                        </span>
-
-                        <span>
+                    <router-link to="/" tag="li"  class="navigation__list-item" active-class="navigation__list-item--active" exact>            
+                        <img class="navigation__list-icon" src="../assets/images/shoppage/icon-bed.png" alt="">
+                        <div>
                             <span class="sub-title">bed</span>
                             <p>Made from natural</p>
-                        </span>
+                        </div>
                     </router-link>
                 </ul>
             </nav>
@@ -139,13 +127,15 @@
 
     .section-shop {
         @include flex-column-center;
-        width: $row-max-width;
+        max-width: $row-max-width;
         margin: 0 auto;
+        margin-top: 21rem;
 
 //----------- NAVIGATION ----------- 
         .navigation {
+            // border: 2px solid red !important;
             width: 100%;
-            margin-top: 6rem;
+            
 
             &__list {
                 @include flex-row-center;
@@ -154,22 +144,33 @@
 
                 &-item {
                     @include flex-row-center;
+                    align-items: flex-end;
+                    justify-content: flex-start;
                     cursor: pointer;
 
+                    & > div {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        justify-content: space-between;
+                        height: 4.5rem;
+                        margin-left: 1rem;
+                    }
+
                     p {
-                        margin-top: .1rem;
+                        text-align: initial;
                         color: $color-grey-light;
+                        line-height: 1;
+                        width: 12.7rem;
                     }
 
                     &--active {
                         color: red;
-
                     }
                 }
 
                 &-icon {
-                    height: 3rem;
-                    margin-right: 1.4rem;
+                    height: 4.5rem;
 
                     img {
                         height: 100%;
@@ -199,8 +200,8 @@
 
 //----------- PAGINATION ----------- 
         &__pagination {
-            margin-top: 7rem;
-            margin-bottom: 15rem;
+            margin-top: 10rem;
+            margin-bottom: 34.6rem;
             align-self: flex-end;
 
             a {
@@ -208,6 +209,7 @@
                 padding: .7rem 1.2rem;
                 font-family: $font-family-1;
                 font-weight: 600;
+                font-size: 1.3rem;
                 text-decoration: none;
                 color: $color-black;
                 background: $color-grey-bright;
