@@ -2,7 +2,7 @@
     <main>
         <section class="section-header">
             <div class="animated fadeInLeft section-header__img">
-                <img src="../assets/images/homepage/cover_02.jpg" alt="Cover photo">
+                <img src="../assets/images/homepage/cover_02.webp" alt="Cover photo">
             </div>
             <div class="section-header__contents">
                 <div>

@@ -38,14 +38,16 @@
         <section class="section-intro">
             
             <div class="section-intro__story">
-                <span class="section-intro__block">
-                    <span class="section-intro__contents">
+                <div class="section-intro__block">
+                    <div class="section-intro__contents">
                         <h2 id="storyTitle">inspiration from nature</h2>
                         <p id="storyParagraph" class="p--fore-line">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
                         <a id="storyBtn" href="#" class="btn btn--normal"><span>view more</span></a>
-                    </span>
-                    <img src="../assets/images/homepage/cover_02.jpg" alt="Mountain Photo">
-                </span>
+                    </div>
+                    <div class="section-intro__img">
+                        <img src="../assets/images/homepage/cover_02.webp" alt="Mountain Photo">
+                    </div>
+                </div>
             </div>
             
             
@@ -347,26 +349,37 @@
         }
 
         &__block {
-            width: 85rem;
-            height: 50rem;
+            border: 2px solid red;
+            width: 60%;
+            height: 70rem;
+        }
+
+        &__img {
+            @include abs-center;
+            @include size(100%, 100%);
+            overflow: hidden;
             img {
                 width: 100%;
+                vertical-align: top;
             }
         }
 
         &__contents {
-            width: 45rem;
+            @include flex-column-center;
+            align-items: flex-start;
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(calc(-50% + 50rem), calc(-50% - 2rem));
+            
+            transform: translate(calc(-50% + 70rem), -50%);
             z-index: 1;
             color: $color-black;
 
             p {
-                width: 80%;
+                width: 47rem;
                 margin-top: 1.8rem;
                 margin-bottom: 3rem;
+                
             }
         }
 
