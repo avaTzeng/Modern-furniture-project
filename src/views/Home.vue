@@ -52,18 +52,18 @@
             
             
             <div class="section-intro__banner">
-                <span class="section-intro__banner-contents">
-                    <span id="bannerSubTitle" class="section-intro__banner-sub-title">furniture creative</span>
+                <div class="section-intro__banner-contents">
+                    <span id="bannerSubTitle" class="sub-title">furniture creative</span>
                     <h2 id="bannerTitle">latest collection</h2>
                     <a id="bannerBtn" href="#" class="btn btn--normal"><span>show all</span></a>
-                </span>
+                </div>
     
-                <span class="section-intro__banner-img">
+                <div class="section-intro__banner-img">
                     <img src="../assets/images/homepage/moreCollection.jpg" alt="Collection 1">
-                </span>
-                <span class="section-intro__banner-img">
+                </div>
+                <div class="section-intro__banner-img">
                     <img src="../assets/images/homepage/moreCollection.jpg" alt="Collection 2">
-                </span>
+                </div>
             </div>
         </section>
 
@@ -349,7 +349,6 @@
         }
 
         &__block {
-            border: 2px solid red;
             width: 60%;
             height: 70rem;
         }
@@ -385,10 +384,9 @@
 
         &__banner {
             @include flex-row-center;
-            position: relative;
             margin: 0 auto;
             width: $row-max-width;
-            padding: $u-margin-bottom-section-md 0;
+            padding: $u-margin-bottom-section-lg 0;
 
             &-contents {
                 @include abs-center;
@@ -404,32 +402,30 @@
                 }
 
                 h2 {
-                    margin-top: 1.5rem;
-                    margin-bottom: 2rem;
+                    margin-top: 3.7rem;
+                    margin-bottom: 4rem;
                 }
             }
 
             &-img {
                 @include size(50%, 27rem);
-                background-color: yellow;
                 overflow: hidden;
 
                 &:first-child {
                     img {
-                        left: 0;
+                        float: left;
                     }
                 }
 
                 &:last-child {
                     margin-left: 2rem;
                     img {
-                        right: 50%;
+                        float: right;
                     }
                 }
 
                 img {
                     height: 100%;
-                    
                 }
             }
         }
