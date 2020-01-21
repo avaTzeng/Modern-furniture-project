@@ -55,9 +55,10 @@
                 </li>
             </ul>
             <span class="footer__info">©2015 CopyRight HeadPassion. All rights reserved.</span>
-            <div class="footer__bg">
+            <img class="footer__bg" src="./assets/images/cover_footer.png" alt="Footer background">
+            <!-- <div class="footer__bg">
                 <img src="./assets/images/cover_footer.png" alt="Footer background">
-            </div>
+            </div> -->
         </footer>
     </div>
 </template>
@@ -260,22 +261,15 @@
         }
 
         &__bg {
-            border: 2px solid red !important;
             width: 100%;
-            height: 65rem;
+            height: auto;
             position: absolute;
             bottom: 0;
             left: 50%;
             transform: translate(-50%, 0);
             z-index: -2;
             overflow: hidden;
-
-            img {
-                // width: 100%;
-                height: 100%;
-                left: -25rem;
-                opacity: .5;
-            }
+            opacity: .5;
         }
     }
 </style>
