@@ -133,35 +133,39 @@
 
     .section-work {
         @include flex-column-center;
-        margin-top: 18rem;
+        max-width: $row-max-width;
+        margin: 0 auto;
+        margin-top: 22.6rem;
+
 
         &__content {
             @include flex-row-center;
-            margin-top: 6rem;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 11.4rem;
 
             .sub-title {
-                margin-top: 1.4rem;
-                margin-bottom: 1rem;
+                margin-top: 2.8rem;
+                margin-bottom: 2.3rem;
             }
 
             &-block {
                 @include flex-column-center;
                 align-items: flex-start;
+                flex: 1;
 
                 &:not(:first-child) {
-                    margin-left: 2rem;
-                    
+                    margin-left: 3rem;
                 }
 
                 p {
-                    width: 30rem;
                     text-align: initial;
                     color: $color-grey-light;
                 }
             }
 
             &-img {
-                height: 4rem;
+                height: 7rem;
                 img {
                     height: 100%;
                 }
@@ -170,8 +174,8 @@
     }
 
     .section-aboutus {
-        margin-top: 20rem;
-        margin-bottom: 15rem;
+        margin-top: 45.5rem;
+        margin-bottom: 25rem;
     
 
         &__contents {
@@ -184,7 +188,7 @@
 
             p {
                 width: 60rem;
-                margin: 1.8rem 0;
+                margin: 4rem 0;
 
                 text-align: center;
                 color: $color-grey-light;
