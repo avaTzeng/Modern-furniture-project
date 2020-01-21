@@ -1,4 +1,4 @@
-const globalReset = true;
+const globalReset = false;
 const delayBase = 20;
 
 export default {
