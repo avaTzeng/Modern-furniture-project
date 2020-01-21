@@ -78,32 +78,32 @@
 <style scoped lang="scss">
     .section-header {
         @include flex-row-center;
-        margin-top: $u-margin-bottom-section-md;
+        margin-top: $u-margin-bottom-section-sm;
         align-items: flex-end;
 
         &__img {
-            width: 50%;
-            height: 50rem;
+            width: 96rem;
+            height: 80rem;
             overflow: hidden;
+    
             img {
                 height: 100%;
             }
         }
 
         &__contents {
-            width: 50%;
-            padding-left: 10rem;
-            padding-bottom: 5.5rem;
             
-
+            width: 50%;
+            padding-left: 11.5rem;
+            padding-bottom: 20rem; 
+            
             div {
-                width: 45rem;
+                width: 47rem;
             }
 
             h2 {
-                width: 65%;
-                line-height: 1;
-                margin-bottom: 2.5rem;
+                line-height: 1.1;
+                margin-bottom: 4.9rem;
                 animation-delay: .2s;
             }
 
@@ -111,7 +111,7 @@
                 color: $color-grey-light;
 
                 &:not(:last-child) {
-                    margin-bottom: 1.8rem;
+                    margin-bottom: 3.5rem;
                 }
             }
 
