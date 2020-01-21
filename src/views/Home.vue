@@ -3,11 +3,11 @@
         <section class="section-header">
             <nav>
                 <ul>
-                    <li id="section-header__list-item-0" class="section-header__list-item section-header__list-item--active"><a href="#">01</a><span></span></li>
-                    <li id="section-header__list-item-1" class="section-header__list-item"><a href="#">02</a><span></span></li>
-                    <li id="section-header__list-item-2" class="section-header__list-item"><a href="#">03</a><span></span></li>
-                    <li id="section-header__list-item-3" class="section-header__list-item"><a href="#">04</a><span></span></li>
-                    <li id="section-header__list-item-4" class="section-header__list-item"><a href="#">05</a><span></span></li>
+                    <li id="section-header__list-item-0" class="section-header__list-item section-header__list-item--active"><a>01</a><span></span></li>
+                    <li id="section-header__list-item-1" class="section-header__list-item"><a>02</a><span></span></li>
+                    <li id="section-header__list-item-2" class="section-header__list-item"><a>03</a><span></span></li>
+                    <li id="section-header__list-item-3" class="section-header__list-item"><a>04</a><span></span></li>
+                    <li id="section-header__list-item-4" class="section-header__list-item"><a>05</a><span></span></li>
                 </ul>
                 <div class="chevron-btns-grp">
                     <span id="chevron-btn-up" class="chevron-btns-grp__icon">
@@ -212,21 +212,21 @@
 //-------------------- SECTION-HEADER --------------------
     .section-header {
         margin-top: 3.6rem;
-        margin-bottom: $u-margin-bottom-section-md;
+        margin-bottom: $u-margin-bottom-section-lg;
         overflow: hidden;
 
         &__list-item {
-            padding: 1.5rem;
+            padding: 2.5rem 0;
 
             &:not(:last-child) {
                 margin-bottom: 1rem;
             }
 
             a {
-                @include abs-center;
+                position: absolute;
                 right: 0;
                 top: 50%;
-                transform: translate(-50%, -50%);
+                transform: translate(0%, -50%);
 
                 font-family: $font-family-1;
                 font-size: 2rem;
@@ -254,7 +254,7 @@
                     color: $color-black;
                     font-size: 3.6rem;
                     font-weight: 500;
-                    transform: translate(calc(-50% - 3rem), -50%);
+                    transform: translate(-2rem, -50%);
                 }
 
                 span {
@@ -270,18 +270,23 @@
             left: 0;
             transform: translate(calc(50% + 9.5rem), 0);
             z-index: 5;
+            width: 5rem;
 
             ul {
                 list-style: none;
-                margin-bottom: 9rem;
+                margin-bottom: 25.5rem;
             }
 
             .chevron-btns-grp {
+                position: absolute;
+                right: 0;
+                bottom: 0;
                 @include flex-column-center;
 
                 &__icon {
-                    @include size(100%, 3rem);
+                    @include size(5rem, 5rem);
                     background-color: $color-grey-bright-2;
+                    cursor: pointer;
 
                     &:first-child {
                         margin-bottom: .5rem;
@@ -289,7 +294,7 @@
 
                     svg {
                         @include abs-center;
-                        @include size(50%, 50%);
+                        @include size(35%, 35%);
                         fill: $color-black;
                     }
                 }
@@ -297,12 +302,12 @@
         }
 
         &__gallery {
-            @include size(91.8%, 80rem);
-            // border: 1px solid red;
+            @include size(90%, 80rem);
+            border: 1px solid red;
             float: right;
             overflow: hidden;
             background-image: linear-gradient(rgba($color-white, .5)), url('../assets/images/homepage/cover_03.jpg');
-            background-size: 72.2% auto;
+            background-size: 72.2% 100%;
             // background-size: cover;
             background-position: top right;
             background-repeat: no-repeat;
