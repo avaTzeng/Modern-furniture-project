@@ -32,7 +32,7 @@
     .section-contact {
         @include flex-row-center;
         margin-top: $u-margin-bottom-section-lg;
-        margin-bottom: 8rem;
+        margin-bottom: 10.4rem;
 
         &__cover {
             width: 40%;

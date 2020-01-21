@@ -1,7 +1,7 @@
 <template>
     <main>
         <section class="section-header">
-            <div class="animated fadeInLeft section-header__img">
+            <div class="animated fadeIn section-header__img">
                 <img src="../assets/images/homepage/cover_02.webp" alt="Cover photo">
             </div>
             <div class="section-header__contents">
@@ -59,20 +59,17 @@
     import AnimConfig from '@/config/ScrollRevealConfig.js'
 
     export default {
+        mounted() {
+            ScrollReveal().reveal('#sectionWorkTitle', AnimConfig.CONTENT_UPWARD);
+            ScrollReveal().reveal('#sectionWorkBlock_first', AnimConfig.CONTENT_LEFTWARD);
+            ScrollReveal().reveal('#sectionWorkBlock_second', AnimConfig.CONTENT_LEFTWARD_DELAY_100);
+            ScrollReveal().reveal('#sectionWorkBlock_third', AnimConfig.CONTENT_LEFTWARD_DELAY_200);
 
+            ScrollReveal().reveal('#sectionAboutusImg', AnimConfig.CONTENT_UPWARD);
+            ScrollReveal().reveal('#sectionAboutusParagraph', AnimConfig.CONTENT_UPWARD);
+            ScrollReveal().reveal('#sectionAboutusSubtitle', AnimConfig.CONTENT_UPWARD);
+        }
     }
-
-    window.onload = () => {
-        ScrollReveal().reveal('#sectionWorkTitle', AnimConfig.CONTENT_UPWARD);
-        ScrollReveal().reveal('#sectionWorkBlock_first', AnimConfig.CONTENT_LEFTWARD);
-        ScrollReveal().reveal('#sectionWorkBlock_second', AnimConfig.CONTENT_LEFTWARD_DELAY_100);
-        ScrollReveal().reveal('#sectionWorkBlock_third', AnimConfig.CONTENT_LEFTWARD_DELAY_200);
-
-        ScrollReveal().reveal('#sectionAboutusImg', AnimConfig.CONTENT_UPWARD);
-        ScrollReveal().reveal('#sectionAboutusParagraph', AnimConfig.CONTENT_UPWARD);
-        ScrollReveal().reveal('#sectionAboutusSubtitle', AnimConfig.CONTENT_UPWARD);
-
-    };
 </script>
 
 <style scoped lang="scss">

@@ -118,7 +118,6 @@
             // this.requestData().then(() => {
                 // console.log("好了！" + this.dataMap.get('SOFA'));
             // });
-
         }
     }
 </script>

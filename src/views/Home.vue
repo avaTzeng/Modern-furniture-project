@@ -78,7 +78,7 @@
              
         </section>
         <section class="section-customer">
-            <img class="section-customer__img" src="../assets/images/homepage/companyLogos.png" alt="Companies's logo">
+            <img id="customerImg" class="section-customer__img" src="../assets/images/homepage/companyLogos.png" alt="Companies's logo">
             <p id="customerParagraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor</p>
             <span class="sub-title">hoang bin - art Director</span>
         </section>
@@ -89,7 +89,7 @@
 <script>
     import ProductGrid from '@/components/product/AppGrid';
     import GalleryPage from '@/components/gallery/AppPage';
-    import AnimConfig from '@/config/ScrollRevealConfig.js';
+    import AnimConfig from '@/config/ScrollRevealConfig';
     import axios from 'axios';
 
     export default {
@@ -128,7 +128,6 @@
         mounted() {
             this.requestData();
 
-            window.onload = () => {
             // ----------------- GALLERY ANIMATION CONTROL ----------------- 
             let page = 0;
 
@@ -185,10 +184,6 @@
             ScrollReveal().reveal('#productSlogan', AnimConfig.CONTENT_RIGHTWARD);
             ScrollReveal().reveal('#productTitle', AnimConfig.CONTENT_RIGHTWARD);
             ScrollReveal().reveal('#productSubTitle');
-
-            ScrollReveal().reveal('#customerImg', AnimConfig.CONTENT_UPWARD);
-            ScrollReveal().reveal('#customerParagraph', AnimConfig.CONTENT_UPWARD);
-    };
         },
         methods: {
             async requestData() {
@@ -319,7 +314,6 @@
                 background-size: cover;
                 background-position: top;
                 background-repeat: no-repeat;
-                // background-attachment: fixed;
             }
 
             &-page-container {
