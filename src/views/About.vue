@@ -43,6 +43,11 @@
             </div>
         </section>
 
+        <section class="section-map">
+            <h2 id="sectionMapTitle" >Where to find us</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.5263249085147!2d121.50363155123125!3d25.016206445078485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a9bf67f5098b%3A0x995e2d85e973d20d!2z57ag5a-255-z5a-154mp5YWs5ZyS!5e0!3m2!1szh-TW!2stw!4v1579692561490!5m2!1szh-TW!2stw" frameborder="0"></iframe>
+        </section>
+
         <section class="section-aboutus">
             <div class="section-aboutus__contents">
                 <span id="sectionAboutusImg" class="section-aboutus__contents-img">
@@ -68,6 +73,8 @@
             ScrollReveal().reveal('#sectionAboutusImg', AnimConfig.CONTENT_UPWARD);
             ScrollReveal().reveal('#sectionAboutusParagraph', AnimConfig.CONTENT_UPWARD);
             ScrollReveal().reveal('#sectionAboutusSubtitle', AnimConfig.CONTENT_UPWARD);
+
+            ScrollReveal().reveal('#sectionMapTitle', AnimConfig.CONTENT_UPWARD);
         }
     }
 </script>
@@ -167,6 +174,20 @@
                     height: 100%;
                 }
             }
+        }
+    }
+
+    .section-map {
+        max-width: $row-max-width;
+        margin: 0 auto;
+        margin-top: 22.6rem;
+        text-align: center;
+        
+        iframe {
+            margin-top: 7.5rem;
+            width: 100%;
+            height: 45rem;
+            border: none;
         }
     }
 
