@@ -73,8 +73,8 @@
                 }
 
                 input[type=submit] {
-                    @include size(22rem, 3.5rem);
-                    float: right;
+                    @include size(30rem, 4rem);
+                    float: left;
                     margin-top: 3.7rem;
                     line-height: 1;
                     text-transform: uppercase;
