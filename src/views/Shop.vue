@@ -3,7 +3,7 @@
         <section class="section-shop">
             <nav class="navigation">
                 <ul class="navigation__list">
-                    <router-link to="/" tag="li"  class="navigation__list-item" active-class="navigation__list-item--active" exact>
+                    <router-link to="/shop/table" tag="li"  class="navigation__list-item" active-class="navigation__list-item--active" exact>
                         <img class="navigation__list-icon" src="../assets/images/shoppage/icon-table.png" alt="">
                         <div>
                             <span class="sub-title">table</span>
@@ -11,7 +11,7 @@
                         </div>
                     </router-link>
 
-                    <router-link to="/" tag="li"  class="navigation__list-item" active-class="navigation__list-item--active" exact>
+                    <router-link to="/shop/sofa" tag="li"  class="navigation__list-item" active-class="navigation__list-item--active">
                         <img class="navigation__list-icon" src="../assets/images/shoppage/icon-sofa.png" alt="">
                         <div>
                             <span class="sub-title">sofa</span>
@@ -19,7 +19,7 @@
                         </div>
                     </router-link>
 
-                    <router-link to="/" tag="li"  class="navigation__list-item" active-class="navigation__list-item--active" exact>
+                    <router-link to="/shop/light" tag="li"  class="navigation__list-item" active-class="navigation__list-item--active">
                         <img class="navigation__list-icon" src="../assets/images/shoppage/icon-lamp.png" alt="">
                         <div>
                             <span class="sub-title">light</span>
@@ -27,7 +27,7 @@
                         </div>
                     </router-link>
 
-                    <router-link to="/" tag="li"  class="navigation__list-item" active-class="navigation__list-item--active" exact>            
+                    <router-link to="/shop/bed" tag="li"  class="navigation__list-item" active-class="navigation__list-item--active">            
                         <img class="navigation__list-icon" src="../assets/images/shoppage/icon-bed.png" alt="">
                         <div>
                             <span class="sub-title">bed</span>
@@ -36,30 +36,12 @@
                     </router-link>
                 </ul>
             </nav>
-            <app-product-grid :products="null"></app-product-grid>
-            <!-- <div class="section-shop__product-grid">
-                <div class="section-shop__product-grid-row">
-                    <app-product-item></app-product-item>
-                    <app-product-item></app-product-item>
-                    <app-product-item></app-product-item>
-                    <app-product-item></app-product-item>
-                </div>
-                <div class="section-shop__product-grid-row">
-                    <app-product-item></app-product-item>
-                    <app-product-item></app-product-item>
-                    <app-product-item></app-product-item>
-                    <app-product-item></app-product-item>
-                </div>
-                <div class="section-shop__product-grid-row">
-                    <app-product-item></app-product-item>
-                    <app-product-item></app-product-item>
-                    <app-product-item></app-product-item>
-                    <app-product-item></app-product-item>
-                </div>
-            </div> -->
+
+            <app-product-grid :products="data[$route.params.id]"></app-product-grid>
+
             <span class="section-shop__pagination">
-                <a href="#">❮ Prev</a>
-                <a href="#">Next ❯</a>
+                <!-- <a href="#">❮ Prev</a>
+                <a href="#">Next ❯</a> -->
             </span>
         </section>
     </main>
@@ -72,9 +54,13 @@
     export default {
         data() {
             return {
-                dataMap: null,
-                displayData: null,
-                dataTypes: ['TABLE', 'SOFA', 'LAMP', 'BED']
+                data: { // 超怪的，不能後來動態新增相關參數，不然 vue 吃不到
+                    table: null,
+                    sofa: null,
+                    light: null,
+                    bed: null
+                },
+                dataTypes: ['table', 'sofa', 'light', 'bed']
             };
         },
         components: {
@@ -87,37 +73,19 @@
                         const data = response.data;
                         if (data) {
                             data.forEach(el => {
-                                for (let i = 0; i < this.dataTypes.length; i++) {
-                                    const type = this.dataTypes[i];
-                                    if (type === el.category) {
-                                        this.dataMap.set(type, el.products);
-                                        // console.log(`加入型態為${type}的資料，而資料有${el.products}`);
+
+                                for(let type of this.dataTypes) {
+                                    if(type === el.category) {
+                                        this.data[type] = el.products;
                                     }
                                 }
                             });
-
-                            // if (!displayData) {
-                                
-                            // }
                         }
-
                     }).catch(error => console.log(error));
-            },
-            injectData(type) {
-                if (!this.dataMap.has(type)) {
-                    console.log(`沒有 [ ${type} ] 的相關資料`);
-                    return;
-                }
-                
-                this.displayData = this.dataMap.get(type);
             }
         },
         mounted() {
-            this.dataMap = new Map();
             this.requestData();
-            // this.requestData().then(() => {
-                // console.log("好了！" + this.dataMap.get('SOFA'));
-            // });
         }
     }
 </script>
@@ -132,7 +100,7 @@
 
 //----------- NAVIGATION ----------- 
         .navigation {
-            // border: 2px solid red !important;
+            margin-bottom: 10rem;
             width: 100%;
             
 
@@ -154,6 +122,20 @@
                         justify-content: space-between;
                         height: 4.5rem;
                         margin-left: 1rem;
+
+                         &::after {
+                            @include size(55%, 25%);
+                            content: "";
+                            background-color: $color-primary;
+                            position: absolute;
+                            right: left;
+                            top: 50%;
+                            transform-origin: left;
+                            transform: translateY(calc(-50% - 1rem)) scaleX(0);
+                            z-index: -1;
+                            transition: .2s ease-out;
+                        }
+                        
                     }
 
                     p {
@@ -164,7 +146,16 @@
                     }
 
                     &--active {
-                        color: red;
+
+                        & > div {
+                            &::after {
+                                transform: translateY(calc(-50% - 1rem)) scaleX(1);
+                            }
+                        }
+
+                        p {
+                            color: $color-black;
+                        }
                     }
                 }
 
@@ -178,24 +169,6 @@
                 }
             }
         }
-
-// //----------- PRODUCT-GRID ----------- 
-//         &__product-grid {
-//             @include flex-column-center;
-//             width: 100%;
-//             margin-top: 10rem;
-
-//             &-row {
-//                 @include flex-row-center;
-//                 width: 100%;
-//                 justify-content: space-between;
-//             }
-
-//             & > div:not(:last-child) {
-//                 margin-bottom: 8rem;
-//             }
-//         }
-
 
 //----------- PAGINATION ----------- 
         &__pagination {

@@ -96,7 +96,7 @@
         data() {
             return {
                 data: null,
-                dataType: 'SHOW_OFF',
+                dataType: 'showOff',
                 galleryContents: [  // mocked data
                     {
                         title: 'softness in the arms of nature 1',
