@@ -5,6 +5,7 @@
     &:visited {
         display: inline-block;
         padding: 1.7rem 0;
+        border: none;
         
         background-color: $color-primary; 
         transform: translateY(0);
@@ -44,6 +45,10 @@
 // ------------ 尺寸 ------------
     &--normal {
         @include size(20rem, 4rem);
+    }
+
+    &--medium {
+        @include size(30rem, 4rem);
     }
 
 // ------------ 樣式 ------------

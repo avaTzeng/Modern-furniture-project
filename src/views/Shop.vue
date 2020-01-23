@@ -54,7 +54,7 @@
     export default {
         data() {
             return {
-                data: { // 超怪的，不能後來動態新增相關參數，不然 vue 吃不到
+                data: {
                     table: null,
                     sofa: null,
                     light: null,

@@ -1,8 +1,9 @@
 <template>
     <div class="product-content">
-        <div class="product-content__img">
-            <img :src="data.imgUrl">
-        </div>
+        <router-link :to="{ name: 'shopDetail', params: { name: data.name, category: data.category }}">
+            <img class="product-content__img" :src="data.imgUrl">    
+        </router-link>
+        
         <div>
             <div class="sub-title">{{ data.name }}</div>
             <div class="product-content__price sub-title">$ {{ data.price }}</div>
@@ -26,6 +27,12 @@
         img {
             width: 100%;
             vertical-align: middle;
+            margin-bottom: .5rem;
+            border: 1rem solid transparent;
+
+            &:active {
+                border: 1rem solid $color-primary;
+            }
         }
 
         &__price {

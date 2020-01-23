@@ -7,10 +7,19 @@ h2 {
     line-height: 1;
 }
 
+h3 {
+    font-size: 1.6rem;
+    font-family: $font-family-1;
+    font-weight: 600;
+    color: $color-black;
+    line-height: 1;
+}
+
 p {
     font-size: 1.6rem;
     font-family: $font-family-2;
     line-height: 1.6;
+    font-weight: 300;
     text-align: justify;
     text-justify: inter-word;
     color: $color-black;
