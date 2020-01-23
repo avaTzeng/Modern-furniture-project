@@ -250,7 +250,7 @@
             outline: none;
 
             &:active {
-                background-color: darken($color-primary, 5%);
+                background-color: darken($color-primary, 10%);
             }
         }
 

@@ -56,6 +56,7 @@
             letter-spacing: 1px;
             transition: .15s;
             overflow: hidden;
+            outline: none;
 
             &::after {
                 @include abs-center;
@@ -83,6 +84,12 @@
                 .btn__invisible {
                     top: 50%;
                     transform: translate(-50%, -50%);
+                }
+            }
+
+            &:active {
+                 &::after {
+                    background-color: darken($color-primary, 10%);
                 }
             }
 

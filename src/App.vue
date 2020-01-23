@@ -11,8 +11,10 @@
                         <use xlink:href="./assets/sprites_icon.svg#icon-shopping-cart"></use>
                     </svg>
                 </span>
+
+                
                 <!-- 購物車快捷視窗功能暫時拿掉 -->
-                <!-- <div v-if="isShowShoppingCart" class="shopping-cart">
+                <div v-if="isShowShoppingCart" class="shopping-cart">
                     <div>
                         <app-shopping-cart-item class="shopping-cart__item"></app-shopping-cart-item>
                         <app-shopping-cart-item class="shopping-cart__item"></app-shopping-cart-item>
@@ -29,7 +31,10 @@
                             <button class="btn--black"><span>check out</span></button>
                         </div>
                     </div>
-                </div> -->
+                </div>
+
+
+
             </div>
         </header>
 
