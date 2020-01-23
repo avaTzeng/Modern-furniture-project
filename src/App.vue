@@ -15,7 +15,7 @@
 
                 <!-- 購物車快捷視窗功能暫時拿掉 -->
                 <div v-if="isShowShoppingCart" class="shopping-cart">
-                    <div>
+                    <div class="shopping-cart__items">
                         <app-shopping-cart-item class="shopping-cart__item"></app-shopping-cart-item>
                         <app-shopping-cart-item class="shopping-cart__item"></app-shopping-cart-item>
                         <app-shopping-cart-item class="shopping-cart__item"></app-shopping-cart-item>
@@ -132,8 +132,13 @@
             transform: translateY(calc(100% + 2.7rem));
             z-index: 5;
             background-color: $color-white;
-            padding: 3rem 3.4rem;
-            box-shadow: 0 1rem 1rem rgba($color-black, .3);
+            padding: 3rem 0 3rem 0;
+            width: 30rem;
+            box-shadow: 0 .5rem 2rem rgba($color-black, .2);
+
+            &__items {
+                margin-bottom: 5.6rem;
+            }
 
             &__item:not(:last-child) {
                 margin-bottom: 1rem;
@@ -141,44 +146,46 @@
 
             &__info {
                 @include flex-column-center;
-                align-items: flex-start;
                 width: 100%;
-                margin-top: 3.5rem;
-
+            
                 &::before {
                     @include size(100% , 1px);
                     content: "";
                     display: block;
                     position: absoulte;
                     top: 0;
-                    transform: translateY(-1.25rem);
+                    left: 0;
+                    transform: translateY(-2.5rem);
                     background-color: $color-grey-light;
                 }
             }
 
             &__contents {
                 @include flex-row-center;
+                width: 23rem;
                 justify-content: flex-start;
-                margin-bottom: 1rem;
+                margin-bottom: 2.8rem;
             }
 
             &__title {
                 font-family: $font-family-2;
-                font-size: 1.5rem;
-                color: $color-grey-light;
+                font-size: 2rem;
+                color: $color-black;
+                line-height: 1;
             }
 
             &__total-price {
-                margin-left: 3rem;
+                margin-left: 5.2rem;
                 font-family: $font-family-1;
-                font-size: 1.5rem;
+                font-size: 2rem;
                 font-weight: 700;
                 color: $color-black;
+                line-height: 1;
             }
 
             &__btns {
                 @include flex-column-center;
-                width: 100%;
+                width: 23rem;
 
                 button:first-child {
                     margin-bottom: 1rem;
@@ -186,13 +193,15 @@
 
                 button {
                     width: 100%;
-                    padding: .8rem 0;
+                    height: 4rem;
                     border: none;
                     text-transform: uppercase;
-                    letter-spacing: 1px;
+                    letter-spacing: 2px;
                     font-weight: 500;
+                    font-size: 1.3rem;
                     transition: .15s;
                     overflow: hidden;
+                    outline: none;
 
                     span {
                         z-index: 2;
@@ -210,15 +219,29 @@
                         transform: translateY(-50%) scaleX(0);
                         z-index: 1;
                         transition: .2s;
+
+                        
                     }
 
                     &:hover {
-                        letter-spacing: 2px;
+                        letter-spacing: 3px;
                         color: black;
                         &::before {
                             transform: translateY(-50%) scaleX(1);
                         }
                     }
+
+                    &:active {
+                        &::before {
+                            background-color: darken($color-primary, 10%);
+                        }
+
+                        
+                    }
+
+                    
+
+                    
                 }
             }
         }
