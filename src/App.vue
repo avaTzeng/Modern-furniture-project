@@ -12,8 +12,6 @@
                     </svg>
                 </span>
 
-
-                <!-- 購物車快捷視窗功能暫時拿掉 -->
                 <div v-if="isShowShoppingCart" class="shopping-cart">
                     <div class="shopping-cart__items">
                         <app-shopping-cart-item class="shopping-cart__item"></app-shopping-cart-item>
@@ -27,8 +25,7 @@
                             <span class="shopping-cart__total-price">150 €</span>
                         </div>
                         <div class="shopping-cart__btns">
-                            <button class="btn--black"><span>view card</span></button>
-                            <button class="btn--black"><span>check out</span></button>
+                            <button class="btn--black"><span>view cart</span></button>
                         </div>
                     </div>
                 </div>
@@ -164,7 +161,7 @@
                 @include flex-row-center;
                 width: 23rem;
                 justify-content: flex-start;
-                margin-bottom: 2.8rem;
+                margin-bottom: 2.3rem;
             }
 
             &__title {
@@ -186,10 +183,6 @@
             &__btns {
                 @include flex-column-center;
                 width: 23rem;
-
-                button:first-child {
-                    margin-bottom: 1rem;
-                }
 
                 button {
                     width: 100%;
@@ -219,8 +212,6 @@
                         transform: translateY(-50%) scaleX(0);
                         z-index: 1;
                         transition: .2s;
-
-                        
                     }
 
                     &:hover {
@@ -235,13 +226,7 @@
                         &::before {
                             background-color: darken($color-primary, 10%);
                         }
-
-                        
                     }
-
-                    
-
-                    
                 }
             }
         }
