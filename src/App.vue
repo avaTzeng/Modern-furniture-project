@@ -7,12 +7,12 @@
             <div class="header__contents">
                 <app-navigation :isEnableActiveVfx="true"></app-navigation>
                 <span class="info-pnl">
-                    <svg class="info-pnl__shopping-cart-icon">
+                    <svg class="info-pnl__shopping-cart-icon" @click="isShowShoppingCart = !isShowShoppingCart">
                         <use xlink:href="./assets/sprites_icon.svg#icon-shopping-cart"></use>
                     </svg>
                 </span>
 
-                
+
                 <!-- 購物車快捷視窗功能暫時拿掉 -->
                 <div v-if="isShowShoppingCart" class="shopping-cart">
                     <div>
@@ -70,7 +70,7 @@
 
 <script>
     import Navigation from './components/ui/AppNavigation.vue';
-    // import ShoppingCartItem from './components/shoppingCart/AppListItem.vue';
+    import ShoppingCartItem from './components/shoppingCart/AppListItem.vue';
 
     export default {
         data() {
@@ -80,7 +80,7 @@
         },
         components: {
             appNavigation: Navigation,
-            // appShoppingCartItem: ShoppingCartItem
+            appShoppingCartItem: ShoppingCartItem
         } 
     }
 </script>
@@ -114,15 +114,10 @@
 
         .info-pnl {
             margin-left: 4.5rem;
-            transform: scale(1);
-            transition: .15s;
-
-            &:hover {
-                transform: scale(1.2);
-            }
 
             &__shopping-cart-icon {
                 @include size(2.8rem, 2.8rem);
+                cursor: pointer;
                 fill: $color-black;
                 vertical-align: middle;
             }
@@ -134,10 +129,10 @@
             position: absolute;
             right: 0;
             bottom: 0;
-            transform: translateY(calc(100% + 1rem));
+            transform: translateY(calc(100% + 2.7rem));
             z-index: 5;
             background-color: $color-white;
-            padding: 2rem;
+            padding: 3rem 3.4rem;
             box-shadow: 0 1rem 1rem rgba($color-black, .3);
 
             &__item:not(:last-child) {
@@ -151,7 +146,7 @@
                 margin-top: 3.5rem;
 
                 &::before {
-                    @include size(100%, 1px);
+                    @include size(100% , 1px);
                     content: "";
                     display: block;
                     position: absoulte;
