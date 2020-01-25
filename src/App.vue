@@ -24,14 +24,12 @@
                             <span class="shopping-cart__title">Total:</span>
                             <span class="shopping-cart__total-price">150 €</span>
                         </div>
-                        <div class="shopping-cart__btns">
+
+                        <router-link class="shopping-cart__btn" to="/shoppingcart">
                             <button class="btn--black"><span>view cart</span></button>
-                        </div>
+                        </router-link>
                     </div>
                 </div>
-
-
-
             </div>
         </header>
 
@@ -180,9 +178,11 @@
                 line-height: 1;
             }
 
-            &__btns {
+            &__btn {
                 @include flex-column-center;
                 width: 23rem;
+
+                text-decoration: none;
 
                 button {
                     width: 100%;
