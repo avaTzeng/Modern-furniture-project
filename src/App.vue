@@ -65,7 +65,7 @@
 
 <script>
     import Navigation from './components/ui/AppNavigation.vue';
-    import ShoppingCartItem from './components/shoppingCart/AppListItem.vue';
+    import ShoppingCartItem from './components/shoppingCart/AppShortCutListItem.vue';
 
     export default {
         data() {
