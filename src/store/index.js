@@ -19,6 +19,11 @@ export default new Vuex.Store({
       }
       return totalPrice;
     }
+    // getItemCount: (state, id) => {
+    //   const index = state.shoppingCartItems.findIndex(el => el.id === id);
+    //   if(index !== -1)
+    //     return state.shoppingCartItems[index].count;
+    // }
   },
   mutations: {
     addShoppingCartItem: (state, item) => {
