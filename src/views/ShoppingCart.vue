@@ -9,9 +9,7 @@
                 <div>Total</div>
             </div>
 
-            <app-shopping-cart-item></app-shopping-cart-item>
-            <app-shopping-cart-item></app-shopping-cart-item>
-            <app-shopping-cart-item></app-shopping-cart-item>
+            <app-shopping-cart-item v-for="(item, index) in shoppingCartItems" :key="index" :data="item"></app-shopping-cart-item>
 
         </div>
        
@@ -74,6 +72,11 @@
     import ShoppingCartItem from '../components/shoppingCart/AppNormalListItem';
 
     export default {
+        computed: {
+            shoppingCartItems() {
+                return this.$store.getters.getShoppingCartItems;
+            }
+        },
         components: {
             appShoppingCartItem: ShoppingCartItem
         }

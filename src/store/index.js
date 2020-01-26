@@ -12,18 +12,13 @@ export default new Vuex.Store({
     getShoppingCartItems: state => {
       return state.shoppingCartItems;
     },
-    getTotoalPrice: state => {
+    getTotalPrice: state => {
       let totalPrice = 0;
       for(let el of state.shoppingCartItems) {
         totalPrice += el.count * el.price;
       }
-      return totalPrice;
+      return Math.floor(totalPrice * 100) / 100;
     }
-    // getItemCount: (state, id) => {
-    //   const index = state.shoppingCartItems.findIndex(el => el.id === id);
-    //   if(index !== -1)
-    //     return state.shoppingCartItems[index].count;
-    // }
   },
   mutations: {
     addShoppingCartItem: (state, item) => {
@@ -37,12 +32,21 @@ export default new Vuex.Store({
       state.shoppingCartItems.push(item);
     },
     deleteShoppingCartItems: (state, id) => {
-      const index = state.shoppingCartItems.find(el => el.id === id);
+      const index = state.shoppingCartItems.findIndex(el => el.id === id);
       state.shoppingCartItems.splice(index, 1);
     },
-    // updateShoppingCartItemCount: (state, newCount) => {
-    //   state.shoppingCartItems.findIndex(el => el.id)
-    // }
+    increaseShoppingCartItemCount: (state, id) => {
+      const index = state.shoppingCartItems.findIndex(el => el.id === id);
+      state.shoppingCartItems[index].count++;
+    },
+    decreaseShoppingCartItemCount: (state, id) => {
+      const index = state.shoppingCartItems.findIndex(el => el.id === id);
+      if(state.shoppingCartItems[index].count > 1)
+        state.shoppingCartItems[index].count--;
+      else {
+        state.shoppingCartItems.splice(index, 1);
+      }
+    }
   },
   actions: {
     addShoppingCartItem: ({ commit }, item) => {
@@ -50,6 +54,12 @@ export default new Vuex.Store({
     },
     deleteShoppingCartItems: ({ commit }, id) => {
       commit('deleteShoppingCartItems', id);
+    },
+    increaseShoppingCartItemCount: ({ commit }, id) => {
+      commit('increaseShoppingCartItemCount', id);
+    },
+    decreaseShoppingCartItemCount: ({ commit }, id) => {
+      commit('decreaseShoppingCartItemCount', id);
     }
   },
   modules: {

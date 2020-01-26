@@ -79,7 +79,7 @@
                 }
             },
             shoppingCartTotalPrice() {
-                return this.$store.getters.getTotoalPrice;
+                return this.$store.getters.getTotalPrice;
             },
             isShoppingCartItemTooMuch() {
                 const result = (this.$store.getters.getShoppingCartItems.length > this.shoppingCartMaxCount) ? true : false;

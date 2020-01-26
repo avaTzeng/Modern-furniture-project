@@ -1,23 +1,54 @@
 <template>
     <div class="shopping-list-item">
-        <img src="../../assets/images/homepage/furniture/1.png" alt="Product">
-        <div class="shopping-list-item__name">Lights throughout</div>
-        <div class="shopping-list-item__price">150</div>
+        <img :src="data.imgUrl" alt="Product">
+        <div class="shopping-list-item__name">{{ data.name }}</div>
+        <div class="shopping-list-item__price">{{ data.price }}€</div>
         <div class="shopping-list-item__quantity">
-            <button>
+            <button @click="decreaseItemCount()">
                 <svg><use xlink:href="../../assets/sprites_icon_entypo.svg#icon-minus"></use></svg> 
             </button>
-            <span>0</span>
-            <button>
+            <span>{{ getItemTotalCount }}</span>
+            <button @click="increaseItemCount()">
                 <svg><use xlink:href="../../assets/sprites_icon_entypo.svg#icon-plus"></use></svg>
             </button>
         </div>
-        <div class="shopping-list-item__total-price">150</div>
-        <button class="shopping-list-item__delete-btn">
+        <div class="shopping-list-item__total-price">{{ getCertainItemTotalPrice }}€</div>
+        <button class="shopping-list-item__delete-btn" @click="deleteItems()">
             <svg><use xlink:href="../../assets/sprites_icon_entypo.svg#icon-cross"></use></svg>
         </button>
     </div>
 </template>
+
+<script>
+    export default {
+        props: ['data'],
+        methods: {
+            increaseItemCount() {
+                this.$store.dispatch('increaseShoppingCartItemCount', this.data.id);
+            },
+            decreaseItemCount() {
+                this.$store.dispatch('decreaseShoppingCartItemCount', this.data.id);
+            },
+            deleteItems() {
+                this.$store.dispatch('deleteShoppingCartItems', this.data.id);
+            }
+        },
+        computed: {
+            getItemTotalCount() {
+                const items = this.$store.getters.getShoppingCartItems;
+                const index = items.findIndex(el => el.id === this.data.id);
+
+                return items[index].count;
+            },
+            getCertainItemTotalPrice() {
+                let totalPrice = 0;
+                totalPrice += this.getItemTotalCount * this.data.price;
+
+                return Math.floor(totalPrice * 100) / 100;
+            }
+        }  
+    }   
+</script>
 
 <style lang="scss" scoped>
     .shopping-list-item {
@@ -38,7 +69,7 @@
         & > img {
            width: 7rem; 
            height: 9.1rem;
-           object-fit: cover;
+           object-fit: contain;
            margin-right: 3rem;
         }
 
@@ -122,6 +153,7 @@
 
         &__delete-btn {
             @include size(4rem, 4rem);
+            cursor: pointer;
             position: absolute;
             right: 0;
             top: 50%;
