@@ -52,15 +52,9 @@
         <div class="section-shopping-list__content-block">
             <div class="section-shopping-list__content-block-title">Cart Total</div>
             <div class="section-shopping-list__cart-total">
-                <div>
-                    <div class="section-shopping-list__total-detail">
-                        <span>Sub total:</span>
-                        <span>150</span>
-                    </div>
-                    <div class="section-shopping-list__total-detail">
-                        <span>Grand Total:</span>
-                        <span>150</span>
-                    </div>
+                <div class="section-shopping-list__total-detail">
+                    <span>Grand Total:</span>
+                    <span>{{ shoppingCartTotalPrice }}€</span>
                 </div>
                 <button>Checkout</button>
             </div>
@@ -75,6 +69,9 @@
         computed: {
             shoppingCartItems() {
                 return this.$store.getters.getShoppingCartItems;
+            },
+            shoppingCartTotalPrice() {
+                return this.$store.getters.getTotalPrice;
             }
         },
         components: {
@@ -182,12 +179,10 @@
         }
 
         &__cart-total {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
 
             button {
                 @include size(30rem, 4rem);
+                float: right;
                 border: none;
                 background-color: $color-primary;
                 font-family: $font-family-1;
@@ -208,6 +203,7 @@
             width: 21.5rem;
             display: flex;
             justify-content: space-between;
+            margin-bottom: 5rem;
 
             & span {
                 font-family: $font-family-1;
@@ -215,11 +211,6 @@
                 font-size: 1.6rem;
                 color: $color-black;
                 line-height: 1;
-            }
-            
-
-            &:not(:last-child) {
-                margin-bottom: 3.8rem;
             }
         }
     }
