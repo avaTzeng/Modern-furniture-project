@@ -39,7 +39,7 @@
                 </button>
             </div>
 
-            <button class="section-shop-detail__add-to-cart-btn">Add to cart</button>
+            <button class="section-shop-detail__add-to-cart-btn" @click="addToCart()">Add to cart</button>
 
             <div>
                 <div class="section-shop-detail__description">
@@ -98,7 +98,17 @@
                     });
 
                 }).catch(error => console.log(error));
-         }
+         },
+         addToCart() {
+            const shoppingItemData = {
+                name: this.data.name,
+                id: this.data.id,
+                price: this.data.price,
+                imgUrl: this.data.imgUrl,
+                count: this.productCount
+            };
+            this.$store.dispatch('addShoppingCartItem', shoppingItemData);
+        }
      },
      mounted() {
          this.requestData();
