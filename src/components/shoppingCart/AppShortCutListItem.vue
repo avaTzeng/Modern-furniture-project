@@ -1,12 +1,18 @@
 <template>
     <div class="item">
-        <div class="item-img"></div>
+        <img class="item-img" :src="data.imgUrl" alt="Product Photo">
         <div class="item-content">
-            <span class="item-content-title">Light throughout</span>
-            <span class="item-content-price">150 €</span>
+            <span class="item-content-title">{{ data.name }}</span>
+            <span class="item-content-price">{{ data.price }}€</span>
         </div>
     </div>
 </template>
+
+<script>
+    export default {
+        props: ['data']        
+    }
+</script>
 
 <style lang="scss" scoped>
     .item {
@@ -15,7 +21,7 @@
 
         &-img {
             @include size(7rem, 100%);
-            background-color: blue;
+            object-fit: contain;
         }
 
         &-content {

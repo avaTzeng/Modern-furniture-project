@@ -14,15 +14,14 @@
 
                 <div v-if="isShowShoppingCart" class="shopping-cart">
                     <div class="shopping-cart__items">
-                        <app-shopping-cart-item class="shopping-cart__item"></app-shopping-cart-item>
-                        <app-shopping-cart-item class="shopping-cart__item"></app-shopping-cart-item>
-                        <app-shopping-cart-item class="shopping-cart__item"></app-shopping-cart-item>
+                        <app-shopping-cart-item v-for="(item, index) in shoppingCartItems" :key="index" :data="item"></app-shopping-cart-item>
+                        <span v-if="isShoppingCartItemTooMuch" class="shopping-cart__more-items">more ...</span>    
                     </div>
-
+                    
                     <div class="shopping-cart__info">
                         <div class="shopping-cart__contents">
                             <span class="shopping-cart__title">Total:</span>
-                            <span class="shopping-cart__total-price">150 €</span>
+                            <span class="shopping-cart__total-price">{{ shoppingCartTotalPrice }} €</span>
                         </div>
 
                         <router-link class="shopping-cart__btn" to="/shoppingcart">
@@ -56,9 +55,6 @@
             </ul>
             <span class="footer__info">©2015 CopyRight HeadPassion. All rights reserved.</span>
             <img class="footer__bg" src="./assets/images/cover_footer.png" alt="Footer background">
-            <!-- <div class="footer__bg">
-                <img src="./assets/images/cover_footer.png" alt="Footer background">
-            </div> -->
         </footer>
     </div>
 </template>
@@ -70,8 +66,25 @@
     export default {
         data() {
             return {
-                isShowShoppingCart: false
+                isShowShoppingCart: false,
+                shoppingCartMaxCount: 4
             };
+        },
+        computed: {
+            shoppingCartItems() {
+                if(this.isShoppingCartItemTooMuch) {
+                    return this.$store.getters.getShoppingCartItems.slice(0, this.shoppingCartMaxCount);
+                } else {
+                    return this.$store.getters.getShoppingCartItems;
+                }
+            },
+            shoppingCartTotalPrice() {
+                return this.$store.getters.getTotoalPrice;
+            },
+            isShoppingCartItemTooMuch() {
+                const result = (this.$store.getters.getShoppingCartItems.length > this.shoppingCartMaxCount) ? true : false;
+                return result;
+            }
         },
         components: {
             appNavigation: Navigation,
@@ -132,13 +145,22 @@
             box-shadow: 0 .5rem 2rem rgba($color-black, .2);
 
             &__items {
-                margin-bottom: 5.6rem;
+                margin-bottom: 4.5rem;
+                text-align: center;
+
+                & div:not(:last-child) {
+                    margin-bottom: 1rem;
+                }
             }
 
-            &__item:not(:last-child) {
-                margin-bottom: 1rem;
+            &__more-items {
+                font-family: $font-family-2;
+                font-size: 1.6rem;
+                line-height: 0;
+                color: $color-grey-light;
+                letter-spacing: 1px;
             }
-
+ 
             &__info {
                 @include flex-column-center;
                 width: 100%;

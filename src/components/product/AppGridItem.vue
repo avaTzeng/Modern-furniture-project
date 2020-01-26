@@ -8,8 +8,8 @@
             <div class="sub-title">{{ data.name }}</div>
             <div class="product-content__price sub-title">$ {{ data.price }}</div>
         </div>
-        <button>
-            <span class="btn__visible">buy now</span>
+        <button @click="addToCart" >
+            <span class="btn__visible">add to cart</span>
             <span class="btn__invisible">click me</span>
         </button>
     </div>
@@ -17,7 +17,19 @@
 
 <script>
     export default {
-        props: ['data']
+        props: ['data'],
+        methods: {
+            addToCart() {
+                const shoppingItemData = {
+                    name: this.data.name,
+                    id: this.data.id,
+                    price: this.data.price,
+                    imgUrl: this.data.imgUrl,
+                    count: 1
+                };
+                this.$store.dispatch('addShoppingCartItem', shoppingItemData);
+            }
+        }
     }
 </script>
 
