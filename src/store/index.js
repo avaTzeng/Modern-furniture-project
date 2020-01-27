@@ -46,6 +46,9 @@ export default new Vuex.Store({
       else {
         state.shoppingCartItems.splice(index, 1);
       }
+    },
+    checkOut: (state) => {
+      state.shoppingCartItems = [];
     }
   },
   actions: {
@@ -60,6 +63,9 @@ export default new Vuex.Store({
     },
     decreaseShoppingCartItemCount: ({ commit }, id) => {
       commit('decreaseShoppingCartItemCount', id);
+    },
+    checkOut: ({ commit }) => {
+      commit('checkOut');
     }
   },
   modules: {

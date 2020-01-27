@@ -171,7 +171,6 @@
                 galleryContainer.style.right = `${ page * 100 }%`;
             }
 
-
             // ----------------- SCROLL ANIMATION ----------------- 
             ScrollReveal().reveal('#storyTitle', AnimConfig.CONTENT_LEFTWARD);
             ScrollReveal().reveal('#storyParagraph', AnimConfig.CONTENT_LEFTWARD);

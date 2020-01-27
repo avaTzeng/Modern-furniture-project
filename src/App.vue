@@ -104,10 +104,18 @@
 <style scoped lang="scss">
 
     .header {
+        // border: 1px solid red;
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 4.2rem 7.5rem 0 7.5rem;
+
+        // 將 header 變成 fixed
+        // position: fixed;
+        // top: 0;
+        // width: 100%;
+        // z-index: 5000;
+        // background-color: rgba($color-white, .95);
         
         &__logo-box {
             @include size(8rem, 8rem);

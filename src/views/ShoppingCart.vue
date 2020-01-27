@@ -56,7 +56,9 @@
                     <span>Grand Total:</span>
                     <span>{{ shoppingCartTotalPrice }}€</span>
                 </div>
-                <button>Checkout</button>
+                <router-link to="/thankYou">
+                    <button @click="checkOut()">Checkout</button>
+                </router-link>
             </div>
         </div>
     </section>
@@ -66,6 +68,11 @@
     import ShoppingCartItem from '../components/shoppingCart/AppNormalListItem';
 
     export default {
+        methods: {
+            checkOut() {
+                this.$store.dispatch('checkOut');
+            }
+        },
         computed: {
             shoppingCartItems() {
                 return this.$store.getters.getShoppingCartItems;
