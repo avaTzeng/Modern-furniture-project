@@ -25,7 +25,7 @@
                         </div>
 
                         <router-link class="shopping-cart__btn" to="/shoppingcart">
-                            <button class="btn--black">view cart</button>
+                            <button class="btn--black" @click="isShowShoppingCart = false">view cart</button>
                         </router-link>
                     </div>
                 </div>
