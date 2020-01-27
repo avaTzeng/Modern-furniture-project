@@ -114,7 +114,6 @@
                     document.getElementById('shoppingCartShortCutBtn').classList.remove('info-pnl__button-stick');
                     document.getElementById('infoPnl').classList.remove('info-pnl--stick');
                 }
-                console.log(`目前的 scrollY 為${window.scrollY}`);
             });
         }
     }

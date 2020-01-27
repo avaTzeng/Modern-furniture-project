@@ -98,7 +98,9 @@
             window.scrollTo(0, 0);
             this.requestData();
 
-            document.getElementById('defaultActiveLink').classList.add('navigation__list-item--active');
+            if(this.$route.params.id === undefined || this.$route.params.id === 'table') {
+                document.getElementById('defaultActiveLink').classList.add('navigation__list-item--active');
+            }     
 
             const linkItems = Array.from(document.querySelectorAll('.navigation__list-item'));
 
