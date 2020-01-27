@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div @click="handleClosingInfoPnl($event)">
         <header class="header">
             <router-link class="header__logo-box" to="/">
                 <img src="./assets/images/brandLogo.png" alt="Logo">
@@ -10,25 +10,27 @@
                     <svg class="info-pnl__shopping-cart-icon" @click="isShowShoppingCart = !isShowShoppingCart">
                         <use xlink:href="./assets/sprites_icon.svg#icon-shopping-cart"></use>
                     </svg>
+
+                    <div v-if="isShowShoppingCart" class="shopping-cart">
+                        <div class="shopping-cart__items">
+                            <app-shopping-cart-item v-for="(item, index) in shoppingCartItems" :key="index" :data="item"></app-shopping-cart-item>
+                            <span v-if="isShoppingCartItemTooMuch" class="shopping-cart__more-items">more ...</span>    
+                        </div>
+                        
+                        <div class="shopping-cart__info">
+                            <div class="shopping-cart__contents">
+                                <span class="shopping-cart__title">Total:</span>
+                                <span class="shopping-cart__total-price">{{ shoppingCartTotalPrice }} €</span>
+                            </div>
+
+                            <router-link class="shopping-cart__btn" to="/shoppingcart">
+                                <button class="btn--black" @click="isShowShoppingCart = false">view cart</button>
+                            </router-link>
+                        </div>
+                    </div>
                 </span>
 
-                <div v-if="isShowShoppingCart" class="shopping-cart">
-                    <div class="shopping-cart__items">
-                        <app-shopping-cart-item v-for="(item, index) in shoppingCartItems" :key="index" :data="item"></app-shopping-cart-item>
-                        <span v-if="isShoppingCartItemTooMuch" class="shopping-cart__more-items">more ...</span>    
-                    </div>
-                    
-                    <div class="shopping-cart__info">
-                        <div class="shopping-cart__contents">
-                            <span class="shopping-cart__title">Total:</span>
-                            <span class="shopping-cart__total-price">{{ shoppingCartTotalPrice }} €</span>
-                        </div>
-
-                        <router-link class="shopping-cart__btn" to="/shoppingcart">
-                            <button class="btn--black" @click="isShowShoppingCart = false">view cart</button>
-                        </router-link>
-                    </div>
-                </div>
+                
             </div>
         </header>
 
@@ -69,6 +71,13 @@
                 isShowShoppingCart: false,
                 shoppingCartMaxCount: 4
             };
+        },
+        methods: {
+            handleClosingInfoPnl(event) {
+                if(!event.target.closest('.info-pnl')) {
+                    this.isShowShoppingCart = false;
+                }
+            }
         },
         computed: {
             shoppingCartItems() {
@@ -131,12 +140,18 @@
 
         .info-pnl {
             margin-left: 4.5rem;
+            padding: 1rem;
+            // border: 1px solid red;
 
             &__shopping-cart-icon {
                 @include size(2.8rem, 2.8rem);
+                
+                
                 cursor: pointer;
                 fill: $color-black;
                 vertical-align: middle;
+
+
             }
         }
 
