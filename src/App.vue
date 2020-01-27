@@ -102,6 +102,7 @@
 </style>
 
 <style scoped lang="scss">
+
     .header {
         display: flex;
         justify-content: space-between;

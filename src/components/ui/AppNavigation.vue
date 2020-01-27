@@ -3,7 +3,7 @@
         <ul class="navigation__list">
             <li class="navigation__item"><router-link to="/" class="navigation__item-link" :active-class="(isEnableActiveVfx ? 'navigation__item-link--active' : '')" exact>Home</router-link></li>
             <li class="navigation__item"><router-link to="/about" class="navigation__item-link" :active-class="(isEnableActiveVfx ? 'navigation__item-link--active' : '')">About us</router-link></li>
-            <li class="navigation__item"><router-link to="/shop/table" class="navigation__item-link" :active-class="(isEnableActiveVfx ? 'navigation__item-link--active' : '')">Shop</router-link></li>
+            <li class="navigation__item"><router-link to="/shop" class="navigation__item-link" :active-class="(isEnableActiveVfx ? 'navigation__item-link--active' : '')">Shop</router-link></li>
             <li class="navigation__item"><router-link to="/contact" class="navigation__item-link" :active-class="(isEnableActiveVfx ? 'navigation__item-link--active' : '')">Contact</router-link></li>
         </ul>
     </nav>

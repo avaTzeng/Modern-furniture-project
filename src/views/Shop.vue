@@ -3,7 +3,7 @@
         <section class="section-shop">
             <nav class="navigation">
                 <ul class="navigation__list">
-                    <router-link to="/shop/table" tag="li"  class="navigation__list-item" active-class="navigation__list-item--active" exact>
+                    <router-link id="defaultActiveLink" to="/shop/table" tag="li"  class="navigation__list-item" active-class="navigation__list-item--active" exact>
                         <img class="navigation__list-icon" src="../assets/images/shoppage/icon-table.png" alt="">
                         <div>
                             <span class="sub-title">table</span>
@@ -37,7 +37,7 @@
                 </ul>
             </nav>
 
-            <app-product-grid :products="data[$route.params.id]"></app-product-grid>
+            <app-product-grid :products="getCurrentData"></app-product-grid>
 
             <span class="section-shop__pagination">
                 <!-- <a href="#">❮ Prev</a>
@@ -60,11 +60,21 @@
                     light: null,
                     bed: null
                 },
-                dataTypes: ['table', 'sofa', 'light', 'bed']
+                dataTypes: ['table', 'sofa', 'light', 'bed'],
+                isInitState: true
             };
         },
         components: {
             appProductGrid: ProductGrid
+        },
+        computed: {
+            getCurrentData() {
+                if(this.isInitState) {
+                    return this.data['table'];
+                }
+
+                return this.data[this.$route.params.id];
+            }
         },
         methods: {
             async requestData() {
@@ -86,6 +96,23 @@
         },
         mounted() {
             this.requestData();
+
+            document.getElementById('defaultActiveLink').classList.add('navigation__list-item--active');
+
+            const linkItems = Array.from(document.querySelectorAll('.navigation__list-item'));
+
+            for(let linkItem of linkItems) {
+                linkItem.addEventListener('click', (event) => {
+                    if(this.isInitState) {
+                        if(!event.target.closest('#defaultActiveLink')) {
+                            document.getElementById('defaultActiveLink').classList.remove('navigation__list-item--active');
+                        } 
+            
+                        this.isInitState = false;
+                    }
+
+                });
+            }
         }
     }
 </script>
