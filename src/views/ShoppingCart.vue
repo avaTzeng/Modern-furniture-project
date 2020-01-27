@@ -175,6 +175,7 @@
                 border: none;
                 border-bottom: 1px solid $color-grey-light;
                 background-color: transparent;
+                font-size: 1.6rem;
 
                 &::placeholder {
                     font-family: $font-family-2;
