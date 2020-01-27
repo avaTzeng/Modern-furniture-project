@@ -100,6 +100,9 @@
                 }).catch(error => console.log(error));
          },
          addToCart() {
+             if(this.productCount === 0)
+                return;
+
             const shoppingItemData = {
                 name: this.data.name,
                 id: this.data.id,

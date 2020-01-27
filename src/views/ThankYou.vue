@@ -4,9 +4,6 @@
         <span>
             Orders are processed within 24-48 hours (excluding weekends and holidays). Once your order ships, we will email you a shipping notification with your tracking number. Your order will arrive in 3-7 business days after it’s processed.
         </span>
-        <!-- <span>Orders are processed within 24-48 hours (excluding weekends and holidays).</span>
-        <span>Once your order ships, we will email you a shipping notification with your tracking number.</span>
-        <span>Your order will arrive in 3-7 business days after it’s processed.</span> -->
     </section>
 </template>
 
@@ -22,7 +19,7 @@
         justify-content: flex-start;
 
         & h2 {
-            margin-bottom:  1.6rem;
+            margin-bottom:  1.8rem;
         }
 
         & span {
@@ -32,7 +29,7 @@
             font-size: 1.6rem;
             font-family: $font-family-1;
             color: $color-grey-light;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
     }
