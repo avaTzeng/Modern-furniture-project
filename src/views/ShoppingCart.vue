@@ -204,6 +204,13 @@
                 outline: none;
                 cursor: pointer;
 
+                transition: letter-spacing .15s, font-size .15s;
+
+                &:hover {
+                    letter-spacing: .25rem;
+                    font-size: 1.35rem;
+                }
+
                 &:active {
                     background-color: darken($color-primary, 7%);
                 }

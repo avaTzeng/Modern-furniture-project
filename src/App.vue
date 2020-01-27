@@ -173,7 +173,7 @@
                 transform: translate(-4rem, 4rem);
             }
 
-            & button {
+            & > button {
                 @include size(2.8rem, 2.8rem);
                 cursor: pointer;
                 outline: none;

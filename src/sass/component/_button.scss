@@ -47,7 +47,7 @@
 // ------------ 樣式 ------------
     &--black {
         background-color: $color-black;
-        color: white;
+        color: $color-white;
 
         &:active {
             background-color: darken($color-black, 7%);
