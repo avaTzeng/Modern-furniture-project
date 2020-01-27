@@ -83,6 +83,9 @@
         },
         components: {
             appShoppingCartItem: ShoppingCartItem
+        },
+        beforeMount() {
+            window.scrollTo(0, 0);
         }
     }
 </script>

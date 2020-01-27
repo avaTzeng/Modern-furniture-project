@@ -42,7 +42,9 @@
                     <div class="section-intro__contents">
                         <h2 id="storyTitle">inspiration from nature</h2>
                         <p id="storyParagraph" class="p--fore-line">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
-                        <a id="storyBtn" href="#" class="btn btn--normal"><span>view more</span></a>
+                        <router-link to="/about">
+                            <a id="storyBtn" class="btn btn--normal"><span>view more</span></a>
+                        </router-link>
                     </div>
                     <div class="section-intro__img">
                         <img src="../assets/images/homepage/cover_02.webp" alt="Mountain Photo">
@@ -55,7 +57,9 @@
                 <div class="section-intro__banner-contents">
                     <span id="bannerSubTitle" class="sub-title">furniture creative</span>
                     <h2 id="bannerTitle">latest collection</h2>
-                    <a id="bannerBtn" href="#" class="btn btn--normal"><span>show all</span></a>
+                    <router-link to="/shop">
+                        <a id="bannerBtn" class="btn btn--normal"><span>show all</span></a>
+                    </router-link>
                 </div>
     
                 <div class="section-intro__banner-img">
@@ -125,6 +129,9 @@
             appProductGrid: ProductGrid,
             appGalleryPage: GalleryPage
         },
+        beforeMount() {
+            window.scrollTo(0,0);
+        },
         mounted() {
             this.requestData();
 
@@ -171,7 +178,7 @@
                 galleryContainer.style.right = `${ page * 100 }%`;
             }
 
-            // ----------------- SCROLL ANIMATION ----------------- 
+             // ----------------- SCROLL ANIMATION ----------------- 
             ScrollReveal().reveal('#storyTitle', AnimConfig.CONTENT_LEFTWARD);
             ScrollReveal().reveal('#storyParagraph', AnimConfig.CONTENT_LEFTWARD);
             ScrollReveal().reveal('#storyBtn', AnimConfig.CONTENT_LEFTWARD);
@@ -200,6 +207,7 @@
             }
         }
     }
+
 
     
 </script>

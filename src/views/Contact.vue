@@ -28,6 +28,14 @@
     </main>
 </template>
 
+<script>
+    export default {
+        mounted() {
+            window.scrollTo(0, 0);
+        }
+    }
+</script>
+
 <style scoped lang="scss">
     .section-contact {
         @include flex-row-center;

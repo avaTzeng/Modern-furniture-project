@@ -64,6 +64,9 @@
     import AnimConfig from '@/config/ScrollRevealConfig.js'
 
     export default {
+        beforeMount() {
+            window.scrollTo(0,0);
+        },
         mounted() {
             ScrollReveal().reveal('#sectionWorkTitle', AnimConfig.CONTENT_UPWARD);
             ScrollReveal().reveal('#sectionWorkBlock_first', AnimConfig.CONTENT_LEFTWARD);

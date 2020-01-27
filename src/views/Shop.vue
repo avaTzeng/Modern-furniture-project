@@ -95,6 +95,7 @@
             }
         },
         mounted() {
+            window.scrollTo(0, 0);
             this.requestData();
 
             document.getElementById('defaultActiveLink').classList.add('navigation__list-item--active');

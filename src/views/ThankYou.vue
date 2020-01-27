@@ -7,6 +7,14 @@
     </section>
 </template>
 
+<script>
+    export default {
+        beforeMount() {
+            window.scrollTo(0, 0);
+        }
+    }
+</script>
+
 <style lang="scss" scoped>
     .section-thank-you {
         margin: 0 auto;
@@ -31,6 +39,5 @@
             color: $color-grey-light;
             line-height: 1.7;
         }
-
     }
 </style>
