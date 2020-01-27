@@ -78,7 +78,7 @@
                 background-color: $color-primary;
                 transform-origin: left;
                 transform: translate(calc(-50% - .5rem), -50%) scaleX(0);
-                transition: all .35s;
+                transition: transform .35s;
             }
 
             &:hover,
@@ -101,7 +101,7 @@
 
             &:active {
                  &::after {
-                    background-color: darken($color-primary, 10%);
+                    background-color: darken($color-primary, 7%);
                 }
             }
 

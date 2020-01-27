@@ -8,20 +8,20 @@
 
                 <div class="section-contact__sub-title animated fadeIn">A: 1125 Josie Knolls Apt. 978 New York<br>T: 01 234 5678<br>E: contact@m989.com</div>
 
-                <form action="#" class="animated fadeInRight fast">
+                <form action="" class="animated fadeInRight fast">
                     <label for="name">Name</label>
-                    <input type="text" name="name" id="name">
+                    <input type="text" name="name" id="namefield" required>
 
                     <label for="email">Email</label>
-                    <input type="email" name="email" id="email">
+                    <input type="email" name="email" id="emailfield" required>
 
                     <label for="subject">Subject</label>
-                    <input type="text" name="subject" id="subject">
+                    <input type="text" name="subject" id="subjectfield" required>
 
                     <label for="content">Your content</label>
-                    <textarea name="content" id="content"></textarea>
+                    <textarea name="content" id="contentfield" required></textarea>
 
-                    <input type="submit" value="send messenger">
+                    <input id="submitBtn" type="submit" value="send messenger">
                 </form>
             </div>
         </section>
@@ -93,14 +93,16 @@
                     color: $color-black;
                     background-color: $color-primary;
                     letter-spacing: 2px;
-                    transform: translateY(0);
-                    transition: .15s;
+                    transition: font-size .15s, letter-spacing .15s;
+                    outline: none;
                     
                     &:hover {
-                        transform: translateY(-.3rem);
                         font-size: 1.25rem;
                         letter-spacing: .25rem;
-                        box-shadow: 0 1rem 1rem rgba($color-black, .15);
+                    }
+
+                    &:active {
+                        background-color: darken($color-primary, 7%);
                     }
                 }
 

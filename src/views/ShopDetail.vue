@@ -254,6 +254,7 @@
 
         &__add-to-cart-btn {
             @include size(30rem, 4rem);
+            cursor: pointer;
             border: none;
             background-color: $color-primary;
             font-family: $font-family-1;
@@ -262,9 +263,15 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             outline: none;
+            transition: letter-spacing .15s, font-size .15s;
+
+            &:hover {
+                letter-spacing: .25rem;
+                font-size: 1.35rem;
+            }
 
             &:active {
-                background-color: darken($color-primary, 10%);
+                background-color: darken($color-primary, 7%);
             }
         }
 

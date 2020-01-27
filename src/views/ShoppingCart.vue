@@ -205,7 +205,7 @@
                 cursor: pointer;
 
                 &:active {
-                    background-color: darken($color-primary, 10%);
+                    background-color: darken($color-primary, 7%);
                 }
             }
         }

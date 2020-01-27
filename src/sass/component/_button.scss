@@ -8,8 +8,7 @@
         border: none;
         
         background-color: $color-primary; 
-        transform: translateY(0);
-        transition: .15s;
+        transition: box-shadow .15s;
         cursor: pointer;
 
         span {
@@ -23,22 +22,16 @@
             font-size: 1.3rem;
             letter-spacing: 2px;
             color: $color-black;
-            transition: .15s;
+            transition: font-size .15s, letter-spacing .15s;
         }
     }
 
     &:hover {
-        transform: translateY(-3px);
         box-shadow: 0 1rem 1rem rgba($color-black, .15);
         span {
             font-size: 1.35rem;
             letter-spacing: .25rem;
         }
-    }
-
-    &:active,
-    &:focus {
-
     }
 
 
@@ -55,11 +48,19 @@
     &--black {
         background-color: $color-black;
         color: white;
+
+        &:active {
+            background-color: darken($color-black, 7%);
+        }
     }
 
     &--primary {
         background-color: $color-primary;
         color: $color-black;
+
+        &:active {
+            background-color: darken($color-primary, 7%);
+        }
     }
 
 }
