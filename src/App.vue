@@ -7,9 +7,11 @@
             <div class="header__contents">
                 <app-navigation :isEnableActiveVfx="true"></app-navigation>
                 <span class="info-pnl">
-                    <svg class="info-pnl__shopping-cart-icon" @click="isShowShoppingCart = !isShowShoppingCart">
-                        <use xlink:href="./assets/sprites_icon.svg#icon-shopping-cart"></use>
-                    </svg>
+                    <button @click="isShowShoppingCart = !isShowShoppingCart">
+                        <svg>
+                            <use xlink:href="./assets/sprites_icon.svg#icon-shopping-cart"></use>
+                        </svg>
+                    </button>
 
                     <div v-if="isShowShoppingCart" class="shopping-cart">
                         <div class="shopping-cart__items">
@@ -28,9 +30,7 @@
                             </router-link>
                         </div>
                     </div>
-                </span>
-
-                
+                </span>   
             </div>
         </header>
 
@@ -140,17 +140,18 @@
 
         .info-pnl {
             margin-left: 4.5rem;
-            padding: 1rem;
-            // border: 1px solid red;
 
-            &__shopping-cart-icon {
+            & button {
                 @include size(2.8rem, 2.8rem);
-                
-                
                 cursor: pointer;
-                fill: $color-black;
-                vertical-align: middle;
+                outline: none;
+                border: none;
 
+                & svg {
+                    @include size(100%, 100%);
+                    fill: $color-black;
+                    vertical-align: middle;
+                }
 
             }
         }
