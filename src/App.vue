@@ -11,6 +11,9 @@
                         <svg>
                             <use xlink:href="./assets/sprites_icon.svg#icon-shopping-cart"></use>
                         </svg>
+                        <div v-if="shoppingCartItemsTotalCount > 0" id="shoppingCountBubble">
+                            <span>{{ shoppingCartItemsTotalCount }}</span>
+                        </div>
                     </button>
 
                     <div v-if="isShowShoppingCart" class="shopping-cart">
@@ -93,6 +96,9 @@
             isShoppingCartItemTooMuch() {
                 const result = (this.$store.getters.getShoppingCartItems.length > this.shoppingCartMaxCount) ? true : false;
                 return result;
+            },
+            shoppingCartItemsTotalCount() {
+                return this.$store.getters.getTotalItemsCount;
             }
         },
         components: {
@@ -152,7 +158,25 @@
                     fill: $color-black;
                     vertical-align: middle;
                 }
+            }
 
+            & #shoppingCountBubble {
+                @include size(2.5rem, 2.5rem);
+                border-radius: 50%;
+                position: absolute;
+                top: 0;
+                right: 0;
+                transform: translate(50%, -50%);
+                z-index: 10;
+                background-color: $color-red;
+
+                & span {
+                    @include abs-center;
+                    font-family: $font-family-2;
+                    font-size: 1.6rem;
+                    color: $color-white;
+                    line-height: 1;
+                }
             }
         }
 

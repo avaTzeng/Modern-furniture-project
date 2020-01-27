@@ -18,6 +18,13 @@ export default new Vuex.Store({
         totalPrice += el.count * el.price;
       }
       return Math.floor(totalPrice * 100) / 100;
+    },
+    getTotalItemsCount: state => {
+      let totalCount = 0;
+      for(let el of state.shoppingCartItems) {
+        totalCount += el.count;
+      }
+      return totalCount;
     }
   },
   mutations: {
