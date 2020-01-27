@@ -25,7 +25,7 @@
                         </div>
 
                         <router-link class="shopping-cart__btn" to="/shoppingcart">
-                            <button class="btn--black"><span>view cart</span></button>
+                            <button class="btn--black">view cart</button>
                         </router-link>
                     </div>
                 </div>
@@ -227,36 +227,12 @@
                     overflow: hidden;
                     outline: none;
 
-                    span {
-                        z-index: 2;
-                    }
-
-                    &::before {
-                        @include size(105%, 105%);
-                        content: "";
-                        display: block;
-                        background-color: $color-primary;
-                        position: absolute;
-                        top: 50%;
-                        left: 0;
-                        transform-origin: left;
-                        transform: translateY(-50%) scaleX(0);
-                        z-index: 1;
-                        transition: .2s;
-                    }
-
                     &:hover {
                         letter-spacing: 3px;
-                        color: black;
-                        &::before {
-                            transform: translateY(-50%) scaleX(1);
-                        }
                     }
 
                     &:active {
-                        &::before {
-                            background-color: darken($color-primary, 10%);
-                        }
+                        background-color: darken($color-black, 10%);
                     }
                 }
             }
