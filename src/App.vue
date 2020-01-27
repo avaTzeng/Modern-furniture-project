@@ -6,8 +6,8 @@
             </router-link>
             <div class="header__contents">
                 <app-navigation :isEnableActiveVfx="true"></app-navigation>
-                <span class="info-pnl">
-                    <button @click="isShowShoppingCart = !isShowShoppingCart">
+                <span id="infoPnl" class="info-pnl">
+                    <button id="shoppingCartShortCutBtn" @click="isShowShoppingCart = !isShowShoppingCart">
                         <svg>
                             <use xlink:href="./assets/sprites_icon.svg#icon-shopping-cart"></use>
                         </svg>
@@ -104,7 +104,19 @@
         components: {
             appNavigation: Navigation,
             appShoppingCartItem: ShoppingCartItem
-        } 
+        },
+        mounted() {
+            window.addEventListener('scroll', () => {
+                if(window.scrollY > 60) {
+                    document.getElementById('shoppingCartShortCutBtn').classList.add('info-pnl__button-stick');
+                    document.getElementById('infoPnl').classList.add('info-pnl--stick');
+                } else {
+                    document.getElementById('shoppingCartShortCutBtn').classList.remove('info-pnl__button-stick');
+                    document.getElementById('infoPnl').classList.remove('info-pnl--stick');
+                }
+                console.log(`目前的 scrollY 為${window.scrollY}`);
+            });
+        }
     }
 </script>
 
@@ -119,19 +131,11 @@
 <style scoped lang="scss">
 
     .header {
-        // border: 1px solid red;
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 4.2rem 7.5rem 0 7.5rem;
 
-        // 將 header 變成 fixed
-        // position: fixed;
-        // top: 0;
-        // width: 100%;
-        // z-index: 5000;
-        // background-color: rgba($color-white, .95);
-        
         &__logo-box {
             @include size(8rem, 8rem);
 
@@ -147,11 +151,45 @@
         .info-pnl {
             margin-left: 4.5rem;
 
+            // --- 將購物車快捷視窗變成 fixed
+            position: fixed;
+            top: 0;
+            right: 0;
+            transform: translate(-5rem, 6.6rem);
+            transition: transform .2s ease-out;
+            
+            z-index: 5000;
+            // ---------------------------
+            
+            // 按鈕黏住
+            &__button-stick {
+
+                &::after {
+                    box-shadow: 0 .5rem 1rem rgba($color-black, .1);
+                }
+            }
+
+            // 本身黏住
+            &--stick {
+                transform: translate(-4rem, 4rem);
+            }
+
             & button {
                 @include size(2.8rem, 2.8rem);
                 cursor: pointer;
                 outline: none;
                 border: none;
+                background-color: transparent;
+
+                &::after {
+                    @include size(160%, 160%);
+                    @include abs-center;
+                    border-radius: 100%;
+                    z-index: -1;
+                    content: "";
+                    display: block;
+                    background-color: $color-white;
+                }
 
                 & svg {
                     @include size(100%, 100%);
