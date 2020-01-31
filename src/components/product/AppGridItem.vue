@@ -1,7 +1,7 @@
 <template>
     <div class="product-content">
         <router-link :to="{ name: 'shopDetail', params: { name: data.name, category: data.category }}">
-            <img class="product-content__img" :src="data.imgUrl">    
+            <img class="product-content__img" :src="data.imgUrl" :alt="data.name">    
         </router-link>
         
         <div>

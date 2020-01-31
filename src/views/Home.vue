@@ -3,11 +3,11 @@
         <section class="section-header">
             <nav>
                 <ul>
-                    <li id="section-header__list-item-0" class="section-header__list-item section-header__list-item--active"><a>01</a><span></span></li>
-                    <li id="section-header__list-item-1" class="section-header__list-item"><a>02</a><span></span></li>
-                    <li id="section-header__list-item-2" class="section-header__list-item"><a>03</a><span></span></li>
-                    <li id="section-header__list-item-3" class="section-header__list-item"><a>04</a><span></span></li>
-                    <li id="section-header__list-item-4" class="section-header__list-item"><a>05</a><span></span></li>
+                    <li id="section-header__list-item-0" class="section-header__list-item section-header__list-item--active"><a aria-label="First gallery image">01</a><span></span></li>
+                    <li id="section-header__list-item-1" class="section-header__list-item"><a aria-label="Second gallery image">02</a><span></span></li>
+                    <li id="section-header__list-item-2" class="section-header__list-item"><a aria-label="Third gallery image">03</a><span></span></li>
+                    <li id="section-header__list-item-3" class="section-header__list-item"><a aria-label="Forth gallery image">04</a><span></span></li>
+                    <li id="section-header__list-item-4" class="section-header__list-item"><a aria-label="Fifth gallery image">05</a><span></span></li>
                 </ul>
                 <div class="chevron-btns-grp">
                     <span id="chevron-btn-up" class="chevron-btns-grp__icon">
