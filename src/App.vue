@@ -136,7 +136,7 @@
         padding: 4.2rem 7.5rem 0 7.5rem;
 
         &__logo-box {
-            @include size(8rem, 8rem);
+            @include size(6rem, 6rem);
 
             img {
                 width: 100%;
@@ -154,7 +154,7 @@
             position: fixed;
             top: 0;
             right: 0;
-            transform: translate(-5rem, 6.6rem);
+            transform: translate(-5rem, 5.6rem);
             transition: transform .2s ease-out;
             
             z-index: 5000;

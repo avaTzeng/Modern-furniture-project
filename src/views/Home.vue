@@ -220,18 +220,13 @@
         overflow: hidden;
 
         &__list-item {
-            padding: 2.5rem 0;
-
-            &:not(:last-child) {
-                margin-bottom: 1rem;
-            }
+            padding: 2.3rem 0;
 
             a {
                 position: absolute;
                 right: 0;
                 top: 50%;
                 transform: translate(0%, -50%);
-
                 font-family: $font-family-1;
                 font-size: 2rem;
                 font-weight: 300;
@@ -272,13 +267,13 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            transform: translate(calc(50% + 9.5rem), 0);
+            transform: translate(calc(50% + 4rem), 0);
             z-index: 5;
             width: 5rem;
 
             ul {
                 list-style: none;
-                margin-bottom: 25.5rem;
+                margin-bottom: 20rem;
             }
 
             .chevron-btns-grp {
@@ -306,7 +301,7 @@
         }
 
         &__gallery {
-            @include size(90%, 80rem);
+            @include size(90%, 76vh);
             float: right;
             overflow: hidden;
             
@@ -349,14 +344,12 @@
         }
 
         &__block {
-            width: 60%;
-            height: 70rem;
+            width: 50%;
         }
 
         &__img {
-            @include abs-center;
             @include size(100%, 100%);
-            overflow: hidden;
+
             img {
                 width: 100%;
                 vertical-align: top;
@@ -368,9 +361,8 @@
             align-items: flex-start;
             position: absolute;
             top: 50%;
-            left: 50%;
-            
-            transform: translate(calc(-50% + 70rem), -50%);
+            right: 0;
+            transform: translate(calc(100% + 15%), -50%);
             z-index: 1;
             color: $color-black;
 
@@ -442,14 +434,14 @@
             font-weight: 700;
             font-size: 2rem;
             line-height: 1;
-            margin-bottom: 3.2rem;
+            margin-bottom: 1.5rem;
         }
 
         &__title {
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
-            margin-bottom: 10rem;
+            margin-bottom: 7rem;
 
             h2 {
                 display: inline-block;

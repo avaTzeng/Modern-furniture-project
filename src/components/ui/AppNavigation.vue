@@ -17,9 +17,9 @@
 
 <style scoped lang="scss">
     .navigation {
-        // border: 1px solid red;
         
         &__list {
+            margin-right: 1rem;
             list-style: none;
         }
 

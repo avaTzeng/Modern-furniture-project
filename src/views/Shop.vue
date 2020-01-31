@@ -126,11 +126,11 @@
         @include flex-column-center;
         max-width: $row-max-width;
         margin: 0 auto;
-        margin-top: 21rem;
+        margin-top: 8rem;
 
 //----------- NAVIGATION ----------- 
         .navigation {
-            margin-bottom: 10rem;
+            margin-bottom: 3.5rem;
             width: 100%;
             
 

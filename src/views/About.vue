@@ -85,24 +85,22 @@
 <style scoped lang="scss">
     .section-header {
         @include flex-row-center;
-        margin-top: $u-margin-bottom-section-sm;
+        margin-top: $u-margin-bottom-section-md;
         align-items: flex-end;
 
         &__img {
-            width: 96rem;
-            height: 80rem;
+            width: 50%;
+            height: 73vh;
             overflow: hidden;
-    
+
             img {
                 height: 100%;
             }
         }
 
         &__contents {
-            
             width: 50%;
-            padding-left: 11.5rem;
-            padding-bottom: 20rem; 
+            padding-left: 8rem;
             
             div {
                 width: 47rem;
@@ -110,7 +108,7 @@
 
             h2 {
                 line-height: 1.1;
-                margin-bottom: 4.9rem;
+                margin-bottom: 3.5rem;
                 animation-delay: .2s;
             }
 
@@ -118,7 +116,7 @@
                 color: $color-grey-light;
 
                 &:not(:last-child) {
-                    margin-bottom: 3.5rem;
+                    margin-bottom: 2.6rem;
                 }
             }
 
@@ -195,7 +193,7 @@
     }
 
     .section-aboutus {
-        margin-top: 45.5rem;
+        margin-top: 28rem;
         margin-bottom: 25rem;
     
 
