@@ -7,7 +7,7 @@
             <div class="header__contents">
                 <app-navigation :isEnableActiveVfx="true"></app-navigation>
                 <span id="infoPnl" class="info-pnl">
-                    <button id="shoppingCartShortCutBtn" @click="isShowShoppingCart = !isShowShoppingCart">
+                    <button aria-label="Shopping cart" id="shoppingCartShortCutBtn" @click="isShowShoppingCart = !isShowShoppingCart">
                         <svg>
                             <use xlink:href="./assets/sprites_icon.svg#icon-shopping-cart"></use>
                         </svg>
@@ -43,17 +43,17 @@
             <app-navigation class="footer__nav" :isEnableActiveVfx="false"></app-navigation>
             <ul class="footer__social-media-list">
                 <li>
-                    <a href="https://www.facebook.com/" target="_blank">
+                    <a href="https://www.facebook.com/" target="_blank" aria-label="facebook link">
                         <svg><use xlink:href="./assets/sprites_icon.svg#icon-social-facebook"></use></svg>
                     </a>
                 </li>
                 <li>
-                    <a href="https://twitter.com/?lang=zh-tw" target="_blank">
+                    <a href="https://twitter.com/?lang=zh-tw" target="_blank" aria-label="twitter link">
                         <svg><use xlink:href="./assets/sprites_icon.svg#icon-social-twitter"></use></svg>
                     </a>
                 </li>
                 <li>
-                    <a href="https://www.pinterest.com/" target="_blank">
+                    <a href="https://www.pinterest.com/" target="_blank" aria-label="pinterest link">
                         <svg><use xlink:href="./assets/sprites_icon.svg#icon-social-pinterest"></use></svg>
                     </a>
                 </li>

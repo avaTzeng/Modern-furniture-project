@@ -26,13 +26,13 @@
                 <span>{{ data.price }} €</span>
             </div>
             <div class="section-shop-detail__count">
-                <button @click="subtractProductCount()">
+                <button @click="subtractProductCount()" aria-label="subtract product count">
                     <svg>
                         <use xlink:href="../assets/sprites_icon_entypo.svg#icon-minus"></use>
                     </svg> 
                 </button>
                 <span>{{ productCount }}</span>
-                <button @click="addProductCount()">
+                <button @click="addProductCount()"  aria-label="add product count">
                     <svg>
                         <use xlink:href="../assets/sprites_icon_entypo.svg#icon-plus"></use>
                     </svg>

@@ -9,16 +9,16 @@
                 <div class="section-contact__sub-title animated fadeIn">A: 1125 Josie Knolls Apt. 978 New York<br>T: 01 234 5678<br>E: contact@m989.com</div>
 
                 <form action="" class="animated fadeInRight fast">
-                    <label for="name">Name</label>
+                    <label for="namefield">Name</label>
                     <input type="text" name="name" id="namefield" required>
 
-                    <label for="email">Email</label>
+                    <label for="emailfield">Email</label>
                     <input type="email" name="email" id="emailfield" required>
 
-                    <label for="subject">Subject</label>
+                    <label for="subjectfield">Subject</label>
                     <input type="text" name="subject" id="subjectfield" required>
 
-                    <label for="content">Your content</label>
+                    <label for="contentfield">Your content</label>
                     <textarea name="content" id="contentfield" required></textarea>
 
                     <input id="submitBtn" type="submit" value="send messenger">
