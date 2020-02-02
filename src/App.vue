@@ -2,7 +2,7 @@
     <div @click="handleClosingInfoPnl($event)">
         <div class="alert-pnl">
             <div class="alert-pnl__contents">
-                <div class="alert-pnl__title">傢俱網頁作品並無製作 RWD 部分，若想觀看 RWD 的掌握度請參考另外一個作品</div>
+                <div class="alert-pnl__title">傢俱網頁作品並無實作 RWD 部分，若想觀看 RWD 的掌握度請參考另外一個作品</div>
                 <div class="alert-pnl__links">
                     <div class="alert-pnl__qrcode">
                         <div>連結方式一： QR Code</div>
@@ -147,9 +147,11 @@
 
 <style scoped lang="scss">
     .alert-pnl {
-        display: none;
-        @include size(100%, 100vh);
+        @include size(100%, 100%);
         position: fixed;
+        top: 0;
+        left: 0;
+        display: none;
         background-color: rgba($color-primary, .9);
         z-index: 10000;
         text-align: center;
@@ -159,13 +161,13 @@
         }
 
         &__contents {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, calc(-50% - 2rem));
+            width: 100vw;
+            // border: 1px solid orangered;
+            position: fixed;
+            top: 5rem;
+            left: 0;
+            z-index: 20000;
             font-size: 2rem;
-            width: 100%;
-
 
             & img {
                 width: 20rem;
@@ -175,15 +177,17 @@
         &__title {
             width: 70%;
             margin: 0 auto;
-            font-weight: 500;
+            font-weight: 600;
             color: $color-black;
-            margin-bottom: 4rem;
+            margin-bottom: 2.5rem;
+            // border: 1px solid blue;
         }
 
         &__links {
             @include flex-column-center;
-            width: 50rem;
             margin: 0 auto;
+            // border: 1px solid red;
+            width: 100%;
         }
 
         &__qrcode, &__website-link {
@@ -199,7 +203,7 @@
         }
 
         &__website-link {
-            margin-top: 5rem;
+            margin-top: 3rem;
 
             a,
             a:link,
