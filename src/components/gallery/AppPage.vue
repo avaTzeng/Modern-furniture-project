@@ -2,7 +2,7 @@
     <div class="page">
         <span class="page-title">{{ content.title }}</span>
         <span class="page-img-product">
-            <img :src="require(`@/assets/images/homepage/furniture/${content.productFileName}`)" alt="Product Photo">
+            <img :src="content.imgUrl" alt="Product Photo">
         </span>
     </div>    
 </template>

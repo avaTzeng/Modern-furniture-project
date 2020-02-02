@@ -1,8 +1,26 @@
 <template>
     <div @click="handleClosingInfoPnl($event)">
+        <div class="alert-pnl">
+            <div class="alert-pnl__contents">
+                <div class="alert-pnl__title">傢俱網頁作品並無製作 RWD 部分，若想觀看 RWD 的掌握度請參考另外一個作品</div>
+                <div class="alert-pnl__links">
+                    <div class="alert-pnl__qrcode">
+                        <div>連結方式一： QR Code</div>
+                        <img src="https://i.imgur.com/OPOO7lI.png" alt="Qrcode of another work">
+                    </div>
+                    <div class="alert-pnl__website-link">
+                        <div>連結方式二： 網頁連結</div>
+                        <div>
+                            <a href="https://gustablo-restaurant-project.web.app/">Gustablo Restaurant</a>
+                        </div>       
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <header class="header">
             <router-link class="header__logo-box" to="/">
-                <img src="./assets/images/brandLogo.png" alt="Logo">
+                <img src="https://i.imgur.com/taFwYNQ.png" alt="Logo">
             </router-link>
             <div class="header__contents">
                 <app-navigation :isEnableActiveVfx="true"></app-navigation>
@@ -59,7 +77,7 @@
                 </li>
             </ul>
             <span class="footer__info">©2015 CopyRight HeadPassion. All rights reserved.</span>
-            <img class="footer__bg" src="./assets/images/cover_footer.png" alt="Footer background">
+            <img class="footer__bg" src="https://i.imgur.com/ztMQreS.png" alt="Footer background">
         </footer>
     </div>
 </template>
@@ -128,6 +146,81 @@
 </style>
 
 <style scoped lang="scss">
+    .alert-pnl {
+        display: none;
+        @include size(100%, 100vh);
+        position: fixed;
+        background-color: rgba($color-primary, .9);
+        z-index: 10000;
+        text-align: center;
+
+        @media only screen and (max-width: 75em) { // 1200px = tab-land
+             display: block;
+        }
+
+        &__contents {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, calc(-50% - 2rem));
+            font-size: 2rem;
+            width: 100%;
+
+
+            & img {
+                width: 20rem;
+            }
+        }
+
+        &__title {
+            width: 70%;
+            margin: 0 auto;
+            font-weight: 500;
+            color: $color-black;
+            margin-bottom: 4rem;
+        }
+
+        &__links {
+            @include flex-column-center;
+            width: 50rem;
+            margin: 0 auto;
+        }
+
+        &__qrcode, &__website-link {
+            font-size: 1.7rem;
+            line-height: 1;
+            & > div:first-child {
+                padding: 1.2rem 1.2rem;
+                background-color: $color-red;
+                margin-bottom: 1.5rem;
+                color: $color-white;
+                border-radius: .8rem;
+            }
+        }
+
+        &__website-link {
+            margin-top: 5rem;
+
+            a,
+            a:link,
+            a:visited {
+                color: $color-black;
+                font-size: 2rem;
+                font-weight: 500;
+                border-bottom: 1px solid $color-black;
+                padding: 1px 0;
+                text-decoration: none;
+            }
+
+            a:hover,
+            a:active {
+                font-weight: 700;
+                border-bottom: 2px solid $color-black;
+            }
+
+           
+        }
+    }
 
     .header {
         display: flex;

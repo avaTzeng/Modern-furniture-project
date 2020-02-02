@@ -47,7 +47,7 @@
                         </router-link>
                     </div>
                     <div class="section-intro__img">
-                        <img src="../assets/images/homepage/cover_02.webp" alt="Mountain Photo">
+                        <img srcset="https://i.imgur.com/b0cFqWg.jpg 1x, https://i.imgur.com/bfMy8Ql.jpg 2x" alt="Mountain Photo">
                     </div>
                 </div>
             </div>
@@ -63,10 +63,10 @@
                 </div>
     
                 <div class="section-intro__banner-img">
-                    <img src="../assets/images/homepage/moreCollection.jpg" alt="Collection 1">
+                    <img srcset="https://i.imgur.com/ikiTvxU.jpg 1x, https://i.imgur.com/VyKKBJ6.jpg 2x" alt="Collection 1">
                 </div>
                 <div class="section-intro__banner-img">
-                    <img src="../assets/images/homepage/moreCollection.jpg" alt="Collection 2">
+                    <img srcset="https://i.imgur.com/ikiTvxU.jpg 1x, https://i.imgur.com/VyKKBJ6.jpg 2x" alt="Collection 2">
                 </div>
             </div>
         </section>
@@ -82,7 +82,7 @@
              
         </section>
         <section class="section-customer">
-            <img id="customerImg" class="section-customer__img" src="../assets/images/homepage/companyLogos.png" alt="Companies's logo">
+            <img id="customerImg" class="section-customer__img" src="https://i.imgur.com/YjZrwqL.png" alt="Companies's logo">
             <p id="customerParagraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor</p>
             <span class="sub-title">hoang bin - art Director</span>
         </section>
@@ -104,23 +104,23 @@
                 galleryContents: [  // mocked data
                     {
                         title: 'softness in the arms of nature 1',
-                        productFileName: '7.png'
+                        imgUrl: 'https://i.imgur.com/7BtvpSx.png'
                     },
                     {
                         title: 'softness in the arms of nature 2',
-                        productFileName: '1.png'
+                        imgUrl: 'https://i.imgur.com/IDHEpMK.png'
                     },
                     {
                         title: 'softness in the arms of nature 3',
-                        productFileName: '2.png'
+                        imgUrl: 'https://i.imgur.com/nHHDhor.png'
                     },
                     {
                         title: 'softness in the arms of nature 4',
-                        productFileName: '3.png'
+                        imgUrl: 'https://i.imgur.com/Z6gueQ0.png'
                     },
                     {
                         title: 'softness in the arms of nature 5',
-                        productFileName: '4.png'
+                        imgUrl: 'https://i.imgur.com/taWcZz0.png'
                     }
                 ],
             };
@@ -312,7 +312,7 @@
                 top: 50%;
                 transform: translate(0, -50%);
                 opacity: .35;
-                background-image: url('../assets/images/homepage/cover_03.jpg');
+                background-image: url('https://i.imgur.com/vw84CfP.jpg');
                 background-size: cover;
                 background-position: top;
                 background-repeat: no-repeat;
@@ -331,7 +331,7 @@
     .section-intro {
         margin-bottom: $u-margin-bottom-section-lg;
 
-        background-image: linear-gradient(rgba($color-white, .7)), url("../assets/images/homepage/cover_03.jpg");
+        background-image: linear-gradient(rgba($color-white, .7)), url("https://i.imgur.com/vw84CfP.jpg");
         background-size: cover;
         background-position: top;
         background-attachment: fixed;

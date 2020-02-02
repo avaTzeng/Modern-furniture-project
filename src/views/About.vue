@@ -2,7 +2,7 @@
     <main>
         <section class="section-header">
             <div class="animated fadeIn section-header__img">
-                <img src="../assets/images/homepage/cover_02.webp" alt="Cover photo">
+                <img srcset="https://i.imgur.com/b0cFqWg.jpg 1x, https://i.imgur.com/bfMy8Ql.jpg 2x" alt="Cover Photo">
             </div>
             <div class="section-header__contents">
                 <div>
@@ -19,7 +19,7 @@
             <div class="section-work__content">
                 <div id="sectionWorkBlock_first" class="section-work__content-block">
                     <span class="section-work__content-img">
-                        <img src="../assets/images/aboutpage/icon-tree.png" alt="Tree icon">
+                        <img src="https://i.imgur.com/4gE70bs.png" alt="Tree icon">
                     </span>
                     <span class="section-work__content-sub-title sub-title">natural furniture</span>
                     <p class="p--fore-line">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cup</p>
@@ -27,7 +27,7 @@
 
                 <div id="sectionWorkBlock_second" class="section-work__content-block">
                     <span class="section-work__content-img">
-                        <img src="../assets/images/aboutpage/icon-lightbulb.png" alt="Tree icon">
+                        <img src="https://i.imgur.com/A01PnsK.png" alt="Tree icon">
                     </span>
                     <span class="section-work__content-sub-title sub-title">creative furniture</span>
                     <p class="p--fore-line">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint</p>
@@ -35,7 +35,7 @@
 
                 <div id="sectionWorkBlock_third" class="section-work__content-block">
                     <span class="section-work__content-img">
-                        <img src="../assets/images/aboutpage/icon-trophy.png" alt="Tree icon">
+                        <img src="https://i.imgur.com/P4VA319.png" alt="Tree icon">
                     </span>
                     <span class="sub-title">High Quality</span>
                     <p class="p--fore-line">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaeca</p>
@@ -51,7 +51,7 @@
         <section class="section-aboutus">
             <div class="section-aboutus__contents">
                 <span id="sectionAboutusImg" class="section-aboutus__contents-img">
-                    <img src="../assets/images/brandLogo.png" alt="Logo">
+                    <img src="https://i.imgur.com/taFwYNQ.png" alt="Logo">
                 </span>
                 <p id="sectionAboutusParagraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor</p>
                 <span id="sectionAboutusSubtitle" class="sub-title">hoang bin - art Director</span>

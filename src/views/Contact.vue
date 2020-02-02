@@ -2,7 +2,7 @@
     <main>
         <section class="section-contact">
             <span class="section-contact__cover">
-                <img src="../assets/images/contactpage/cover.png" alt="Team photo">
+                <img src="https://i.imgur.com/xxiFaAM.png" alt="Team photo">
             </span>
             <div class="section-contact__form">
 

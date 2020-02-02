@@ -4,7 +4,7 @@
             <nav class="navigation">
                 <ul class="navigation__list">
                     <router-link id="defaultActiveLink" to="/shop/table" tag="li"  class="navigation__list-item" active-class="navigation__list-item--active" exact>
-                        <img class="navigation__list-icon" src="../assets/images/shoppage/icon-table.png" alt="">
+                        <img class="navigation__list-icon" src="https://i.imgur.com/tQ4xiy7.png" alt="">
                         <div>
                             <span class="sub-title">table</span>
                             <p>Made from natural</p>
@@ -12,7 +12,7 @@
                     </router-link>
 
                     <router-link to="/shop/sofa" tag="li"  class="navigation__list-item" active-class="navigation__list-item--active">
-                        <img class="navigation__list-icon" src="../assets/images/shoppage/icon-sofa.png" alt="">
+                        <img class="navigation__list-icon" src="https://i.imgur.com/qPj2hIb.png" alt="">
                         <div>
                             <span class="sub-title">sofa</span>
                             <p>Made from natural</p>
@@ -20,7 +20,7 @@
                     </router-link>
 
                     <router-link to="/shop/light" tag="li"  class="navigation__list-item" active-class="navigation__list-item--active">
-                        <img class="navigation__list-icon" src="../assets/images/shoppage/icon-lamp.png" alt="">
+                        <img class="navigation__list-icon" src="https://i.imgur.com/Y1cUPcn.png" alt="">
                         <div>
                             <span class="sub-title">light</span>
                             <p>Made from natural</p>
@@ -28,7 +28,7 @@
                     </router-link>
 
                     <router-link to="/shop/bed" tag="li"  class="navigation__list-item" active-class="navigation__list-item--active">            
-                        <img class="navigation__list-icon" src="../assets/images/shoppage/icon-bed.png" alt="">
+                        <img class="navigation__list-icon" src="https://i.imgur.com/q6KUftL.png" alt="">
                         <div>
                             <span class="sub-title">bed</span>
                             <p>Made from natural</p>
