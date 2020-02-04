@@ -12,13 +12,13 @@
                 <div class="chevron-btns-grp">
                     <span id="chevron-btn-up" class="chevron-btns-grp__icon">
                         <svg>
-                            <use xlink:href="../assets/sprites_icon_entypo.svg#icon-triangle-up"></use>
+                            <use xlink:href="../assets/sprites_icon_entypo.svg#icon-triangle-up" fill="#303030"/>
                         </svg>
                     </span>
                     
                     <span id="chevron-btn-down" class="chevron-btns-grp__icon">
                         <svg>
-                            <use xlink:href="../assets/sprites_icon_entypo.svg#icon-triangle-down"></use>
+                            <use xlink:href="../assets/sprites_icon_entypo.svg#icon-triangle-down" fill="#303030"/>
                         </svg>
                     </span>
                 </div>
@@ -294,7 +294,7 @@
                     svg {
                         @include abs-center;
                         @include size(35%, 35%);
-                        fill: $color-black;
+                        // fill: $color-black;
                     }
                 }
             }
@@ -330,8 +330,7 @@
 //-------------------- SECTION-INTRO --------------------
     .section-intro {
         margin-bottom: $u-margin-bottom-section-lg;
-
-        background-image: linear-gradient(rgba($color-white, .7)), url("https://i.imgur.com/vw84CfP.jpg");
+        background-image: linear-gradient(rgba($color-white, .7), rgba($color-white, .7)), url("https://i.imgur.com/vw84CfP.jpg");
         background-size: cover;
         background-position: top;
         background-attachment: fixed;

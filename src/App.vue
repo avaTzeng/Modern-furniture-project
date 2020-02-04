@@ -26,8 +26,8 @@
                 <app-navigation :isEnableActiveVfx="true"></app-navigation>
                 <span id="infoPnl" class="info-pnl">
                     <button aria-label="Shopping cart" id="shoppingCartShortCutBtn" @click="isShowShoppingCart = !isShowShoppingCart">
-                        <svg>
-                            <use xlink:href="./assets/sprites_icon.svg#icon-shopping-cart"></use>
+                        <svg class="info-pnl__svg">
+                            <use xlink:href="./assets/sprites_icon.svg#icon-shopping-cart" fill="#303030"/>
                         </svg>
                         <div v-if="shoppingCartItemsTotalCount > 0" id="shoppingCountBubble">
                             <span>{{ shoppingCartItemsTotalCount }}</span>
@@ -61,18 +61,18 @@
             <app-navigation class="footer__nav" :isEnableActiveVfx="false"></app-navigation>
             <ul class="footer__social-media-list">
                 <li>
-                    <a href="https://www.facebook.com/" target="_blank" aria-label="facebook link">
-                        <svg><use xlink:href="./assets/sprites_icon.svg#icon-social-facebook"></use></svg>
+                    <a href="https://www.facebook.com/" target="_blank" aria-label="facebook link" rel="noopener">
+                        <svg><use xlink:href="./assets/sprites_icon.svg#icon-social-facebook" fill="#303030"/></svg>
                     </a>
                 </li>
                 <li>
-                    <a href="https://twitter.com/?lang=zh-tw" target="_blank" aria-label="twitter link">
-                        <svg><use xlink:href="./assets/sprites_icon.svg#icon-social-twitter"></use></svg>
+                    <a href="https://twitter.com/?lang=zh-tw" target="_blank" aria-label="twitter link" rel="noopener">
+                        <svg><use xlink:href="./assets/sprites_icon.svg#icon-social-twitter" fill="#303030"/></svg>
                     </a>
                 </li>
                 <li>
-                    <a href="https://www.pinterest.com/" target="_blank" aria-label="pinterest link">
-                        <svg><use xlink:href="./assets/sprites_icon.svg#icon-social-pinterest"></use></svg>
+                    <a href="https://www.pinterest.com/" target="_blank" aria-label="pinterest link" rel="noopener">
+                        <svg><use xlink:href="./assets/sprites_icon.svg#icon-social-pinterest" fill="#303030"/></svg>
                     </a>
                 </li>
             </ul>
@@ -253,8 +253,14 @@
             right: 0;
             transform: translate(-5rem, 5.6rem);
             transition: transform .2s ease-out;
-            
+
             z-index: 5000;
+
+            &__svg {
+                @include size(100%, 100%);
+                // fill: $color-black;
+                vertical-align: middle;
+            }
             // ---------------------------
             
             // 按鈕黏住
@@ -285,12 +291,6 @@
                     content: "";
                     display: block;
                     background-color: $color-white;
-                }
-
-                & svg {
-                    @include size(100%, 100%);
-                    fill: $color-black;
-                    vertical-align: middle;
                 }
             }
 
@@ -352,7 +352,7 @@
                     @include size(100% , 1px);
                     content: "";
                     display: block;
-                    position: absoulte;
+                    position: absolute;
                     top: 0;
                     left: 0;
                     transform: translateY(-2.5rem);
@@ -439,7 +439,7 @@
 
             svg {
                 @include size(2.5rem, 2.5rem);
-                fill: $color-black;
+                // fill: $color-black;
             }
         }
 
