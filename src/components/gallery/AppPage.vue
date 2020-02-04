@@ -2,7 +2,7 @@
     <div class="page">
         <span class="page-title">{{ content.title }}</span>
         <span class="page-img-product">
-            <img :src="content.imgUrl" alt="Product Photo">
+            <img :src="content.imgUrl_1x" :srcset="`${content.imgUrl_1x} 1x, ${content.imgUrl_2x} 2x`" alt="Product Photo">
         </span>
     </div>    
 </template>

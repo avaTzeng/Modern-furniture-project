@@ -104,23 +104,28 @@
                 galleryContents: [  // mocked data
                     {
                         title: 'softness in the arms of nature 1',
-                        imgUrl: 'https://i.imgur.com/7BtvpSx.png'
+                        imgUrl_1x: 'https://i.imgur.com/rFOeEYW.png',
+                        imgUrl_2x: 'https://i.imgur.com/j9JErZO.png'
                     },
                     {
                         title: 'softness in the arms of nature 2',
-                        imgUrl: 'https://i.imgur.com/IDHEpMK.png'
+                        imgUrl_1x: 'https://i.imgur.com/vsd2orN.png',
+                        imgUrl_2x: 'https://i.imgur.com/7HjZEG5.png'
                     },
                     {
                         title: 'softness in the arms of nature 3',
-                        imgUrl: 'https://i.imgur.com/nHHDhor.png'
+                        imgUrl_1x: 'https://i.imgur.com/KmVr3y8.png',
+                        imgUrl_2x: 'https://i.imgur.com/YaySROe.png'
                     },
                     {
                         title: 'softness in the arms of nature 4',
-                        imgUrl: 'https://i.imgur.com/Z6gueQ0.png'
+                        imgUrl_1x: 'https://i.imgur.com/2iT9eEs.png',
+                        imgUrl_2x: 'https://i.imgur.com/cNSQ8ug.png'
                     },
                     {
                         title: 'softness in the arms of nature 5',
-                        imgUrl: 'https://i.imgur.com/taWcZz0.png'
+                        imgUrl_1x: 'https://i.imgur.com/1apnXSS.png',
+                        imgUrl_2x: 'https://i.imgur.com/Fvmsp08.png'
                     }
                 ],
             };
